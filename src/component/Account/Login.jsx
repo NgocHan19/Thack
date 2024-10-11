@@ -51,7 +51,7 @@ function Login() {
         </div>
       </div>
       {/* Mật khẩu */}
-      <div className="absolute left-[400px] top-[330px]">
+      <div className="absolute left-[400px] top-[320px]">
         <span className="text-[#868585] text-[24px] font-normal">Mật khẩu</span>
         <div className="mt-[10px] relative w-[827px] h-[60px] bg-[#FFFFFF] border border-[#A3A3A3] rounded-[5px] flex items-center hover:border-[#3498DB] transition duration-200">
           <img src={images['icon_pass.png']} alt="Password Icon" className="w-[30px] h-[30px] ml-[15px]" />
@@ -64,9 +64,17 @@ function Login() {
       </div>
 
       {/* Đăng nhập button */}
-      <div className="absolute left-[400px] top-[480px] w-[827px] h-[60px] bg-[#3498DB] rounded-[5px] flex items-center justify-center">
+      <div className="absolute left-[400px] top-[460px] w-[827px] h-[60px] bg-[#3498DB] rounded-[5px] flex items-center justify-center">
         <span className="text-[#FFFBFB] text-[24px] font-bold">Đăng nhập</span>
       </div>
+
+      {/* Đăng ký */}
+      <div className="absolute left-[600px] top-[530px] flex items-center">
+        <span className="text-[#A2A2A2] text-[20px] font-normal">Bạn chưa có tài khoản?</span>
+        <a href="register" className="ml-2 text-[#A2A2A2] font-bold hover:text-[#3498DB] ">Đăng ký ngay</a>
+      </div>
+      
+      <div className="absolute left-[500px] top-[570px] w-[630px] border-b border-[#A2A2A2]"></div>
 
       <div className="absolute left-[600px] top-[580px]">
         <p className="text-[#5E5D5D] text-[20px] font-bold">Bạn gặp khó khăn khi tạo tài khoản?</p>
