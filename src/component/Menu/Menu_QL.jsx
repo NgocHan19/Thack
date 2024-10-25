@@ -106,33 +106,17 @@ function Menu_QL() {
 
         {/* Các mục con của Danh mục tổ chức */}
         {isOrganizationDropdownOpen && (
-          <div className="absolute right-[15px] w-[200px] top-[700px]">
+          <div className="absolute right-[15px] w-[200px] top={[isDropdownOpen ? '700px' : '400px']}" style={{ top: `${isDropdownOpen ? '700px' : '400px'}` }}>
             <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
-              <img src={images['icon_unit.png']} alt="icon_unit" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhà cung cấp</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
-              <img src={images['icon_department.png']} alt="icon_department" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Chi nhánh</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
               <img src={images['icon_organization.png']} alt="icon_organization" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhân viên</button>
+              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Quản lý tổ chức</button>
+            </div>
+            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
+              <img src={images['icon_member.png']} alt="icon_member" className="w-[25px] h-[25px] ml-[10px]" />
+              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Thành viên</button>
             </div>
           </div>
         )}
-
-        {/* Account */}
-        <div className="absolute w-[280px] h-[80px] left-0 bottom-0 bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-tl-[15px] rounded-tr-[15px]">
-          <button className="absolute w-[40px] h-[40px] left-[30px] top-[10px]">
-            <img src={images['icon_account.png']} alt="Account Avatar" className="w-full h-full" />
-          </button>
-          <div className="absolute left-[85px] top-[10px] font-inter font-bold text-[18px] text-[#FFFFFF]">Tên Tài Khoản</div>
-          <div className="absolute left-[85px] top-[40px] font-inter font-bold text-[10px] text-[#D9D9D9]">email@gmail.com</div>
-          <button className="absolute right-[10px] top-[10px] w-[20px] h-[20px]">
-            <img src={images['icon_ring.png']} alt="Notification Ring" className="w-full h-full" />
-          </button>
-        </div>
       </div>
     </div>
   );
