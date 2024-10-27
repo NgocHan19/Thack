@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import images from '../../images';
 
 function Menu_QL() {
+  const navigate = useNavigate(); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOrganizationDropdownOpen, setIsOrganizationDropdownOpen] = useState(false);
 
@@ -18,6 +20,10 @@ function Menu_QL() {
   const toggleForm = () => {
     setIsFormVisible(!isFormVisible);
   };
+
+  const handleNavigate = (path) => {
+    navigate(path);
+};
 
   return (
     <div className="relative w-full h-full">
@@ -38,7 +44,7 @@ function Menu_QL() {
 
           <div className="absolute w-[250px] h-[45px] left-[15px] top-[150px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center">
             <img src={images['icon_dashboard.png']} alt="icon_dashboard" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
-            <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]">Dashboard</button>
+            <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]"  onClick={() => handleNavigate('/dashboard')}>Dashboard</button>
           </div>
 
           <div className={`absolute w-[250px] h-[45px] left-[15px] top-[215px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center`}>
@@ -61,15 +67,15 @@ function Menu_QL() {
             <div className="absolute right-[15px] top-[270px] w-[200px]">
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
                 <img src={images['icon_import.png']} alt="icon_import" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhập kho</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/nhapkho')}>Nhập kho</button>
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_export.png']} alt="icon_export" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Xuất kho</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/xuatkho')}>Xuất kho</button>
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_inventory.png']} alt="icon_inventory" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Kiểm kê</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/kiemke')}>Kiểm kê</button>
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_component.png']} alt="icon_component" className="w-[25px] h-[25px] ml-[10px]" />
@@ -84,7 +90,7 @@ function Menu_QL() {
 
           <div className={`absolute w-[250px] h-[45px] left-[15px] ${isDropdownOpen ? 'top-[585px]' : 'top-[280px]'} bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] transition-all duration-200`}>
             <img src={images['icon_dashboard.png']} alt="icon_dashboard" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
-            <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]">Thống kê</button>
+            <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/thongke')}>Thống kê</button>
           </div>
 
           <div className={`absolute w-[250px] h-[45px] left-[15px] ${isDropdownOpen ? 'top-[650px]' : 'top-[345px]'} bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center`}>
@@ -115,7 +121,7 @@ function Menu_QL() {
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_staff.png']} alt="icon_member" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhân viên</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/nhanvien')}>Nhân viên</button>
               </div>
             </div>
           )}
@@ -134,12 +140,12 @@ function Menu_QL() {
       </div>
 
       {isFormVisible && (
-        <div className="absolute left-[290px] top-[auto] bottom-[10px] w-[200px] h-[80px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[15px] flex flex-col items-center justify-center border-2 border-[#D8D8D8]">
-          <button className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] flex items-center">
+        <div className="absolute left-[30px] top-[910px] w-[200px] h-[80px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[15px] flex flex-col items-center justify-center border-2 border-[#D8D8D8]">
+          <button  onClick={() => handleNavigate('/suathongtincanhan')}className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] flex items-center">
             <img src={images['icon_info.png']} alt="icon_infp" className="w-[20px] h-[20px] ml-[10px] mr-[10px]" />
             Thông tin cá nhân
           </button>
-          <button className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] mt-2 flex items-center">
+          <button onClick={() => handleNavigate('/dangxuat')} className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] mt-2 flex items-center">
             <img src={images['icon_logout.png']} alt="icon_logout" className="w-[20px] h-[20px] ml-[10px] mr-[10px]" />
             Đăng xuất
           </button>

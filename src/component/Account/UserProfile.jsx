@@ -7,7 +7,7 @@ const UserProfile = () => {
       <div className="absolute w-[448px] h-[29px] left-[50px] top-[35px] font-inter font-bold text-[24px] leading-[29px] text-[#7D7D7D]">
         Thông Tin Cá Nhân/ Tài Khoản Của Tôi
       </div>
-      <div className="absolute w-[1070px] h-[750px] left-[50px] top-[80px] bg-white rounded-[15px]"> 
+      <div className="absolute w-[1130px] h-[750px] left-[50px] top-[80px] bg-white rounded-[15px]"> 
         <button className="absolute left-[30px] top-[20px]">
           <img src={images['icon_profile.png']} alt="User" className="w-[50px] h-[50px]" />
         </button>
