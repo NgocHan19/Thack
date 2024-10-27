@@ -10,13 +10,25 @@ import UserProfile from './component/Account/UserProfile';
 
 function App() {
   return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+
     // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<HomePage />} />
-    //     <Route path="/login" element={<Login />} />
-    //   </Routes>
+    //   <div className="app flex h-screen">
+    //     {/* Menu bên trái */}
+    //     <div className="w-[280px]">
+    //       <Menu_NV />
+    //     </div>
+    //     {/* Nội dung trang bên phải */}
+    //     <div className="flex-1 bg-white">
+    //       <UserProfile />
+    //     </div>
+    //   </div>
     // </Router>
-    <UserProfile/>
   );
 }
 

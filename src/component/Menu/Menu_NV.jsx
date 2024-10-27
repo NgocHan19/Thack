@@ -15,16 +15,13 @@ function Menu_NV() {
 
   return (
     <div className="relative w-full h-[1080px]">
-      {/* Menu */}
       <div className="absolute w-[280px] h-full left-0 top-0">
         <div className="absolute w-full h-full bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-r-[15px]"></div>
         
-        {/* Logo */}
         <div className="absolute w-[180px] h-[60px] left-[30px] top-0">
           <img src={images['logo.png']} alt="Logo" className="w-full h-full object-cover rounded-r-[15px]" />
         </div>
         
-        {/* Tìm kiếm */}
         <div className="absolute w-[250px] h-[45px] left-[15px] top-[85px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center transition duration-200 hover:bg-[#4B4E55]">
           <img src={images['search.png']} alt="icon_search" className="w-[25px] h-[25px] ml-[15px]" />
           <input
@@ -34,13 +31,11 @@ function Menu_NV() {
           />
         </div>
 
-        {/* Dashboard */}
         <div className="absolute w-[250px] h-[45px] left-[15px] top-[150px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center">
           <img src={images['icon_dashboard.png']} alt="icon_dashboard" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
           <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]">Dashboard</button>
         </div>
 
-        {/* Lô hàng */}
         <div className={`absolute w-[250px] h-[45px] left-[15px] top-[215px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center`}>
           <img src={images['icon_shipment.png']} alt="icon_shipment" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
           <button
@@ -82,16 +77,14 @@ function Menu_NV() {
           </div>
         )}
 
-        {/* Thống kê */}
         <div className={`absolute w-[250px] h-[45px] left-[15px] ${isDropdownOpen ? 'top-[585px]' : 'top-[280px]'} bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] transition-all duration-200`}>
           <img src={images['icon_dashboard.png']} alt="icon_dashboard" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
           <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]">Thống kê</button>
         </div>
 
-        {/* Account */}
-        <div className="absolute w-[280px] h-[80px] left-0 bottom-0 bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-tl-[15px] rounded-tr-[15px]">
+        <div className="absolute w-[280px] h-[80px] left-0 bottom-0 bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-tl-[15px] rounded-br-[15px] ">
           <button className="absolute w-[40px] h-[40px] left-[30px] top-[10px]" onClick={toggleForm}>
-            <img src={images['icon_account.png']} alt="Account Avatar" className="w-full h-full" />
+            <img src={images['icon_account1.png']} alt="Account Avatar" className="w-full h-full" />
           </button>
           <div className="absolute left-[85px] top-[10px] font-inter font-bold text-[18px] text-[#FFFFFF]">Tên Tài Khoản</div>
           <div className="absolute left-[85px] top-[40px] font-inter font-bold text-[10px] text-[#D9D9D9]">email@gmail.com</div>
