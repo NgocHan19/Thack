@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import hook điều hướng
 import images from '../../images';
+import '../custom.css';
 
 function Menu_NV() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

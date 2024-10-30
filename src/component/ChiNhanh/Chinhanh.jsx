@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import images from '../../images';
+import '../custom.css';
 
 function Chinhanh() {
   const [isDropdown1Open, setDropdown1Open] = useState(false);
@@ -13,11 +14,23 @@ function Chinhanh() {
   const toggleDropdown2 = () => {
     setDropdown2Open(!isDropdown2Open);
   };
+  
   const [isFormVisible, setIsFormVisible] = useState(false);
 
 
-  const navigate = useNavigate(); // Sử dụng navigate để điều hướng
+ const [showModal, setShowModal] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
+  const handleDeleteClick = () => setShowModal(true);
+  const confirmDelete = () => {
+    setShowModal(false);
+    setSuccess(true);
+  };
+// Thiết lập thời gian để thông báo biến mất sau 3 giây
+setTimeout(() => {
+  setSuccess(false);
+}, 3000);
 
 
 
@@ -278,12 +291,45 @@ function Chinhanh() {
             <div className="self-stretch"></div>
           </div>
         </div>
-      </div>
+      </div> 
       <div  className="w-[150px] h-[60px] left-[1462px] top-[124px] absolute bg-[#f39c12] rounded-[15px]" />
-      <div className="w-[50px] h-[60px] left-[1791px] top-[124 px] absolute">
-        <div className="w-[50px] h-[60px] left-0 top-0 absolute bg-[#cd4141] rounded-[15px]" />
-        <img className="w-[25px] h-[25px] left-[12px] top-[17px] absolute" src={images['Delete.png']} />
+{/* Trigger Delete Button */}
+<div className="w-[50px] h-[60px] absolute left-[1791px] top-[124px] cursor-pointer" onClick={handleDeleteClick}>
+        <div className="w-full h-full bg-[#cd4141] rounded-[15px] flex items-center justify-center">
+          <img className="w-[25px] h-[25px]" src={images['Delete.png']} alt="Delete Icon" />
+        </div>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50">
+          <div className="max-w-[300px] w-full h-auto bg-white rounded-[15px] border-2 border-[#767676] flex flex-col items-center justify-center p-4">
+            <div className="text-[#525050] text-xl font-bold">Xóa chi nhánh</div>
+            <div className="text-[#a09696] text-lg font-bold mt-2 text-center">
+              Bạn chắc chắn muốn xóa chi nhánh này?
+            </div>
+            <div className="flex justify-between w-full mt-4">
+              {/* Confirm Button */}
+              <button onClick={confirmDelete} className="w-[100px] h-[40px] bg-[#cd4141] rounded-[10px] flex items-center justify-center mx-2">
+                <span className="text-white text-lg font-bold">Xóa</span>
+              </button>
+
+              {/* Cancel Button */}
+              <button onClick={() => setShowModal(false)} className="w-[100px] h-[40px] bg-[#d9d9d9] rounded-[10px] flex items-center justify-center mx-2">
+                <span className="text-[#525050] text-lg font-bold">Quay lại</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+       {/* Success Message */}
+       {success && (
+        <div className="absolute top-[200px] left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-lg font-bold rounded-md p-3">
+          Xóa thành công!
+        </div>
+      )}
+      
       <div className="w-[135px] h-[60px] left-[1634px] top-[124px] absolute" >
         <div className="w-[135px] h-[60px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
         <div className="w-[82.39px] h-[21.29px] left-[47px] top-[19px] absolute text-white text-lg font-semibold font-['Inter']"onClick={() => navigate('/chinhanh-tao')}>Tạo mới</div>

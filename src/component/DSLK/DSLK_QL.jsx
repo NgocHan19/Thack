@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import images from '../../images';
+import '../custom.css';
 
 function DSLK_QL() {
   const [isDropdown1Open, setDropdown1Open] = useState(false);
