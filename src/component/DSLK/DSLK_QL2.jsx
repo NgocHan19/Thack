@@ -3,21 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import images from '../../images';
 import '../custom.css';
 
-function Chinhanh_Tao() {
+function DSLK_QL2() {
   const navigate = useNavigate(); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOrganizationDropdownOpen, setIsOrganizationDropdownOpen] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  // Handle button click
-  const handleClick = () => {
-    setShowSuccessMessage(true);
-
-    // Automatically hide the message after 3 seconds
-    setTimeout(() => {
-      setShowSuccessMessage(false);
-    }, 3000);
-  };
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -163,64 +153,43 @@ function Chinhanh_Tao() {
           </button>
         </div>
       )}
-  <div className="left-[399px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên chi nhánh</div>
-  <div className="left-[398px] top-[282px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Địa chỉ</div>
-  <div className="absolute w-[380px] h-[35px] left-[399px] top-[221px]">
-  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
-    <input
-      type="text"
-      placeholder="Nhập dữ liệu..."
-      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
-    />
+  <div className="left-[342px] top-[38px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Kho Linh Kiện/ Chi Tiết Linh Kiện</div>
+  <div className="w-[1525px] h-[170px] left-[342px] top-[87px] absolute bg-white rounded-[15px]" />
+  <div className="left-[436px] top-[119px] absolute text-black text-[32px] font-bold font-['Inter']">Thông Tin Linh Kiện</div>
+  <img className="w-[50px] h-[50px] left-[373px] top-[114px] absolute" src={images['icon_dslk.png']} />
+  <div className="left-[398px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tên lô:</div>
+  <div className="left-[772px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tên linh kiện:</div>
+  <div className="w-[1525px] h-[753px] left-[342px] top-[277px] absolute bg-white rounded-[15px]" />
+  
+  <div className="w-[1473.01px] h-[284px] left-[368px] top-[299px] absolute">
+    <div className="left-[311px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Số seri</div>
+    <div className="left-[520px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Ngày sản xuất</div>
+    <div className="left-[68px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Barcode</div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[35px] absolute border-2 border-[#7f7e7e]"></div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[84px] absolute border-2 border-[#cdcdcd]"></div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[134px] absolute border-2 border-[#7f7e7e]"></div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[183px] absolute border-2 border-[#7f7e7e]"></div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[134px] absolute border-2 border-[#cdcdcd]"></div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[183px] absolute border-2 border-[#cdcdcd]"></div>
+    <div className="w-[25px] h-[0px] left-[456px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="w-[25px] h-[0px] left-[697px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="w-[25px] h-[0px] left-[212px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="left-[758px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Thời gian sử dụng</div>
+    <div className="w-[25px] h-[0px] left-[938px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="left-[1014px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Ngày hết hạn</div>
+    <div className="w-[25px] h-[0px] left-[1179px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="left-[1309px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[235px] absolute border-2 border-[#cdcdcd]"></div>
+    <div className="w-[1473.01px] h-[0px] left-0 top-[284px] absolute border-2 border-[#cdcdcd]"></div>
   </div>
-</div>  <div className="left-[966px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Quản lý chi nhánh</div>
-<div className="absolute w-[380px] h-[35px] left-[966px] top-[221px]">
-  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
-    <input
-      type="text"
-      placeholder="Nhập dữ liệu..."
-      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
-    />
-  </div>
-</div>
-  <div className="left-[396px] top-[380px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số điện thoại của chi nhánh</div>
-  <div className="absolute w-[380px] h-[35px] left-[396px] top-[419px]">
-  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
-    <input
-      type="text"
-      placeholder="Nhập dữ liệu..."
-      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
-    />
-  </div>
-</div>
-  <div className="left-[396px] top-[480px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
-  <div className="absolute w-[380px] h-[50px] left-[396px] top-[519px]">
-  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
-    <input
-      type="text"
-      placeholder="Nhập dữ liệu..."
-      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[16px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
-    />
-  </div>
-</div> 
-<div className="absolute w-[380px] h-[35px] left-[398px] top-[319px] bg-white rounded-[10px] border border-[#525050] flex items-center">
-  <input 
-    type="text" 
-    placeholder="Nhập thông tin..." 
-    className="w-full h-full bg-transparent text-[#525050] font-semibold text-[16px] placeholder-[#A2A2A2] focus:outline-none px-[10px]" 
-  />
-</div>  <div className="w-[200px] h-[55px] left-[396px] top-[927px] absolute bg-[#3498db] rounded-[5px]" />
-  <div className="left-[449px] top-[940px] absolute text-white text-2xl font-bold font-['Inter']" onClick={handleClick}>Tạo mới</div>
-  {showSuccessMessage && (
-        <div className="absolute left-[393px] top-[1000px] bg-green-500 text-white p-3 rounded-md">
-          Thành công
+  <div className="w-[119px] h-5 left-[1724px] top-[990px] absolute">
+          <img className="w-5 h-5 left-[99px] top-[20px] absolute origin-top-left -rotate-90" src={images['left.png']}/>
+          <img className="w-5 h-5 left-[94px] top-0 absolute origin-top-left rotate-90" src={images['right.png']} />
+          <div className="left-0 top-[2px] absolute text-[#b1b1b1] text-xs font-bold font-['Inter']">1/ 10 trang</div>
         </div>
-      )}
-    
-  <img src={images['icon_ttcn.png']}  className="w-[50px] h-[50px] left-[371px] top-[78px] absolute"  />
-  <div className="left-[438px] top-[80px] absolute text-black text-[32px] font-bold font-['Inter']">Tạo Chi Nhánh Mới</div>
-
-</div>  
+      </div>
   );
 }
-  export default Chinhanh_Tao;
+
+
+export default DSLK_QL2;

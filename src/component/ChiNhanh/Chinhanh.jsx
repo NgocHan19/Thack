@@ -5,16 +5,26 @@ import '../custom.css';
 
 function Chinhanh() {
   const [isDropdown1Open, setDropdown1Open] = useState(false);
-  const [isDropdown2Open, setDropdown2Open] = useState(false);
+  const [isDropdown2Open, setDropdown2Open] = useState(false); 
+   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
+  const [isOrganizationDropdownOpen, setIsOrganizationDropdownOpen] = useState(false);
   const toggleDropdown1 = () => {
     setDropdown1Open(!isDropdown1Open);
   };
-
+  const handleNavigate = (path) => {
+    navigate(path);
+};
+const toggleDropdown = () => {
+  setDropdownOpen(!isDropdownOpen);
+};
   const toggleDropdown2 = () => {
     setDropdown2Open(!isDropdown2Open);
   };
-  
+  const toggleOrganizationDropdown = () => {
+    setIsOrganizationDropdownOpen(!isOrganizationDropdownOpen);
+  };
+
   const [isFormVisible, setIsFormVisible] = useState(false);
 
 
@@ -67,45 +77,46 @@ setTimeout(() => {
 
         {/* Lô hàng */}
         <div className={`absolute w-[250px] h-[45px] left-[15px] top-[215px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center`}>
-          <img src={images['icon_shipment.png']} alt="icon_shipment" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
-          <button
-              className="w-full h-full text-[#FFFFFF] font-bold text-[17px] flex items-center justify-between pl-[55px] pr-[10px]"
-               onClick={() => { toggleDropdown1(); navigate('/lohang-ql'); }}
-          >
-              Lô hàng
-          <img
-              src={images['icon_down_arrow.png']}
-              alt="icon_downarrow"
-              className="w-[20px] h-[20px] ml-[-5px]"
-          />
-          </button>
-        </div>
-
-        {/* Các mục con của Lô hàng */}
-        {isDropdown1Open && (
-          <div className="absolute right-[15px] top-[270px] w-[200px]">
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
-              <img src={images['icon_import.png']} alt="icon_import" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhập kho</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
-              <img src={images['icon_export.png']} alt="icon_export" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Xuất kho</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
-              <img src={images['icon_inventory.png']} alt="icon_inventory" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Kiểm kê</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
-              <img src={images['icon_component.png']} alt="icon_component" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => navigate('/DSLK_QL')}>Linh kiện</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
-              <img src={images['icon_category.png']} alt="icon_category" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => navigate('/Danhmuc_QL')}>Danh mục</button>
-            </div>
+            <img src={images['icon_shipment.png']} alt="icon_shipment" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
+            <button
+                className="w-full h-full text-[#FFFFFF] font-bold text-[17px] flex items-center justify-between pl-[55px] pr-[10px]"
+                onClick={() => { toggleDropdown(); navigate('/lohang-ql'); }}
+                
+            >
+                Lô hàng
+            <img
+                src={images['icon_down_arrow.png']}
+                alt="icon_downarrow"
+                className="w-[20px] h-[20px] ml-[-5px]"
+            />
+            </button>
           </div>
-        )}
+
+          {/* Các mục con của Lô hàng */}
+          {isDropdownOpen && (
+            <div className="absolute right-[15px] top-[270px] w-[200px]">
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
+                <img src={images['icon_import.png']} alt="icon_import" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/nhapkho')}>Nhập kho</button>
+              </div>
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
+                <img src={images['icon_export.png']} alt="icon_export" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/xuatkho')}>Xuất kho</button>
+              </div>
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
+                <img src={images['icon_inventory.png']} alt="icon_inventory" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/kiemke')}>Kiểm kê</button>
+              </div>
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
+                <img src={images['icon_component.png']} alt="icon_component" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => {  navigate('/dslk-ql'); }}>Linh kiện</button>
+              </div>
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
+                <img src={images['icon_category.png']} alt="icon_category" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => {  navigate('/danhmuc-ql'); }}>Danh mục</button>
+              </div>
+            </div>
+          )}
 
         {/* Thống kê */}
         <div className={`absolute w-[250px] h-[45px] left-[15px] ${isDropdown1Open ? 'top-[585px]' : 'top-[280px]'} bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] transition-all duration-200`}>
@@ -114,41 +125,40 @@ setTimeout(() => {
         </div>
 <div>
         {/* Danh mục tổ chức */}
-        <div className={`absolute w-[250px] h-[45px] left-[15px] ${isDropdown2Open ? 'top-[650px]' : 'top-[345px]'} bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center`}>
-          <img src={images['icon_dmtc.png']} alt="icon_dmtc" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
-          <button
-              className="w-full h-full text-[#FFFFFF] font-bold text-[17px] flex items-center justify-between pl-[55px] pr-[10px]"
-              onClick={toggleDropdown2}
-          >
-              Danh mục tổ chức
-          <img
-              src={images['icon_down_arrow.png']}
-              alt="icon_downarrow"
-              className="w-[20px] h-[20px] ml-[-5px]"
-          />
-          </button>
-
-        </div>
-        {/* Các mục con của Danh mục tổ chức */}
-        {isDropdown2Open && (
-          <div className="absolute right-[15px] w-[200px] top-[700px]">
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
-              <img src={images['icon_ncc.png']} alt="icon_ncc" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => navigate('/Nhacungcap')}>Nhà cung cấp</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
-              <img src={images['icon_cn.png']} alt="icon_cn" className="w-[25px] h-[25px] ml-[10px]" />
-              <button a ='#' className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => navigate('/Chinhanh')}>Chi nhánh</button>
-            </div>
-            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
-              <img src={images['icon_nv.png']} alt="icon_nv" className="w-[25px] h-[25px] ml-[10px]" />
-              <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhân viên</button>
-            </div>
+        <div className={`absolute w-[250px] h-[45px] left-[15px] ${isDropdownOpen ? 'top-[650px]' : 'top-[345px]'} bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center`}>
+            <img src={images['icon_dmtc.png']} alt="icon_organization" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
+            <button
+                className="w-full h-full text-[#FFFFFF] font-bold text-[17px] flex items-center justify-between pl-[55px] pr-[10px]"
+                onClick={toggleOrganizationDropdown}
+            >
+                Danh mục tổ chức
+            <img
+                src={images['icon_down_arrow.png']}
+                alt="icon_downarrow"
+                className="w-[20px] h-[20px] ml-[-5px]"
+            />
+            </button>
           </div>
-        )}
-        </div>
 
-        
+          {/* Các mục con của Danh mục tổ chức */}
+          {isOrganizationDropdownOpen && (
+            <div className="absolute right-[15px] w-[200px] top={[isDropdownOpen ? '700px' : '400px']}" style={{ top: `${isDropdownOpen ? '700px' : '400px'}` }}>
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
+                <img src={images['icon_ncc.png']} alt="icon_organization" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => {  navigate('/nhacungcap'); }}>Nhà cung cấp</button>
+              </div>
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
+                <img src={images['icon_cn.png']} alt="icon_member" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => { navigate('/chinhanh'); }}>Chi nhánh</button>
+              </div>
+              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
+                <img src={images['icon_nv.png']} alt="icon_member" className="w-[25px] h-[25px] ml-[10px]" />
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => handleNavigate('/nhanvien')}>Nhân viên</button>
+              </div>
+            </div>
+          )}
+
+</div>
 
         {/* Account */}
         <div className="absolute w-[280px] h-[80px] left-0 bottom-0 bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-tl-[15px] rounded-tr-[15px]">
