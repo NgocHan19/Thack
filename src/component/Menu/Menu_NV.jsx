@@ -56,7 +56,7 @@ function Menu_NV() {
           {/* Các mục con của Lô hàng */}
           {isDropdownOpen && (
             <div className="absolute right-[15px] top-[270px] w-[200px]">
-              <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
+<div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
                 <img src={images['icon_import.png']} alt="icon_import" className="w-[25px] h-[25px] ml-[10px]" />
                 <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhập kho</button>
               </div>
@@ -70,7 +70,7 @@ function Menu_NV() {
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_component.png']} alt="icon_component" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => navigate('/dslk-nv')}>Linh kiện</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => navigate('/dslk')}>Linh kiện</button>
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_category.png']} alt="icon_category" className="w-[25px] h-[25px] ml-[10px]" />
@@ -89,7 +89,7 @@ function Menu_NV() {
               <img src={images['icon_account1.png']} alt="Account Avatar" className="w-full h-full" />
             </button>
             <div className="absolute left-[85px] top-[10px] font-inter font-bold text-[18px] text-[#FFFFFF]">Tên Tài Khoản</div>
-            <div className="absolute left-[85px] top-[40px] font-inter font-bold text-[10px] text-[#D9D9D9]">email@gmail.com</div>
+<div className="absolute left-[85px] top-[40px] font-inter font-bold text-[10px] text-[#D9D9D9]">email@gmail.com</div>
             <button className="absolute right-[10px] top-[10px] w-[20px] h-[20px]">
               <img src={images['icon_ring.png']} alt="Notification Ring" className="w-full h-full" />
             </button>

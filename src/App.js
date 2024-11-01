@@ -1,9 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './component/Account/Login';
+import Menu_user from './component/Menu/Menu_user';
 import Menu_NV from './component/Menu/Menu_NV';
 import Menu_QL from './component/Menu/Menu_QL';
-import Lohang_NV from './component/Lo/Lohang_NV';
+import Logout from './component/Account/Logout';
+import HomePage from './component/HomePage/HomePage';
+import UserProfile from './component/Account/UserProfile';
+import Staff from './component/Organization/Staff';
+import Staff_New from './component/Organization/Staff_New';
+import Staff_Edit from './component/Organization/Staff_Edit';
+import Statistics from './component/Statistics/Statistics';
+import Import from './component/Import/Import';
+import Export from './component/Export/Export';
+import Dashboard_QL from './component/Dashboard/Dashboard_QL';
 import Lohang_NV3 from './component/Lo/Lohang_NV3';
 import Lohang_QL from './component/Lo/Lohang_QL';
 import Chinhanh from './component/ChiNhanh/Chinhanh';
@@ -13,25 +23,33 @@ import Danhmuc_NV from './component/DanhMuc/Danhmuc_NV';
 import Danhmuc_QL from './component/DanhMuc/Danhmuc_QL';
 import Danhmuc_QL_Sua from './component/DanhMuc/Danhmuc_QL_Sua';
 import Danhmuc_QL_Tao from './component/DanhMuc/Danhmuc_QL_Tao';
-import DSLK_NV from './component/DSLK/DSLK_NV';
-import DSLK_NV2 from './component/DSLK/DSLK_NV2';
-import DSLK_QL from './component/DSLK/DSLK_QL';
-import DSLK_QL2 from './component/DSLK/DSLK_QL2';
+import DSLK from './component/DSLK/DSLK';
+import DSLK2 from './component/DSLK/DSLK2';
 import Nhacungcap from './component/NhaCungCap/Nhacungcap';
 import Nhacungcap_Sua from './component/NhaCungCap/Nhacungcap_Sua';
 import Nhacungcap_Tao from './component/NhaCungCap/Nhacungcap_Tao';
 import Lohang_QL2 from './component/Lo/Lohang_QL2';
-
 function App() {
   return (
-    
     <Router>
-      <Routes>
-        
-        {/* Menu */}
-        <Route path="/menu-nv" element={<Menu_NV />} />
-        <Route path="/menu-ql" element={<Menu_QL />} />
-        
+      <div className="app flex h-screen">
+          <div className="w-[280px]">
+            <Menu_QL />
+          </div>
+        <div className="flex-1 bg-white">
+          <Routes>
+            <Route path="/trangchu" element={<HomePage />} />
+            <Route path="/dangnhap" element={<Login />} />
+            <Route path="/dangxuat" element={<Logout />} />
+            <Route path="/suathongtincanhan" element={<UserProfile />} />
+            <Route path="/dashboard" element={<Dashboard_QL />} />
+            <Route path="/nhapkho" element={<Import />} />
+            <Route path="/xuatkho" element={<Export />} />
+            <Route path="/kiemke" element={<Statistics />} />
+            <Route path="/nhanvien" element={<Staff />} />
+            <Route path="/taonhanvien" element={<Staff_New />} />
+            <Route path="/suathongtinnhanvien" element={<Staff_Edit />} />
+
         {/* Lô hàng */}
         <Route path="/lohang-nv" element={<Lohang_NV />} />
         <Route path="/lohang-nv3" element={<Lohang_NV3 />} />
@@ -50,24 +68,18 @@ function App() {
         <Route path="/danhmuc-ql-tao" element={<Danhmuc_QL_Tao />} />
         
         {/* Danh sách linh kiện */}
-        <Route path="/dslk-nv" element={<DSLK_NV />} />
-        <Route path="/dslk-nv2" element={<DSLK_NV2 />} />
-        <Route path="/dslk-ql" element={<DSLK_QL />} />
-        <Route path="/dslk-ql2" element={<DSLK_QL2 />} />
+        <Route path="/dslk" element={<DSLK />} />
+        <Route path="/dslk2" element={<DSLK2 />} />
         
         {/* Nhà cung cấp */}
         <Route path="/nhacungcap" element={<Nhacungcap />} />
         <Route path="/nhacungcap-sua" element={<Nhacungcap_Sua />} />
         <Route path="/nhacungcap-tao" element={<Nhacungcap_Tao />} />
-        
-        {/* Default route (trang mặc định khi không tìm thấy route) */}
-        <Route path="*" element={<Menu_QL />} /> {/* Hoặc trang mặc định khác */}
-      </Routes>
+          </Routes>
+        </div>
+      </div>
     </Router>
-
   );
-  
 }
 
 export default App;
- 
