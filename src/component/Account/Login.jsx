@@ -23,9 +23,9 @@ function Login() {
       </div>
 
       {/* Đăng nhập button */}
-      <button className="absolute left-[400px] top-[320px] w-[827px] h-[60px] bg-[#3498DB] rounded-[5px] flex items-center justify-center">
+      <div className="absolute left-[400px] top-[320px] w-[827px] h-[60px] bg-[#3498DB] rounded-[5px] flex items-center justify-center">
         <span className="text-[#FFFBFB] text-[24px] font-bold">Đăng nhập</span>
-      </button>
+      </div>
 
       {/* Đăng nhập bằng Gmail button */}
       <div className="absolute left-[400px] top-[390px] w-[827px] h-[60px] bg-[#DB4437] rounded-[5px] flex items-center justify-center cursor-pointer transition duration-200 hover:bg-[#c13528]">

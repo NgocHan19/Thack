@@ -3,10 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import images from '../../images';
 import '../custom.css';
 
-function Menu_QL() {
+function Danhmuc_QL() {
   const navigate = useNavigate(); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOrganizationDropdownOpen, setIsOrganizationDropdownOpen] = useState(false);
+  const [isTableVisible, setIsTableVisible] = useState(false);
+
+  // Function to toggle the table visibility
+  const toggleTable = () => {
+      setIsTableVisible((prev) => !prev);
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -153,8 +159,92 @@ function Menu_QL() {
           </button>
         </div>
       )}
+      
+<div className="left-[333px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Kho Linh Kiện</div>
+      <div className="w-[1525px] h-[170px] left-[333px] top-[86px] absolute bg-white rounded-[15px]" />
+      <div className="w-[1525px] h-[753px] left-[335px] top-[276px] absolute bg-white rounded-[15px]" />
+      <div className="left-[427px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Danh Mục Linh Kiện</div>
+      <div className="left-[400px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số danh mục :</div>
+      <div className="left-[600px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Danh mục cha:</div>
+      <div className="left-[900px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Danh mục con:</div>
+      <img className="w-[50px] h-[50px] left-[364px] top-[113px] absolute" src={images['icon_dmlk.png']} 
+        alt="icon_dmlk" />
+  <div className="w-[330px] h-[55px] left-[1512px] top-[295px] absolute">
+    <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
+    <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-lg font-bold font-['Inter']">Lọc theo: </div>
+    <img className="w-5 h-5 left-[12px] top-[18px] absolute" src={images['icon_loc.png']} 
+        alt="icon_loc" />
+    <img className="w-[25px] h-[25px] left-[289px] top-[15px] absolute" src={images['icon_drop.png']} />
+  </div>
+  <div className="w-[184px] h-[50px] left-[1681px] top-[16px] absolute">
+    <div className="w-[184px] h-[50px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
+    <div className="w-[126px] h-[21px] left-[43px] top-[12px] absolute text-white text-lg font-semibold font-['Inter']"onClick={() => navigate('/danhmuc-ql-tao')}>Tạo danh mục</div>
+  </div>
+  <img className="w-[25px] h-[25px] left-[1693px] top-[28px] absolute" src={images['Plus.png']} 
+        alt="Plus" />
+  <div className="w-[1476.01px] h-[482px] left-[356px] top-[399px] absolute">
+    <div className="left-[517px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
+    <div className="left-[240px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục</div>
+    <div className="left-[103px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
+    <div className="w-[1473.01px] h-[0px] left-[3px] top-[32px] absolute border-2 border-[#7f7e7e]"></div>
+    <div className="w-[1473.01px] h-[0px] left-[3px] top-[81px] absolute border-2 border-[#cdcdcd]"></div>
+    <div className="w-[1473.01px] h-[0px] left-[3px] top-[131px] absolute border-2 border-[#7f7e7e]"></div>
+    <div className="w-[1473.01px] h-[0px] left-[3px] top-[180px] absolute border-2 border-[#7f7e7e]"></div>
+    <div className="w-[1473.01px] h-[0px] left-[3px] top-[131px] absolute border-2 border-[#cdcdcd]"></div>
+    <div className="w-[1473.01px] h-[0px] left-[3px] top-[180px] absolute border-2 border-[#cdcdcd]"></div>
+    <div className="w-[25px] h-[0px] left-[412px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="w-[25px] h-[0px] left-[188px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="w-[25px] h-[0px] left-[43px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="w-[25px] h-[0px] left-[716px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="left-[823px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
+    <div className="w-[25px] h-[0px] left-[968px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <div className="left-[990px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục cấp cha</div>
+    <div className="left-[1310px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
+    <div className="w-[25px] h-[0px] left-[1181px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
+    <img className="w-5 h-5 left-[9px] top-[96px] absolute" src={images['icon_barcode.png']} />
+    <img className="w-5 h-5 left-[9px] top-[145px] absolute" src={images['icon_barcode.png']} />
+    <img
+        className="w-5 h-5 left-[6px] top-[48px] absolute cursor-pointer"
+        src={images['icon_barcode.png']}
+        alt="Toggle Dropdown"
+        onClick={toggleTable}
+        
+      />
+    {isTableVisible && (
+        <div className="w-[1473.01px] h-[252px] left-0 top-[230px] absolute">
+        <div className="w-[1473px] h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
+        <div className="w-[1473.01px] h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
+        <div className="w-[1473.01px] h-[0px] left-0 top-[116px] absolute border-2 border-[#cdcdcd]"></div>
+        <div className="w-[1473.01px] h-[0px] left-0 top-[184px] absolute border-2 border-[#cdcdcd]"></div>
+        <div className="left-[611px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
+        <div className="left-[274px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục con</div>
+        <div className="left-[84px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
+        <div className="left-[936px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
+        <div className="left-[1259px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
+      </div>
+      )}
+    <div className="w-[1473.01px] h-[252px] left-0 top-[230px] absolute">
+      <div className="w-[1473px] h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
+      <div className="w-[1473.01px] h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
+      <div className="w-[1473.01px] h-[0px] left-0 top-[116px] absolute border-2 border-[#cdcdcd]"></div>
+      <div className="w-[1473.01px] h-[0px] left-0 top-[184px] absolute border-2 border-[#cdcdcd]"></div>
+      <div className="left-[611px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
+      <div className="left-[274px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục con</div>
+      <div className="left-[84px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
+      <div className="left-[936px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
+      <div className="left-[1259px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
     </div>
+  </div>
+  <div className="w-[119px] h-5 left-[1710px] top-[988px] absolute">
+    <img className="w-5 h-5 left-[99px] top-[20px] absolute origin-top-left -rotate-90" src={images['left.png']} />
+    <img className="w-5 h-5 left-[94px] top-0 absolute origin-top-left rotate-90" src={images['right.png']} />
+    <div className="left-0 top-[2px] absolute text-[#b1b1b1] text-xs font-bold font-['Inter']">1/ 10 trang</div>
+  </div>
+  <img className="w-[30px] h-[30px] left-[1457px] top-[308px] absolute" src={images['icon_canhloc.png']} 
+        alt="icon_canhloc" onClick={() => navigate('/danhmuc-ql-sua')}/>
+</div>
+
+
   );
 }
-
-export default Menu_QL;
+export default Danhmuc_QL;

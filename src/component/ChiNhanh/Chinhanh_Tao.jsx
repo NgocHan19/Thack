@@ -3,11 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import images from '../../images';
 import '../custom.css';
 
-function Menu_QL() {
+function Chinhanh_Tao() {
   const navigate = useNavigate(); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOrganizationDropdownOpen, setIsOrganizationDropdownOpen] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
+  // Handle button click
+  const handleClick = () => {
+    setShowSuccessMessage(true);
+
+    // Automatically hide the message after 3 seconds
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 3000);
+  };
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -153,8 +163,64 @@ function Menu_QL() {
           </button>
         </div>
       )}
-    </div>
+  <div className="left-[399px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên chi nhánh</div>
+  <div className="left-[398px] top-[282px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Địa chỉ</div>
+  <div className="absolute w-[380px] h-[35px] left-[399px] top-[221px]">
+  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
+    <input
+      type="text"
+      placeholder="Nhập dữ liệu..."
+      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
+    />
+  </div>
+</div>  <div className="left-[966px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Quản lý chi nhánh</div>
+<div className="absolute w-[380px] h-[35px] left-[966px] top-[221px]">
+  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
+    <input
+      type="text"
+      placeholder="Nhập dữ liệu..."
+      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
+    />
+  </div>
+</div>
+  <div className="left-[396px] top-[380px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số điện thoại của chi nhánh</div>
+  <div className="absolute w-[380px] h-[35px] left-[396px] top-[419px]">
+  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
+    <input
+      type="text"
+      placeholder="Nhập dữ liệu..."
+      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
+    />
+  </div>
+</div>
+  <div className="left-[396px] top-[480px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
+  <div className="absolute w-[380px] h-[50px] left-[396px] top-[519px]">
+  <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
+    <input
+      type="text"
+      placeholder="Nhập dữ liệu..."
+      className="w-full h-full bg-transparent text-[#525050] font-semibold text-[16px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
+    />
+  </div>
+</div> 
+<div className="absolute w-[380px] h-[35px] left-[398px] top-[319px] bg-white rounded-[10px] border border-[#525050] flex items-center">
+  <input 
+    type="text" 
+    placeholder="Nhập thông tin..." 
+    className="w-full h-full bg-transparent text-[#525050] font-semibold text-[16px] placeholder-[#A2A2A2] focus:outline-none px-[10px]" 
+  />
+</div>  <div className="w-[200px] h-[55px] left-[396px] top-[927px] absolute bg-[#3498db] rounded-[5px]" />
+  <div className="left-[449px] top-[940px] absolute text-white text-2xl font-bold font-['Inter']" onClick={handleClick}>Tạo mới</div>
+  {showSuccessMessage && (
+        <div className="absolute left-[393px] top-[1000px] bg-green-500 text-white p-3 rounded-md">
+          Thành công
+        </div>
+      )}
+    
+  <img src={images['icon_ttcn.png']}  className="w-[50px] h-[50px] left-[371px] top-[78px] absolute"  />
+  <div className="left-[438px] top-[80px] absolute text-black text-[32px] font-bold font-['Inter']">Tạo Chi Nhánh Mới</div>
+
+</div>  
   );
 }
-
-export default Menu_QL;
+  export default Chinhanh_Tao;

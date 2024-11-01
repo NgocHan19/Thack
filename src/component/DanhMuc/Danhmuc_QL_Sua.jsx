@@ -3,11 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import images from '../../images';
 import '../custom.css';
 
-function Menu_QL() {
+function Danhmuc_QL_Sua() {
   const navigate = useNavigate(); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOrganizationDropdownOpen, setIsOrganizationDropdownOpen] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
+  // Handle button click
+  const handleClick = () => {
+    setShowSuccessMessage(true);
+
+    // Automatically hide the message after 3 seconds
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 3000);
+  };
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -153,8 +163,49 @@ function Menu_QL() {
           </button>
         </div>
       )}
-    </div>
-  );
-}
 
-export default Menu_QL;
+    
+  <div className="w-[1525px] h-[981px] left-[337px] top-[55px] absolute bg-white rounded-[15px]" />
+  <div className="left-[431px] top-[90px] absolute text-black text-[32px] font-bold font-['Inter']">Chỉnh Sửa Thông Tin Danh Mục</div>
+  <div className="left-[396px] top-[197px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số hiệu danh mục</div>
+  <div className="left-[395px] top-[289px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số hiệu danh mục cha</div>
+  <div className="absolute left-[396px] top-[228px]">
+  <input 
+    className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[#525050] px-2" 
+  />
+</div>  <div className="left-[1103px] top-[197px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên danh mục</div>
+<div className="absolute left-[1103px] top-[228px]">
+  <input 
+    type="text" 
+    className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[#525050] px-2" 
+    placeholder="Nhập thông tin tại đây" 
+  />
+</div>  <div className="left-[393px] top-[387px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Mô tả</div>
+<div className="absolute left-[393px] top-[426px]">
+  <textarea 
+    className="w-[480px] h-[100px] bg-white rounded-[10px] border border-[#525050] p-2 resize-none" 
+    placeholder="Nhập thông tin tại đây" 
+  />
+</div>
+  <div className="left-[393px] top-[539px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
+  <div className="absolute left-[393px] top-[578px]">
+  <textarea 
+    className="w-[950px] h-[200px] bg-white rounded-[10px] border border-[#525050] p-2 resize-none" 
+    placeholder="Nhập thông tin tại đây" 
+  />
+</div>  <div className="w-[480px] h-[35px] left-[395px] top-[326px] absolute bg-white rounded-[10px] border border-[#525050]" />
+  <div className="w-[300px] h-[55px] left-[393px] top-[934px] absolute bg-[#f39c12] rounded-[5px]" />
+  <div className="left-[470px] top-[947px] absolute text-white text-2xl font-bold font-['Inter']" onClick={handleClick}>Lưu thay đổi</div>
+  {showSuccessMessage && (
+        <div className="absolute left-[393px] top-[1000px] bg-green-500 text-white p-3 rounded-md">
+          Thành công
+        </div>
+      )}
+    
+  <img className="w-[25px] h-[25px] left-[837px] top-[233px] absolute" src={images['icon_drop.png']}/>
+  <img className="w-[25px] h-[25px] left-[837px] top-[331px] absolute" src={images['icon_drop.png']} />
+  <img className="w-[50px] h-[50px] left-[368px] top-[85px] absolute" src={images['icon_dmlk.png']} />
+</div>
+);
+}
+export default Danhmuc_QL_Sua;
