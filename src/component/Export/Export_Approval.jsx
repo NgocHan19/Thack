@@ -1,13 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import images from '../../images';
 
 const Export_Approval = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+};
+
   return (
     <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
       <div className="relative w-full h-full bg-gray-200">
         <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Kho linh kiện/</button>
-        <button className="absolute left-[185px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Nhập kho/</button>
-        <button className="absolute left-[275px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Duyệt nhập kho</button>
+        <button className="absolute left-[185px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
+          onClick={() => handleNavigate('/xuatkho')}>Xuất kho/</button>
+        <button className="absolute left-[275px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
+        onClick={() => handleNavigate('/duyetxuatkho')}>Duyệt xuất kho</button>
         <div className="absolute w-[1130px] h-[900px] left-[50px] top-[60px] bg-white rounded-[15px]">
           <div className="absolute w-[260px] h-[40px] left-[20px] top-[20px] bg-[#D9D9D9] rounded-[15px] flex items-center px-2">
             <button className="flex items-center pl-4">

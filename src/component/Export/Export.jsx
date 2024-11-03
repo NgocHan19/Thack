@@ -1,13 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import images from '../../images';
 
 const Export = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
       <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Kho linh kiện/</button>
       <button className="absolute left-[180px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Xuất kho</button>
 
-      <button className="absolute w-[170px] h-[40px] left-[1010px] top-[10px] bg-[#CD4141] rounded-lg flex items-center justify-center">
+      <button className="absolute w-[170px] h-[40px] left-[1010px] top-[10px] bg-[#CD4141] rounded-lg flex items-center justify-center" onClick={() => handleNavigate('/duyetxuatkho')}>
         <img src={images['icon_tick_white.png']} alt="Nhập kho" className="w-[20px] h-[20px] mr-2" />
         <span className="font-semibold text-white">Duyệt xuất kho</span>
       </button>
