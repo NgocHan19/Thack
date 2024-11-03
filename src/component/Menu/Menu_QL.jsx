@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import images from '../../images';
-import '../custom.css';
 
 function Menu_QL() {
   const navigate = useNavigate(); 

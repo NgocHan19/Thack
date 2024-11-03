@@ -29,6 +29,9 @@ import Nhacungcap from './component/NhaCungCap/Nhacungcap';
 import Nhacungcap_Sua from './component/NhaCungCap/Nhacungcap_Sua';
 import Nhacungcap_Tao from './component/NhaCungCap/Nhacungcap_Tao';
 import Lohang_QL2 from './component/Lo/Lohang_QL2';
+import Lohang_NV from './component/Lo/Lohang_NV';
+
+
 function App() {
   return (
     <Router>
@@ -81,5 +84,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
