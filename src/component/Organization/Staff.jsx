@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import images from '../../images';
 import Staff_Delete from './Staff_Delete';
+import axios from 'axios'; // Thêm thư viện axios để gọi API
 
 const Staff = () => {
     const navigate = useNavigate(); 
     const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+    const [users, setUsers] = useState([]); // State để lưu trữ dữ liệu người dùng
 
     const handleDeleteClick = () => {
         setDeleteModalOpen(true); // Mở modal khi nhấn nút xóa
@@ -19,6 +21,20 @@ const Staff = () => {
         navigate(path);
     };
 
+    useEffect(() => {
+        // Gọi API để lấy dữ liệu người dùng
+        const fetchUsers = async () => {
+            try {
+                const response = await axios.get('/api/userprofile'); // Thay đổi đường dẫn nếu cần
+                setUsers(response.data); // Lưu dữ liệu vào state
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        };
+
+        fetchUsers(); // Gọi hàm fetchUsers
+    }, []); // Chạy một lần khi component mount
+
     return (
         <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
             <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Quản lý nhân viên</button>
@@ -28,7 +44,7 @@ const Staff = () => {
                     <h2 className="text-[24px] font-bold text-black">Thông Tin Nhân Viên</h2>
                 </div>
                 <p className="absolute left-[50px] top-[120px] text-base text-[#3498DB]">
-                    Tổng số nhân viên: 2
+                    Tổng số nhân viên: {users.length} {/* Hiển thị số lượng nhân viên */}
                 </p>
 
                 <div className="absolute left-[760px] top-[40px] flex space-x-4">
@@ -65,30 +81,32 @@ const Staff = () => {
                         ))}
                     </div>
 
-                    {/* Dữ liệu mẫu */}
-                    <div className="flex w-full h-[40px] border-b border-gray-300">
-                        <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
-                            <span className="text-black font-normal text-sm">1</span>
+                    {/* Hiển thị dữ liệu từ API */}
+                    {users.map((user, index) => (
+                        <div key={index} className="flex w-full h-[40px] border-b border-gray-300">
+                            <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
+                                <span className="text-black font-normal text-sm">{user.UserID}</span>
+                            </div>
+                            <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
+                                <img src={user.AnhDaiDien} alt={user.AnhDaiDien} className="w-8 h-8 rounded-full" />
+                            </div>
+                            <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
+                                <span className="text-black font-normal text-sm">{user.HoTen}</span>
+                            </div>
+                            <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
+                                <span className="text-black font-normal text-sm">{user.NgaySinh}</span>
+                            </div>
+                            <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
+                                <span className="text-black font-normal text-sm">{user.GioiTinh}</span>
+                            </div>
+                            <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
+                                <span className="text-black font-normal text-sm">{user.DiaChi}</span>
+                            </div>
+                            <div className="flex-1 flex items-center justify-center px-2">
+                                <span className="text-black font-normal text-sm">{user.NgayTaoHoSo}</span>
+                            </div>
                         </div>
-                        <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
-                            <span className="text-black font-normal text-sm">Chi nhánh A</span>
-                        </div>
-                        <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
-                            <span className="text-black font-normal text-sm">Địa chỉ A</span>
-                        </div>
-                        <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
-                            <span className="text-black font-normal text-sm">Quản lý A</span>
-                        </div>
-                        <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
-                            <span className="text-black font-normal text-sm">10</span>
-                        </div>
-                        <div className="flex-1 border-r border-gray-300 flex items-center justify-center px-2">
-                            <span className="text-black font-normal text-sm">Hoạt động</span>
-                        </div>
-                        <div className="flex-1 flex items-center justify-center px-2">
-                            <span className="text-black font-normal text-sm">Không có ghi chú</span>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
                 <div className="absolute bottom-4 right-4 flex items-center space-x-2">
