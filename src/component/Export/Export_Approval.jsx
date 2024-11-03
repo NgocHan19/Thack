@@ -12,7 +12,8 @@ const Export_Approval = () => {
   return (
     <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
       <div className="relative w-full h-full bg-gray-200">
-        <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Kho linh kiện/</button>
+        <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
+          onClick={() => handleNavigate('/dslk')}>Kho linh kiện/</button>
         <button className="absolute left-[185px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
           onClick={() => handleNavigate('/xuatkho')}>Xuất kho/</button>
         <button className="absolute left-[275px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
@@ -67,7 +68,7 @@ const Export_Approval = () => {
                 <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
                 <td className="p-2 flex items-center justify-center">
                   <div className="bg-white border border-[#CAC745] rounded-[10px] px-2 py-0.5">
-                    <span className="text-[#CAC745] font-bold text-[12px] leading-[15px] ">Đã nhập kho</span>
+                    <span className="text-[#CAC745] font-bold text-[12px] leading-[15px] ">Chờ duyệt</span>
                   </div>
                 </td>
               </tr>
@@ -89,7 +90,7 @@ const Export_Approval = () => {
                 <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
                 <td className="p-2 flex items-center justify-center">
                   <div className="bg-white border border-[#37DE47] rounded-[10px] px-2 py-0.5">
-                    <span className="text-[#37DE47] font-bold text-[12px] leading-[15px]">Đã duyệt</span>
+                    <span className="text-[#37DE47] font-bold text-[12px] leading-[15px]">Chờ duyệt</span>
                   </div>
                 </td>
               </tr>

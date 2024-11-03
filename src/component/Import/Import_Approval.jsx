@@ -12,7 +12,8 @@ const Import_Approval = () => {
   return (
     <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
       <div className="relative w-full h-full bg-[#EEEEEE]">
-        <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Kho linh kiện/</button>
+        <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
+          onClick={() => handleNavigate('/dslk')}>Kho linh kiện/</button>
         <button className="absolute left-[185px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
           onClick={() => handleNavigate('/nhapkho')}>Nhập kho/</button>
         <button className="absolute left-[275px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
