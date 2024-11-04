@@ -96,10 +96,10 @@ const Add_Components = () => {
           <textarea className="box-border w-[450px] h-[100px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
         </div>
 
-        <div className="absolute left-[30px] top-[440px] w-[240px] h-[40px] bg-[#64C860] rounded-[10px] flex items-center justify-center">
+        <button className="absolute left-[30px] top-[440px] w-[240px] h-[40px] bg-[#64C860] rounded-[10px] flex items-center justify-center">
           <img src={images['icon_tick_white.png']} alt="Nhập kho" className="w-[20px] h-[20px] mr-2" /> 
           <span className="font-inter font-semibold text-white text-[18px] leading-[22px]">Thêm linh kiện vào lô</span>
-        </div>
+        </button>
       </div>
 
       <div className="relative w-full h-full bg-gray-200">

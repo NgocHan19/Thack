@@ -75,15 +75,16 @@ const Import = () => {
           <textarea className="box-border w-[430px] h-[150px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
         </div>
 
-        <div className="absolute left-[30px] top-[500px] w-[136px] h-[40px] bg-[#64C860] rounded-[10px] flex items-center justify-center">
+        <button className="absolute left-[30px] top-[500px] w-[136px] h-[40px] bg-[#64C860] rounded-[10px] flex items-center justify-center">
           <img src={images['icon_tick_white.png']} alt="Nhập kho" className="w-[20px] h-[20px] mr-2" /> 
           <span className="font-inter font-semibold text-white text-[18px] leading-[22px]">Nhập kho</span>
-        </div>
+        </button>
 
-        <div className="absolute left-[190px] top-[500px] w-[232px] h-[40px] bg-[#3498DB] rounded-[10px] flex items-center justify-center">
+        <button className="absolute left-[190px] top-[500px] w-[232px] h-[40px] bg-[#3498DB] rounded-[10px] flex items-center justify-center">
+          onClick={() => handleNavigate('/themlinhkienvaolo')}
           <img src={images['icon_create_white.png']} alt="Thêm linh kiện vào lô" className="w-[20px] h-[20px] mr-2" />
           <span className="font-inter font-semibold text-white text-[18px] leading-[22px]">Thêm linh kiện vào lô</span>
-        </div>
+        </button>
 
 
         <div className="absolute w-[615px] h-[520px] left-[490px] top-[25px] bg-[#EEEEEE] rounded-[10px]">
