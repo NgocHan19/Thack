@@ -13,6 +13,7 @@ import Staff_Edit from './component/Organization/Staff_Edit';
 import Statistics from './component/Statistics/Statistics';
 import Import from './component/Import/Import';
 import Import_Approval from './component/Import/Import_Approval';
+import Add_Components from './component/Import/Add_Components';
 import Export from './component/Export/Export';
 import Export_Approval from './component/Export/Export_Approval';
 import Dashboard_QL from './component/Dashboard/Dashboard_QL';
@@ -55,6 +56,7 @@ function App() {
             <Route path="/dashboard-nv" element={<Dashboard_NV />} />
             <Route path="/nhapkho" element={<Import />} />
             <Route path="/duyetnhapkho" element={<Import_Approval />} />
+            <Route path="/themlinhkienvaolo" element={<Add_Components />} />
             <Route path="/xuatkho" element={<Export />} />
             <Route path="/duyetxuatkho" element={<Export_Approval />} />
             <Route path="/kiemke" element={<Statistics />} />
