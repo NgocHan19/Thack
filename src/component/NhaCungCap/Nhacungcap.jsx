@@ -171,11 +171,15 @@ function Nhacungcap() {
   <img className="w-[25px] h-[25px] left-[840px] top-[145px] absolute"src={images['Sua.png']} />
   
   <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
+        <button>
         <img className="w-5 h-5 left-[99px] top-[20px] absolute origin-top-left -rotate-90" src={images['left.png']}/>
+        </button>
+        <button>
         <img className="w-5 h-5 left-[94px] top-0 absolute origin-top-left rotate-90" src={images['right.png']} />
+        </button>
         <div className="left-0 top-[2px] absolute text-[#b1b1b1] text-xs font-bold font-['Inter']">1/ 10 trang</div>
       </div>
-</div>    
+    </div>
   );
 }
 export default Nhacungcap;
