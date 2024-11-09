@@ -6,6 +6,29 @@ function DSLK_NV() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isTableVisible, setIsTableVisible] = useState(false);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const [selectedCell, setSelectedCell] = useState(null); // State để lưu ô được chọn
+  const [filterText, setFilterText] = useState(''); // State để lưu nội dung đã chọn
+
+  const handleIconClick = () => {
+    setIsOverlayVisible(true);
+    setSelectedCell(null); // Reset ô được chọn khi mở overlay
+  };
+
+  const handleCloseOverlay = () => {
+    setIsOverlayVisible(false);
+  };
+
+  const handleCellClick = (rowIndex, colIndex) => {
+    setSelectedCell({ row: rowIndex, col: colIndex }); // Cập nhật ô được chọn
+  };
+
+  const handleSelect = () => {
+    if (selectedCell) {
+      setFilterText(`Row ${selectedCell.row + 1}, Column ${selectedCell.col + 1}`); // Cập nhật nội dung đã chọn
+      handleCloseOverlay(); // Đóng overlay
+    }
+  };
 
   const toggleTable = () => {
     setIsTableVisible(!isTableVisible);
@@ -59,10 +82,66 @@ function DSLK_NV() {
         </div>
         <div className="w-[330px] h-[55px] left-[850px] top-[296px] absolute">
         <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
-        <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-lg font-bold font-['Inter']">Lọc theo: </div>
-        <img className="w-5 h-5 left-[12px] top-[18px] absolute" src={images['icon_loc.png']} alt="icon_loc" />
-        <img className="w-[25px] h-[25px] left-[289px] top-[15px] absolute" src={images['icon_drop.png']} alt="icon_drop" />
+        <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-lg font-bold font-['Inter']">
+        Lọc theo: {filterText} {/* Hiển thị nội dung đã chọn */}
       </div>
+              <img className="w-5 h-5 left-[12px] top-[18px] absolute" src={images['icon_loc.png']} alt="icon_loc" />
+              <img
+        className="w-[25px] h-[25px] left-[289px] top-[15px] absolute cursor-pointer"
+        src={images['icon_drop.png']}
+        alt="icon_drop"
+        onClick={handleIconClick} // Show overlay on click
+      />
+
+      {isOverlayVisible && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-4 rounded-md shadow-lg">
+            {/* Nội dung bảng */}
+            <table className="table-auto border-collapse border border-gray-300">
+              <thead>
+                <tr>
+                  <th className="border px-4 py-2">Column 1</th>
+                  <th className="border px-4 py-2">Column 2</th>
+                  <th className="border px-4 py-2">Column 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Array.from({ length: 4 }).map((_, rowIndex) => (
+                  <tr key={rowIndex}>
+                    <td
+                      className={`border px-4 py-2 cursor-pointer ${selectedCell?.row === rowIndex && selectedCell?.col === 0 ? 'bg-blue-200' : ''}`}
+                      onClick={() => handleCellClick(rowIndex, 0)}
+                    >
+                      Row {rowIndex + 1} Col 1
+                    </td>
+                    <td
+                      className={`border px-4 py-2 cursor-pointer ${selectedCell?.row === rowIndex && selectedCell?.col === 1 ? 'bg-blue-200' : ''}`}
+                      onClick={() => handleCellClick(rowIndex, 1)}
+                    >
+                      Row {rowIndex + 1} Col 2
+                    </td>
+                    <td
+                      className={`border px-4 py-2 cursor-pointer ${selectedCell?.row === rowIndex && selectedCell?.col === 2 ? 'bg-blue-200' : ''}`}
+                      onClick={() => handleCellClick(rowIndex, 2)}
+                    >
+                      Row {rowIndex + 1} Col 3
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <button
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+              onClick={handleSelect} // Ẩn overlay khi nhấn
+            >
+              Select
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+
         <div className="w-[1150px] h-[283px] left-[50px] top-[402px] absolute">
           <div className="left-[200px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Tên linh kiện</div>
           <div className="left-[350px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Tên lô</div>
@@ -91,8 +170,12 @@ function DSLK_NV() {
           <img className="w-10 h-[35.24px] left-[8px] top-[39px] absolute" src={images['icon_linhkien.png']} onClick={() => navigate('/dslk2')}/>
         </div>
         <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
+        <button>
         <img className="w-5 h-5 left-[99px] top-[20px] absolute origin-top-left -rotate-90" src={images['left.png']}/>
+        </button>
+        <button>
         <img className="w-5 h-5 left-[94px] top-0 absolute origin-top-left rotate-90" src={images['right.png']} />
+        </button>
         <div className="left-0 top-[2px] absolute text-[#b1b1b1] text-xs font-bold font-['Inter']">1/ 10 trang</div>
       </div>
     </div>
