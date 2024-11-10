@@ -40,3 +40,32 @@ app.get('/api/userprofile', async (req, res) => {
         res.status(500).json({ error: 'Database query failed' });
     }
 });
+
+// API danh sách nhập kho
+app.get('/api/nhapkho', (req, res) => {
+  const sql = `
+    SELECT 
+      nk.IDNK,
+      nk.NgayNhap,
+      nk.TongGiaTri,
+      nk.TrangThai,
+      nk.GhiChu,
+      nk.UserID,
+      nklk.IDLK,
+      nklk.SoLuong,
+      nklk.GiaNhap
+    FROM 
+      NHAPKHO nk
+    LEFT JOIN 
+      NHAPKHO_LINHKIEN nklk ON nk.IDNK = nklk.IDNK
+    ORDER BY 
+      nk.IDNK;
+  `;
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.error('Lỗi truy vấn:', err);
+      return res.status(500).json({ message: 'Có lỗi xảy ra khi truy vấn cơ sở dữ liệu.', error: err });
+    }
+    res.status(200).json(result);
+  });
+});

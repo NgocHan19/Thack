@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import images from '../../images';
+import axios from 'axios'
 
 const Import = () => {
   const navigate = useNavigate();
@@ -8,6 +9,16 @@ const Import = () => {
   const handleNavigate = (path) => {
     navigate(path);
   };
+
+  const [nhapkho, setNhapKho] = useState([]);
+
+  useEffect(() => {
+      axios.get('http://localhost:3000/api/nhapkho')
+          .then(response => {
+              setNhapKho(response.data);
+          })
+          .catch(error => console.error('Lỗi lấy dữ liệu:', error));
+  }, []);
 
   return (
     <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
@@ -70,9 +81,23 @@ const Import = () => {
 
         <div className="absolute left-[30px] top-[270px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
+            Số seri
+          </div>
+          <input type="number" placeholder='Số seri...' className="box-border w-[200px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-2 pr-1" />
+        </div>
+
+        <div className="absolute left-[260px] top-[270px]">
+          <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
+            Tên lô
+          </div>
+          <input type="text" placeholder='Nhập tên lô...' className="box-border w-[200px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-2 pr-2" />
+        </div>
+
+        <div className="absolute left-[30px] top-[355px]">
+          <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Ghi chú
           </div>
-          <textarea className="box-border w-[430px] h-[150px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
+          <textarea className="box-border w-[430px] h-[80px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
         </div>
 
         <button className="absolute left-[30px] top-[500px] w-[136px] h-[40px] bg-[#64C860] rounded-[10px] flex items-center justify-center">
@@ -80,8 +105,8 @@ const Import = () => {
           <span className="font-inter font-semibold text-white text-[18px] leading-[22px]">Nhập kho</span>
         </button>
 
-        <button className="absolute left-[190px] top-[500px] w-[232px] h-[40px] bg-[#3498DB] rounded-[10px] flex items-center justify-center">
-          onClick={() => handleNavigate('/themlinhkienvaolo')}
+        <button className="absolute left-[190px] top-[500px] w-[232px] h-[40px] bg-[#3498DB] rounded-[10px] flex items-center justify-center"
+          onClick={() => handleNavigate('/themlinhkienvaolo')}>
           <img src={images['icon_create_white.png']} alt="Thêm linh kiện vào lô" className="w-[20px] h-[20px] mr-2" />
           <span className="font-inter font-semibold text-white text-[18px] leading-[22px]">Thêm linh kiện vào lô</span>
         </button>
@@ -201,6 +226,30 @@ const Import = () => {
                   </div>
                 </td>
               </tr>
+            </tbody>
+            <tbody>
+            {nhapkho.map((item, index) => (
+              <tr key={index} className="border-t-2 border-gray-400">
+                <td className="flex items-center justify-center p-2">
+                  <button className="w-full h-full flex items-center justify-center">
+                    <img src={images['icon_down_arrow_black1.png']} alt="Arrow Down" className="w-[20px] h-[20px]" />
+                  </button>
+                </td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">q949q3</td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">001234</td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Lô 1</td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-10-01</td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">69</td>
+                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
+                <td className="p-2 flex items-center justify-center">
+                  <div className="bg-white border border-[#DBA260] rounded-[10px] px-2 py-0.5">
+                    <span className="text-[#DBA260] font-bold text-[12px] leading-[15px]">Đã xuất kho</span>
+                  </div>
+                </td>
+              </tr>
+              ))}
             </tbody>
           </table>
           </div>

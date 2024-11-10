@@ -32,83 +32,95 @@ const Import_Approval = () => {
             </span>
           </div>
 
-          <div className="absolute w-[1100px] h-[300px] left-[20px] top-[80px]">
-          <table className="table-auto w-full">
-            <thead>
-              <tr>
-                <th className="w-10">
-                  <button className="p-2"></button>
-                </th>
-                <th className="text-center px-2 py-2 text-xs">Barcode</th>
-                <th className="text-center px-2 py-2 text-xs">Số seri</th>
-                <th className="text-center px-2 py-2 text-xs">Tên lô</th>
-                <th className="text-center px-2 py-2 text-xs">Ngày nhận</th>
-                <th className="text-center px-2 py-2 text-xs">Ngày sản xuất</th>
-                <th className="text-center px-2 py-2 text-xs">Ngày hết hạn lô</th>
-                <th className="text-center px-2 py-2 text-xs">Số lượng lô hàng</th>
-                <th className="text-center px-2 py-2 text-xs">Tổng giá</th>
-                <th className="text-center px-2 py-2 text-xs">Trạng thái lô hàng</th>
-                <th className="text-center px-2 py-2 text-xs">Ghi chú</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t-2 border-gray-400">
-                <td className="flex items-center justify-center p-2">
-                  <button className="w-full h-full flex items-center justify-center">
-                    <img src={images['icon_down_arrow_black1.png']} alt="Arrow Down" className="w-[20px] h-[20px]" />
-                  </button>
-                </td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">q949q3</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">001234</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Lô 1</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-10-01</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">100</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
-                <td className="p-2 flex items-center justify-center">
-                  <div className="bg-white border border-[#3498DB] rounded-[10px] px-2 py-0.5">
-                    <span className="text-[#3498DB] font-bold text-[12px] leading-[15px] ">Chờ duyệt</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr className="border-t-2 border-gray-400">
-                <td className="flex items-center justify-center p-2">
-                  <button className="w-full h-full flex items-center justify-center">
-                    <img src={images['icon_down_arrow_black1.png']} alt="Arrow Down" className="w-[20px] h-[20px]" />
-                  </button>
-                </td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">q949q3</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">001234</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Lô 1</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-10-01</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">69</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
-                <td className="p-2 flex items-center justify-center">
-                  <div className="bg-white border border-[#3498DB] rounded-[10px] px-2 py-0.5">
-                    <span className="text-[#3498DB] font-bold text-[12px] leading-[15px]">Chờ duyệt</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-          <div className="absolute bottom-2 right-2 flex items-center space-x-2">
-              <span className="font-bold text-base text-[#B2B2B2]">1/10 trang</span>
-                <button className="w-[30px] h-[30px] bg-white flex items-center justify-center">
-                  <img src={images['icon_prev.png']} alt="Previous" className="w-6 h-6" />
-                </button>
-                <button className="w-[30px] h-[30px] bg-white rounded-full flex items-center justify-center">
-                  <img src={images['icon_next.png']} alt="Next" className="w-6 h-6" />
-                </button>
+          <div className="absolute w-[1120px] h-[300px] left-[5px] top-[80px] overflow-auto">
+            <table className="table-auto w-full">
+              <thead>
+                <tr>
+                  <th>
+                    <button className="p-2"></button>
+                  </th>
+                  <th>
+                    <button className="p-2"></button>
+                  </th>
+                  <th className="text-center px-2 py-2 text-xs">Barcode</th>
+                  <th className="text-center px-2 py-2 text-xs">Số seri</th>
+                  <th className="text-center px-2 py-2 text-xs">Tên lô</th>
+                  <th className="text-center px-2 py-2 text-xs">Ngày nhận</th>
+                  <th className="text-center px-2 py-2 text-xs">Ngày sản xuất</th>
+                  <th className="text-center px-2 py-2 text-xs">Ngày hết hạn lô</th>
+                  <th className="text-center px-2 py-2 text-xs">Số lượng lô hàng</th>
+                  <th className="text-center px-2 py-2 text-xs">Tổng giá</th>
+                  <th className="text-center px-2 py-2 text-xs">Trạng thái lô hàng</th>
+                  <th className="text-center px-2 py-2 text-xs">Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t-2 border-gray-400">
+                  <td className="p-1 text-center">
+                    <button>
+                      <img src={images['icon_check_empty.png']} alt="Check Empty" className="w-[20px] h-[20px]" />
+                    </button>
+                  </td>
+                  <td className="p-1 text-center">
+                    <button>
+                      <img src={images['icon_down_arrow_black1.png']} alt="Arrow Down" className="w-[20px] h-[20px]" />
+                    </button>
+                  </td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">q949q3</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">001234</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Lô 1</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-10-01</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">100</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
+                  <td className="p-2 flex items-center justify-center">
+                    <button className="bg-white border border-[#3498DB] rounded-[10px] px-2 py-0.5">
+                      <span className="text-[#3498DB] font-bold text-[12px] leading-[15px] ">Chờ duyệt</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr className="border-t-2 border-gray-400">
+                  <td className="p-2 text-center">
+                    <button>
+                      <img src={images['icon_check_empty.png']} alt="Check Empty" className="w-[20px] h-[20px]" />
+                    </button>
+                  </td>
+                  <td className="p-2 text-center">
+                    <button>
+                      <img src={images['icon_down_arrow_black1.png']} alt="Arrow Down" className="w-[20px] h-[20px]" />
+                    </button>
+                  </td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">q949q3</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">001234</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Lô 1</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-10-01</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">100</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
+                  <td className="p-2 flex items-center justify-center">
+                    <button className="bg-white border border-[#3498DB] rounded-[10px] px-2 py-0.5">
+                      <span className="text-[#3498DB] font-bold text-[12px] leading-[15px]">Chờ duyệt</span>
+                    </button>
+                  </td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Ghi chú</td>
+                </tr>
+              </tbody>
+                </table>
             </div>
-        </div>
-
-
+            <div className="absolute bottom-2 right-2 flex items-center space-x-2">
+                <span className="font-bold text-base text-[#B2B2B2]">1/10 trang</span>
+                  <button className="w-[30px] h-[30px] bg-white flex items-center justify-center">
+                    <img src={images['icon_prev.png']} alt="Previous" className="w-6 h-6" />
+                  </button>
+                  <button className="w-[30px] h-[30px] bg-white rounded-full flex items-center justify-center">
+                    <img src={images['icon_next.png']} alt="Next" className="w-6 h-6" />
+                  </button>
+              </div>
+          </div>
         </div>
       </div>
   );
