@@ -181,7 +181,7 @@ setTimeout(() => {
         <div className="fixed inset-0 flex items-center justify-center bg-opacity-50">
           <div className="max-w-[300px] w-full h-auto bg-white rounded-[15px] border-2 border-[#767676] flex flex-col items-center justify-center p-4">
             <div className="text-[#525050] text-2xl font-bold">Xóa chi nhánh</div>
-            <div className="text-[#a09696] text-xl font-bold mt-2 text-center">
+            <div className="text-[#a09696] text-xl font-bold bg-[#FFFFFF] mt-2 text-center">
               Bạn chắc chắn muốn xóa chi nhánh này?
             </div>
             <div className="flex justify-between w-full mt-4">
