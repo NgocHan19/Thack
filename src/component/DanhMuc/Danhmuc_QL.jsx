@@ -162,7 +162,7 @@ function Danhmuc_QL() {
         onClick={toggleTable}
         
       />
-
+{isTableVisible && (
     <div className="w-full h-[252px] left-0 top-[230px] absolute">
       <div className="w-full h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
       <div className="w-full h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
@@ -173,7 +173,11 @@ function Danhmuc_QL() {
       <div className="left-[60px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
       <div className="left-[650px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
       <div className="left-[900px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
-    </div>
+          <div className="w-full h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
+          {/* Các dòng khác của bảng */}
+        </div>
+      )}
+
   </div>
   <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
         <button>

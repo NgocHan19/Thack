@@ -101,33 +101,36 @@ function Lohang_QL() {
 
       {/* Dropdown */}
       {showDropdown1 && (
-        <div className="w-[200px] h-[100px] absolute left-[1000px] top-[66px]">
-          <div className="w-[200px] h-[100px] bg-white rounded-[15px] border-2 border-[#767676]" />
-          <div className="absolute left-[40px] top-[10px] text-[#525050] text-l ">
-            Trạng thái lô hàng
-          </div>
-          <div className="w-[22px] h-[22px] absolute left-[25px] top-[35px] bg-[#d9d9d9] rounded-[5px]" />
-          <input 
-      type="radio" 
-      name="status" 
-      id="approved" 
-      className="w-[20px] h-[20px] mr-2" 
-    />
-          <div className="absolute left-[63px] top-[35px] text-[#a1a1a1] text-l font-normal ">
-            Đã duyệt
-          </div>
-          <div className="w-[22px] h-[22px] absolute left-[25px] top-[70px] bg-[#d9d9d9] rounded-[5px]" />
-          <input 
-      type="radio" 
-      name="status" 
-      id="approved" 
-      className="w-[20px] h-[20px] mr-2" 
-    />
-          <div className="absolute left-[63px] top-[70px] text-[#a1a1a1] text-l font-normal ">
-            Bị từ chối
-          </div>
-        </div>
-      )}
+  <div className="w-[200px] h-[100px] absolute left-[1000px] top-[66px]">
+    <div className="w-[200px] h-[100px] bg-white rounded-[15px] border-2 border-[#767676]" />
+    <div className="absolute left-[40px] top-[10px] text-[#525050] text-l ">
+      Trạng thái lô hàng
+    </div>
+    <div className="absolute left-[25px] top-[35px] flex items-center">
+      <input 
+        type="radio" 
+        name="status" 
+        id="approved" 
+        className="w-[20px] h-[20px] mr-2" 
+      />
+      <label htmlFor="approved" className="text-[#a1a1a1] text-l font-normal">
+        Đã duyệt
+      </label>
+    </div>
+    <div className="absolute left-[25px] top-[70px] flex items-center">
+      <input 
+        type="radio" 
+        name="status" 
+        id="rejected" 
+        className="w-[20px] h-[20px] mr-2" 
+      />
+      <label htmlFor="rejected" className="text-[#a1a1a1] text-l font-normal">
+        Bị từ chối
+      </label>
+    </div>
+  </div>
+)}
+
     </div>
   <div className="w-[330px] h-[55px] left-[850px] top-[296px] absolute">
         <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />

@@ -139,24 +139,28 @@ function Danhmuc_NV() {
         <img className="w-5 h-5 left-[9px] top-[96px] absolute" src={images['icon_barcode.png']} />
         <img className="w-5 h-5 left-[9px] top-[145px] absolute" src={images['icon_barcode.png']} />
         <img
-            className="w-5 h-5 left-[6px] top-[48px] absolute cursor-pointer"
-            src={images['icon_barcode.png']}
-            alt="Toggle Dropdown"
-            onClick={toggleTable}
-            
-          />
-    
-        <div className="w-full h-[252px] left-0 top-[230px] absolute">
-          <div className="w-full h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
+        className="w-5 h-5 left-[6px] top-[48px] absolute cursor-pointer"
+        src={images['icon_barcode.png']}
+        alt="Toggle Dropdown"
+        onClick={toggleTable}
+        
+      />
+{isTableVisible && (
+    <div className="w-full h-[252px] left-0 top-[230px] absolute">
+      <div className="w-full h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
+      <div className="w-full h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
+      <div className="w-full h-[0px] left-0 top-[116px] absolute border-2 border-[#cdcdcd]"></div>
+      <div className="w-full h-[0px] left-0 top-[184px] absolute border-2 border-[#cdcdcd]"></div>
+      <div className="left-[400px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
+      <div className="left-[150px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục con</div>
+      <div className="left-[60px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
+      <div className="left-[650px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
+      <div className="left-[900px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
           <div className="w-full h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
-          <div className="w-full h-[0px] left-0 top-[116px] absolute border-2 border-[#cdcdcd]"></div>
-          <div className="w-full h-[0px] left-0 top-[184px] absolute border-2 border-[#cdcdcd]"></div>
-          <div className="left-[400px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
-          <div className="left-[150px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục con</div>
-          <div className="left-[60px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
-          <div className="left-[650px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
-          <div className="left-[900px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
+          {/* Các dòng khác của bảng */}
         </div>
+      )}
+
       </div>
       <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
         <button>
