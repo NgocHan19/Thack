@@ -172,7 +172,7 @@ function Lohang_NV() {
    {/* Bảng xổ xuống */}
    
    {isTableVisible && (
-     <div className="w-[1080px] h-[252px] left-0 top-[231px] absolute z-10"> // Thêm z-index để bảng xổ xuống nằm trên các phần tử khác
+     <div className="w-[1080px] h-[252px] left-10 top-[300px] absolute z-10"> // Thêm z-index để bảng xổ xuống nằm trên các phần tử khác
        <div className="w-full h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
        <div className="left-[550px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Giá</div>
        <div className="left-[350px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Đơn vị</div>
