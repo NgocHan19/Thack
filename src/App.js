@@ -6,6 +6,7 @@ import OTPVerification from './component/Account/OTPVerification';
 import Menu_user from './component/Menu/Menu_user';
 import Menu_NV from './component/Menu/Menu_NV';
 import Menu_QL from './component/Menu/Menu_QL';
+import Menu_Admin from './component/Menu/Menu_Admin';
 import Logout from './component/Account/Logout';
 import HomePage from './component/HomePage/HomePage';
 import UserProfile from './component/Account/UserProfile';
@@ -36,6 +37,15 @@ import DSLK2 from './component/DSLK/DSLK2';
 import Nhacungcap from './component/NhaCungCap/Nhacungcap';
 import Nhacungcap_Sua from './component/NhaCungCap/Nhacungcap_Sua';
 import Nhacungcap_Tao from './component/NhaCungCap/Nhacungcap_Tao';
+import Lohang_QL2 from './component/Lo/Lohang_QL2';
+import Lohang_NV from './component/Lo/Lohang_NV';
+import QLLK from './component/QLLK/QLLK';
+import QLND from './component/QLND/QLND';
+import QLND_New from './component/QLND/QLND_New';
+import QLND_Edit from './component/QLND/QLND_Edit';
+import QLND_Delete from './component/QLND/QLND_Delete';
+import Caidat_Admin from './component/Caidat_Admin/Caidat_Admin';
+
 
 
 function App() {
@@ -89,6 +99,17 @@ function App() {
           <Route path="/nhacungcap" element={<Nhacungcap />} />
           <Route path="/nhacungcap-sua" element={<Nhacungcap_Sua />} />
           <Route path="/nhacungcap-tao" element={<Nhacungcap_Tao />} />
+          {/* Quản lí người dùng */}
+          <Route path="/qlnd" element={<QLND />} />
+          <Route path="/qlnd-new" element={<QLND_New />} />
+          <Route path="/qlnd-edit" element={<QLND_Edit />} />
+          <Route path="/qlnd-delete" element={<QLND_Delete />} />
+
+          {/* Quản lí linh kiện */}
+          <Route path="/qllk" element={<QLLK />} />
+
+          {/* Cài đặt admin */}
+          <Route path="/caidat-admin" element={<Caidat_Admin />} />
         </Routes>
       </div>
     </div>
