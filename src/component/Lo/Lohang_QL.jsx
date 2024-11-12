@@ -12,6 +12,9 @@ function Lohang_QL() {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [selectedCell, setSelectedCell] = useState(null); // State để lưu ô được chọn
   const [filterText, setFilterText] = useState(''); // State để lưu nội dung đã chọn
+  const [selectedStatus, setSelectedStatus] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [pendingStatus, setPendingStatus] = useState("");
 
   const handleIconClick = () => {
     setIsOverlayVisible(true);
@@ -51,6 +54,22 @@ function Lohang_QL() {
 
   const [isFormVisible, setIsFormVisible] = useState(false);
 
+  const handleRadioChange = (status) => {
+    setPendingStatus(status);
+    setShowModal(true);  // Show modal when an option is selected
+  };
+
+  const confirmSelection = () => {
+    setSelectedStatus(pendingStatus);
+    setShowModal(false);
+    // Additional actions based on the selected status can go here
+  };
+
+  const cancelSelection = () => {
+    setPendingStatus("");
+    setShowModal(false);
+  };
+
 
 
   const toggleForm = () => {
@@ -82,7 +101,7 @@ function Lohang_QL() {
     />
   </div>
 </div>
-      <div className="relative">
+<div className="relative">
       {/* Button */}
       <div
         className="w-[184px] h-[50px] absolute left-[1000px] top-[16px] cursor-pointer"
@@ -101,36 +120,54 @@ function Lohang_QL() {
 
       {/* Dropdown */}
       {showDropdown1 && (
-  <div className="w-[200px] h-[100px] absolute left-[1000px] top-[66px]">
-    <div className="w-[200px] h-[100px] bg-white rounded-[15px] border-2 border-[#767676]" />
-    <div className="absolute left-[40px] top-[10px] text-[#525050] text-l ">
-      Trạng thái lô hàng
-    </div>
-    <div className="absolute left-[25px] top-[35px] flex items-center">
-      <input 
-        type="radio" 
-        name="status" 
-        id="approved" 
-        className="w-[20px] h-[20px] mr-2" 
-      />
-      <label htmlFor="approved" className="text-[#a1a1a1] text-l font-normal">
-        Đã duyệt
-      </label>
-    </div>
-    <div className="absolute left-[25px] top-[70px] flex items-center">
-      <input 
-        type="radio" 
-        name="status" 
-        id="rejected" 
-        className="w-[20px] h-[20px] mr-2" 
-      />
-      <label htmlFor="rejected" className="text-[#a1a1a1] text-l font-normal">
-        Bị từ chối
-      </label>
-    </div>
-  </div>
-)}
+        <div className="w-[200px] h-[100px] absolute left-[1000px] top-[66px]">
+          <div className="w-[200px] h-[220px] bg-white rounded-[15px] border-2 border-[#767676]" />
+          <div className="absolute left-[40px] top-[10px] text-[#525050] text-l ">
+            Trạng thái lô hàng
+          </div>
 
+          {["Đã duyệt", "Bị từ chối", "Chưa nhập kho", "Đã nhập kho", "Đã xuất kho"].map((status, index) => (
+            <div key={index} className="absolute left-[25px] top-[35px] flex items-center" style={{ top: `${35 + index * 35}px` }}>
+              <input 
+                type="radio" 
+                name="status" 
+                value={status} 
+                className="w-[20px] h-[20px] mr-2" 
+                checked={selectedStatus === status}
+                onChange={() => handleRadioChange(status)}
+              />
+              <label className="text-[#a1a1a1] text-l font-normal">
+                {status}
+              </label>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg p-6 w-[300px] text-center">
+            <p className="text-lg font-semibold mb-4">
+              Bạn có muốn chọn "{pendingStatus}"?
+            </p>
+            <div className="flex justify-around">
+              <button
+                className="bg-green-500 text-white px-4 py-2 rounded"
+                onClick={confirmSelection}
+              >
+                Xác nhận
+              </button>
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded"
+                onClick={cancelSelection}
+              >
+                Huỷ
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   <div className="w-[330px] h-[55px] left-[850px] top-[296px] absolute">
         <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
@@ -233,7 +270,7 @@ function Lohang_QL() {
         {/* Bảng xổ xuống */}
         
         {isTableVisible && (
-          <div className="w-[1080px] h-[252px] left-0 top-[231px] absolute z-10"> // Thêm z-index để bảng xổ xuống nằm trên các phần tử khác
+          <div className="w-[1080px] h-[252px] left-10 top-[300px] absolute z-10"> // Thêm z-index để bảng xổ xuống nằm trên các phần tử khác
             <div className="w-full h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
             <div className="left-[550px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Giá</div>
             <div className="left-[350px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Đơn vị</div>
