@@ -20,7 +20,7 @@ const OTPVerification = () => {
       }
     
       try {
-        const response = await fetch('http://localhost:5000/OTPVerification', {
+        const response = await fetch('http://localhost:5000/xacthuctaikhoan', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, verificationToken: otp.join('') }), // Convert OTP array to a single string
@@ -30,7 +30,7 @@ const OTPVerification = () => {
         if (response.ok) {
           setSuccessMessage(result.message);
           setTimeout(() => {
-            navigate('/login');
+            navigate('/dangnhap');
           }, 2000);
         } else {
           setErrorMessage(result.message || 'Mã OTP không chính xác. Vui lòng thử lại.');
