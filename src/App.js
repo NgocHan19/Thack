@@ -38,8 +38,6 @@ import Nhacungcap_Tao from './component/NhaCungCap/Nhacungcap_Tao';
 
 
 
-
-
 function App() {
   const location = useLocation();
   const hideMenuRoutes = ['/dangnhap', '/dangky', '/trangchu'];
