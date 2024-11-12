@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import images from '../../images';
 import { useNavigate } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -107,30 +106,35 @@ function Login() {
         <p className="text-white font-bold text-[24px] leading-[29px]">
           {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
         </p>
+
+      <div
+        className="absolute left-0 top-[90px] w-[827px] h-[60px] bg-[#DB4437] rounded-[5px] flex items-center justify-center"
+        onClick={loading ? null : handleLogin}
+        style={{ cursor: loading ? 'not-allowed' : 'pointer' }}
+      >
+        <p className="text-white font-bold text-[24px] leading-[29px]">
+          {loading ? 'Đang đăng nhập...' : 'Đăng nhập bằng Gmail'}
+        </p>
       </div>
 
-      {/* Đăng nhập bằng Gmail button */}
-      <div className="absolute left-[400px] top-[530px] w-[827px] h-[60px] bg-[#DB4437] rounded-[5px] flex items-center justify-center cursor-pointer transition duration-200 hover:bg-[#c13528]">
-        <span className="text-[#FFFFFF] text-[24px] font-bold">Đăng nhập bằng Gmail</span>
-      </div>
-
-      <button className="absolute left-[600px] top-[610px] flex items-center">
-        <span className="text-[#A2A2A2] text-[20px] font-normal"
-          onClick={() => navigate('/dangky')}>Bạn chưa có tài khoản? Đăng ký ngay</span>
+      <button
+        className="absolute left-[280px] top-[170px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]"
+        onClick={() => navigate('/dangky')}
+      >
+        Bạn chưa có tài khoản? Đăng ký ngay
       </button>
-      
-      <div className="absolute left-[500px] top-[650px] w-[630px] border-b border-[#A2A2A2]"></div>
 
-      <div className="absolute left-[600px] top-[660px]">
-        <p className="text-[#5E5D5D] text-[20px] font-bold">Bạn gặp khó khăn khi tạo tài khoản?</p>
-      </div>
+      <p className="absolute left-[230px] top-[270px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]">
+        Vui lòng gọi tới số 0123456789 (giờ hành chính).
+      </p>
+      <p className="absolute left-[280px] top-[230px] text-[#5E5D5D] font-bold text-[20px] leading-[24px]">
+        Bạn gặp khó khăn khi tạo tài khoản?
+      </p>
 
-      <div className="absolute left-[560px] top-[690px]">
-        <p className="mt-[10px] text-[#A2A2A2] text-[20px] font-normal">Vui lòng gọi tới số 0123456789 (giờ hành chính).</p>
-      </div>
-
+      <div className="absolute left-[60px] top-[210px] w-[700px] h-0 border border-[#D9D9D9]" />
     </div>
+  </div>
   );
-}
+};
 
 export default Login;

@@ -28,7 +28,7 @@ const HomePage = () => {
       <div className="absolute w-full flex items-center justify-between p-5">
         <img src={images['logo1.png']} alt="Logo" className="w-[200px] h-[70px]" />
         <button
-          onClick={() => navigate('/login')} className="flex items-center justify-center w-[144px] h-[43px] bg-white border-2 border-[#9FC1ED] rounded-[10px] mr-[20px]"
+          onClick={() => navigate('/dangnhap')} className="flex items-center justify-center w-[144px] h-[43px] bg-white border-2 border-[#9FC1ED] rounded-[10px] mr-[20px]"
         >
           <span className="text-[20px] font-bold text-black/80">Đăng nhập</span>
         </button>
