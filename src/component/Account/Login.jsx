@@ -106,25 +106,35 @@ function Login() {
         <p className="text-white font-bold text-[24px] leading-[29px]">
           {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
         </p>
+
+      <div
+        className="absolute left-0 top-[90px] w-[827px] h-[60px] bg-[#DB4437] rounded-[5px] flex items-center justify-center"
+        onClick={loading ? null : handleLogin}
+        style={{ cursor: loading ? 'not-allowed' : 'pointer' }}
+      >
+        <p className="text-white font-bold text-[24px] leading-[29px]">
+          {loading ? 'Đang đăng nhập...' : 'Đăng nhập bằng Gmail'}
+        </p>
       </div>
 
       <button
-        className="absolute left-[398px] top-[580px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]"
+        className="absolute left-[280px] top-[170px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]"
         onClick={() => navigate('/dangky')}
       >
         Bạn chưa có tài khoản? Đăng ký ngay
       </button>
 
-      <p className="absolute left-[350px] top-[684px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]">
+      <p className="absolute left-[230px] top-[270px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]">
         Vui lòng gọi tới số 0123456789 (giờ hành chính).
       </p>
-      <p className="absolute left-[402px] top-[643px] text-[#5E5D5D] font-bold text-[20px] leading-[24px]">
+      <p className="absolute left-[280px] top-[230px] text-[#5E5D5D] font-bold text-[20px] leading-[24px]">
         Bạn gặp khó khăn khi tạo tài khoản?
       </p>
 
-      <div className="absolute left-[226px] top-[625px] w-[700px] h-0 border border-[#D9D9D9]" />
+      <div className="absolute left-[60px] top-[210px] w-[700px] h-0 border border-[#D9D9D9]" />
     </div>
+  </div>
   );
-}
+};
 
 export default Login;
