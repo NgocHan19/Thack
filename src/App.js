@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Login from './component/Account/Login';
 import Register from './component/Account/Register';
+import OTPVerification from './component/Account/OTPVerification';
 import Menu_user from './component/Menu/Menu_user';
 import Menu_NV from './component/Menu/Menu_NV';
 import Menu_QL from './component/Menu/Menu_QL';
@@ -37,10 +38,9 @@ import Nhacungcap_Sua from './component/NhaCungCap/Nhacungcap_Sua';
 import Nhacungcap_Tao from './component/NhaCungCap/Nhacungcap_Tao';
 
 
-
 function App() {
   const location = useLocation();
-  const hideMenuRoutes = ['/dangnhap', '/dangky', '/trangchu'];
+  const hideMenuRoutes = ['/dangnhap', '/dangky', '/', '/xacthuctaikhoan'];
 
   return (
     <div className="app flex h-screen">
@@ -51,9 +51,10 @@ function App() {
       )}
       <div className="flex-1 bg-white">
         <Routes>
-          <Route path="/trangchu" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/dangnhap" element={<Login />} />
           <Route path="/dangky" element={<Register />} />
+          <Route path="/xacthuctaikhoan" element={<OTPVerification />} />
           <Route path="/dangxuat" element={<Logout />} />
           <Route path="/suathongtincanhan" element={<UserProfile />} />
           <Route path="/dashboard-ql" element={<Dashboard_QL />} />
