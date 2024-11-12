@@ -63,9 +63,23 @@ const Export = () => {
 
         <div className="absolute left-[30px] top-[270px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
+            Số seri
+          </div>
+          <input type="number" placeholder='Số seri...' className="box-border w-[200px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-2 pr-1" />
+        </div>
+
+        <div className="absolute left-[260px] top-[185px]">
+          <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
+            Tên lô
+          </div>
+          <input type="text" placeholder='Nhập tên lô...' className="box-border w-[200px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-2 pr-2" />
+        </div>
+
+        <div className="absolute left-[30px] top-[355px]">
+          <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Ghi chú
           </div>
-          <textarea className="box-border w-[430px] h-[150px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
+          <textarea className="box-border w-[430px] h-[80px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
         </div>
 
         <div className="absolute left-[30px] top-[500px] w-[136px] h-[40px] bg-[#64C860] rounded-[10px] flex items-center justify-center">

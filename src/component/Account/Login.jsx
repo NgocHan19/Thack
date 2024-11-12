@@ -1,6 +1,6 @@
-Login
 import React, { useState } from 'react';
 import images from '../../images';
+import { useNavigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -109,21 +109,26 @@ function Login() {
         </p>
       </div>
 
-      <button
-        className="absolute left-[398px] top-[580px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]"
-        onClick={() => navigate('/dangky')}
-      >
-        Bạn chưa có tài khoản? Đăng ký ngay
+      {/* Đăng nhập bằng Gmail button */}
+      <div className="absolute left-[400px] top-[530px] w-[827px] h-[60px] bg-[#DB4437] rounded-[5px] flex items-center justify-center cursor-pointer transition duration-200 hover:bg-[#c13528]">
+        <span className="text-[#FFFFFF] text-[24px] font-bold">Đăng nhập bằng Gmail</span>
+      </div>
+
+      <button className="absolute left-[600px] top-[610px] flex items-center">
+        <span className="text-[#A2A2A2] text-[20px] font-normal"
+          onClick={() => navigate('/dangky')}>Bạn chưa có tài khoản? Đăng ký ngay</span>
       </button>
+      
+      <div className="absolute left-[500px] top-[650px] w-[630px] border-b border-[#A2A2A2]"></div>
 
-      <p className="absolute left-[350px] top-[684px] text-[#A2A2A2] font-normal text-[20px] leading-[24px]">
-        Vui lòng gọi tới số 0123456789 (giờ hành chính).
-      </p>
-      <p className="absolute left-[402px] top-[643px] text-[#5E5D5D] font-bold text-[20px] leading-[24px]">
-        Bạn gặp khó khăn khi tạo tài khoản?
-      </p>
+      <div className="absolute left-[600px] top-[660px]">
+        <p className="text-[#5E5D5D] text-[20px] font-bold">Bạn gặp khó khăn khi tạo tài khoản?</p>
+      </div>
 
-      <div className="absolute left-[226px] top-[625px] w-[700px] h-0 border border-[#D9D9D9]" />
+      <div className="absolute left-[560px] top-[690px]">
+        <p className="mt-[10px] text-[#A2A2A2] text-[20px] font-normal">Vui lòng gọi tới số 0123456789 (giờ hành chính).</p>
+      </div>
+
     </div>
   );
 }

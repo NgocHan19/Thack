@@ -158,7 +158,7 @@ const Register = () => {
           onChange={handleCheckboxChange}
           className="w-[24px] h-[24px] mr-[10px]"
         />
-        <span className="text-[#868585] text-lg leading-[24px]">Tôi đồng ý với các điều khoản sử dụng</span>
+        <span className="text-[#868585] text-lg leading-[24px]">Tôi đã đọc và đồng ý với Điều khoản dịch vụ và Chính sách bảo mật của Thack</span>
       </div>
 
       {/* Nút đăng ký */}

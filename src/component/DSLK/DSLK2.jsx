@@ -38,6 +38,12 @@ function DSLK_NV2() {
     <div className="left-[370px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Ngày sản xuất</div>
     <div className="left-[50px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Barcode</div>
     <div className="w-full h-[0px] left-0 top-[35px] absolute border-2 border-[#7f7e7e]"></div>
+    <div className="left-[50px] top-[55px] absolute text-black text-sm font-normal font-['Inter']">BA01</div>
+    <div className="left-[230px] top-[55px] absolute text-black text-sm font-normal font-['Inter']">01234567</div>
+    <div className="left-[370px] top-[55px] absolute text-black text-sm font-normal font-['Inter']">06/07/2022</div>
+    <div className="left-[580px] top-[55px] absolute text-black text-sm font-normal font-['Inter']">6 tháng</div>
+    <div className="left-[800px] top-[55px] absolute text-black text-sm font-normal font-['Inter']">06/07/2022</div>
+    <div className="left-[960px] top-[55px] absolute text-black text-sm font-normal font-['Inter']">Mô tả 1</div>
     <div className="w-full h-[0px] left-0 top-[84px] absolute border-2 border-[#cdcdcd]"></div>
     <div className="w-full h-[0px] left-0 top-[134px] absolute border-2 border-[#7f7e7e]"></div>
     <div className="w-full left-0 top-[183px] absolute border-2 border-[#7f7e7e]"></div>
@@ -55,11 +61,15 @@ function DSLK_NV2() {
     <div className="w-full h-[0px] left-0 top-[284px] absolute border-2 border-[#cdcdcd]"></div>
   </div>
   <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
+        <button>
         <img className="w-5 h-5 left-[99px] top-[20px] absolute origin-top-left -rotate-90" src={images['left.png']}/>
+        </button>
+        <button>
         <img className="w-5 h-5 left-[94px] top-0 absolute origin-top-left rotate-90" src={images['right.png']} />
+        </button>
         <div className="left-0 top-[2px] absolute text-[#b1b1b1] text-xs font-bold font-['Inter']">1/ 10 trang</div>
       </div>
-      </div>
+    </div>
   );
 }
 
