@@ -82,7 +82,7 @@ function Danhmuc_QL_Sua() {
           className="w-[480px] h-[100px] bg-white rounded-[10px] border border-[#525050] p-2 resize-none" 
           placeholder="Nhập thông tin tại đây" 
         />
-      </div>
+      </div>  
       <div className="left-[100px] top-[539px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
       <div className="absolute left-[100px] top-[578px]">
         <textarea 
