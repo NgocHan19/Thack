@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Login from './component/Account/Login';
+import Register from './component/Account/Register';
 import Menu_user from './component/Menu/Menu_user';
 import Menu_NV from './component/Menu/Menu_NV';
 import Menu_QL from './component/Menu/Menu_QL';
@@ -37,62 +38,67 @@ import Nhacungcap_Tao from './component/NhaCungCap/Nhacungcap_Tao';
 
 
 
-
-
 function App() {
+  const location = useLocation();
+
+  const hideMenuRoutes = ['/dangnhap', '/dangky', '/trangchu'];
+
+  return (
+    <div className="app flex h-screen">
+      {!hideMenuRoutes.includes(location.pathname) && (
+        <div className="w-[280px]">
+          <Menu_QL />
+        </div>
+      )}
+      <div className="flex-1 bg-white">
+        <Routes>
+          <Route path="/trangchu" element={<HomePage />} />
+          <Route path="/dangnhap" element={<Login />} />
+          <Route path="/dangky" element={<Register />} />
+          <Route path="/dangxuat" element={<Logout />} />
+          <Route path="/suathongtincanhan" element={<UserProfile />} />
+          <Route path="/dashboard-ql" element={<Dashboard_QL />} />
+          <Route path="/dashboard-nv" element={<Dashboard_NV />} />
+          <Route path="/nhapkho" element={<Import />} />
+          <Route path="/duyetnhapkho" element={<Import_Approval />} />
+          <Route path="/themlinhkienvaolo" element={<Add_Components />} />
+          <Route path="/xuatkho" element={<Export />} />
+          <Route path="/duyetxuatkho" element={<Export_Approval />} />
+          <Route path="/kiemke" element={<Statistics />} />
+          <Route path="/nhanvien" element={<Staff />} />
+          <Route path="/taonhanvien" element={<Staff_New />} />
+          <Route path="/suathongtinnhanvien" element={<Staff_Edit />} />
+          {/* Lô hàng */}
+          <Route path="/lohang-nv" element={<Lohang_NV />} />
+          <Route path="/lohang-nv3" element={<Lohang_NV3 />} />
+          <Route path="/lohang-ql" element={<Lohang_QL />} />
+          <Route path="/lohang-ql2" element={<Lohang_QL2 />} />
+          {/* Chi nhánh */}
+          <Route path="/chinhanh" element={<Chinhanh />} />
+          <Route path="/chinhanh-sua" element={<Chinhanh_Sua />} />
+          <Route path="/chinhanh-tao" element={<Chinhanh_Tao />} />
+          {/* Danh mục */}
+          <Route path="/danhmuc-nv" element={<Danhmuc_NV />} />
+          <Route path="/danhmuc-ql" element={<Danhmuc_QL />} />
+          <Route path="/danhmuc-ql-sua" element={<Danhmuc_QL_Sua />} />
+          <Route path="/danhmuc-ql-tao" element={<Danhmuc_QL_Tao />} />
+          {/* Danh sách linh kiện */}
+          <Route path="/dslk" element={<DSLK />} />
+          <Route path="/dslk2" element={<DSLK2 />} />
+          {/* Nhà cung cấp */}
+          <Route path="/nhacungcap" element={<Nhacungcap />} />
+          <Route path="/nhacungcap-sua" element={<Nhacungcap_Sua />} />
+          <Route path="/nhacungcap-tao" element={<Nhacungcap_Tao />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}
+
+export default function MainApp() {
   return (
     <Router>
-      <div className="app flex h-screen">
-          <div className="w-[280px]">
-            <Menu_QL />
-          </div>
-        <div className="flex-1 bg-white">
-          <Routes>
-            <Route path="/trangchu" element={<HomePage />} />
-            <Route path="/dangnhap" element={<Login />} />
-            <Route path="/dangxuat" element={<Logout />} />
-            <Route path="/suathongtincanhan" element={<UserProfile />} />
-            <Route path="/dashboard-ql" element={<Dashboard_QL />} />
-            <Route path="/dashboard-nv" element={<Dashboard_NV />} />
-            <Route path="/nhapkho" element={<Import />} />
-            <Route path="/duyetnhapkho" element={<Import_Approval />} />
-            <Route path="/themlinhkienvaolo" element={<Add_Components />} />
-            <Route path="/xuatkho" element={<Export />} />
-            <Route path="/duyetxuatkho" element={<Export_Approval />} />
-            <Route path="/kiemke" element={<Statistics />} />
-            <Route path="/nhanvien" element={<Staff />} />
-            <Route path="/taonhanvien" element={<Staff_New />} />
-            <Route path="/suathongtinnhanvien" element={<Staff_Edit />} />
-
-            {/* Lô hàng */}
-            <Route path="/lohang-nv" element={<Lohang_NV />} />
-            <Route path="/lohang-nv3" element={<Lohang_NV3 />} />
-            <Route path="/lohang-ql" element={<Lohang_QL />} />
-            <Route path="/lohang-ql2" element={<Lohang_QL2 />} />
-            
-            {/* Chi nhánh */}
-            <Route path="/chinhanh" element={<Chinhanh />} />
-            <Route path="/chinhanh-sua" element={<Chinhanh_Sua />} />
-            <Route path="/chinhanh-tao" element={<Chinhanh_Tao />} />
-            
-            {/* Danh mục */}
-            <Route path="/danhmuc-nv" element={<Danhmuc_NV />} />
-            <Route path="/danhmuc-ql" element={<Danhmuc_QL />} />
-            <Route path="/danhmuc-ql-sua" element={<Danhmuc_QL_Sua />} />
-            <Route path="/danhmuc-ql-tao" element={<Danhmuc_QL_Tao />} />
-            
-            {/* Danh sách linh kiện */}
-            <Route path="/dslk" element={<DSLK />} />
-            <Route path="/dslk2" element={<DSLK2 />} />
-            
-            {/* Nhà cung cấp */}
-            <Route path="/nhacungcap" element={<Nhacungcap />} />
-            <Route path="/nhacungcap-sua" element={<Nhacungcap_Sua />} />
-            <Route path="/nhacungcap-tao" element={<Nhacungcap_Tao />} />
-          </Routes>
-        </div>
-      </div>
+      <App />
     </Router>
   );
 }
-export default App;
