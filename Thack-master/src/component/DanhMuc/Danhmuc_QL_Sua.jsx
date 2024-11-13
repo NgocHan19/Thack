@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import images from '../../images';
+import axios from 'axios';
 
 function Danhmuc_QL_Sua() {
   const navigate = useNavigate(); 
@@ -12,12 +13,25 @@ function Danhmuc_QL_Sua() {
   const [filterText1, setFilterText1] = useState('');
   const [filterText2, setFilterText2] = useState('');
   const [selectButtonClicked, setSelectButtonClicked] = useState(false);
+  const [data, setData] = useState({
+    IDDM: '',
+    TenDM: '',
+    MoTa: '',
+    Notes: '',
+})
 
-  const handleClick = () => {
-    setShowSuccessMessage(true);
-    setTimeout(() => {
-      setShowSuccessMessage(false);
-    }, 3000);
+  const handleClick = async () => {
+    try {
+      await axios.put(`http://localhost:5000/api/updateDM/${data.IDDM}`, data);
+      setShowSuccessMessage(true);
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+        navigate('/danhmuc-ql'); // Điều hướng sau khi lưu thành công
+      }, 3000);
+    } catch (error) {
+      console.error("Cập nhật danh mục thất bại:", error);
+      alert("Cập nhật thất bại");
+    }
   };
 
   const toggleOverlay1 = () => {
@@ -61,17 +75,23 @@ function Danhmuc_QL_Sua() {
       <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px]" />
       <div className="left-[50px] top-[16px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']" onClick={() => navigate('/danhmuc-ql')}>Kho Linh Kiện/Chỉnh Sửa</div>
       <div className="left-[150px] top-[84px] absolute text-black text-[32px] font-bold font-['Inter']">Chỉnh Sửa Thông Tin Danh Mục</div>
+      <form onSubmit={handleClick}>
       <div className="left-[100px] top-[197px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số hiệu danh mục</div>
       <div className="left-[100px] top-[289px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số hiệu danh mục cha</div>
       <div className="absolute left-[100px] top-[228px]">
-        <input 
-          className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[#525050] px-2" 
+        <input
+          value={data.CodeDM}
+          className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[#525050] px-2"
+          placeholder='Số hiệu danh mục'
+          onChange={(e) => setData({...data, CodeDM:e.target.value})}
         />
       </div>  
       <div className="left-[700px] top-[197px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên danh mục</div>
       <div className="absolute left-[700px] top-[228px]">
         <input 
           type="text" 
+          value={data.TenDM}
+          onChange={(e)=> setData({...data, TenDM: e.target.value})}
           className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[# 525050] px-2" 
           placeholder="Nhập thông tin tại đây" 
         />
@@ -79,6 +99,8 @@ function Danhmuc_QL_Sua() {
       <div className="left-[100px] top-[387px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Mô tả</div>
       <div className="absolute left-[100px] top-[426px]">
         <textarea 
+          value={data.MoTa}
+          onChange={(e) => setData({...data, MoTa: e.target.value})}
           className="w-[480px] h-[100px] bg-white rounded-[10px] border border-[#525050] p-2 resize-none" 
           placeholder="Nhập thông tin tại đây" 
         />
@@ -86,18 +108,22 @@ function Danhmuc_QL_Sua() {
       <div className="left-[100px] top-[539px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
       <div className="absolute left-[100px] top-[578px]">
         <textarea 
+          value={data.Notes}
+          onChange={(e)=> setData({...data, Notes: e.target.value})}
           className="w-[950px] h-[200px] bg-white rounded-[10px] border border-[#525050] p-2 resize-none" 
           placeholder="Nhập thông tin tại đây" 
         />
       </div>  
       <div className="w-[480px] h-[35px] left-[100px] top-[326px] absolute bg-white rounded-[10px] border border-[#525050]" />
       <div className="w-[300px] h-[55px] left-[100px] top-[890px] absolute bg-[#f39c12] rounded-[5px]" />
-      <div className="left-[180px] top-[905px] absolute text-white text-2xl font-bold font-['Inter']" onClick={handleClick}>Lưu thay đổi</div>
+      <button className="left-[180px] top-[905px] absolute text-white text-2xl font-bold font-['Inter']" type='submit'>Lưu thay đổi</button>
       {showSuccessMessage && (
         <div className="absolute left-[393px] top-[950px] bg-green-500 text-white p-3 rounded-md">
           Thành công
         </div>
       )}
+      </form>
+      
       <img className="w-[25px] h-[25px] left-[550px] top-[233px] absolute" src={images['icon_drop.png']} onClick={toggleOverlay1} />
       <img className="w-[25px] h-[25px] left-[550px] top-[331px] absolute" src={images['icon_drop.png']} onClick={toggleOverlay2} />
       <img className="w-[50px] h-[50px] left-[90px] top-[79px] absolute" src={images['icon_dmlk.png']} />

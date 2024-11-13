@@ -153,50 +153,35 @@ function DSLK_NV() {
         </div>
       )}
     </div>
-
-        <table className="w-[1150px] h-[283px] left-[50px] top-[402px] absolute ">
-          <thead>
-            <tr>
-              <>
-              <div className="left-[200px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Tên linh kiện</div>
-              <div className="left-[350px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Tên lô</div>
-              <div className="left-[70px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu linh kiện</div>
-              <div className="w-full h-[0px] left-0 top-[34px] absolute border-2 border-[#7f7e7e]"></div>
-              <div className="w-full h-[0px] left-0 top-[83px] absolute border-2 border-[#cdcdcd]"></div>
-              <div className="w-full h-[0px] left-0 top-[133px] absolute border-2 border-[#7f7e7e]"></div>
-              <div className="w-full h-[0px] left-0 top-[182px] absolute border-2 border-[#7f7e7e]"></div>
-              <div className="w-full h-[0px] left-0 top-[133px] absolute border-2 border-[#cdcdcd]"></div>
-              <div className="w-full h-[0px] left-0 top-[182px] absolute border-2 border-[#cdcdcd]"></div>
-              <div className="w-[25px] h-[0px] left-[180px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="w-[25px] h-[0px] left-[320px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="left-[470px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
-              <div className="w-[25px] h-[0px] left-[430px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="w-[25px] h-[0px] left-[600px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="w-[25px] h-[0px] left-[750px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="left-[645px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Số lượng</div>
-              <div className="w-[25px] h-[0px] left-[60px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="left-[780px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Các biến thể</div>
-              <div className="w-[25px] h-[0px] left-[880px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="left-[920px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">UOM</div>
-              <div className="w-[25px] h-[0px] left-[1000px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-              <div className="left-[1050px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Giá</div>
-              <div className="w-full h-[0px] left-0 top-[234px] absolute border-2 border-[#cdcdcd]"></div>
-              <div className="w-full h-[0px] left-0 top-[283px] absolute border-2 border-[#cdcdcd]"></div>
-              </>
-            </tr>
-          </thead>
-          <tbody>
-            {linhKien.map(products => (
-                <tr className='"border-t-2 border-gray-400"' key={products.IDLK}>
-                  <>
-                    <td className="w-10 h-[35.24px] left-[8px] top-[39px] absolute"></td>
-                    <td className="w-10 h-[35.24px] left-[70px] top-[30px] absolute">{products.CodeLK}</td>
-                  </>
-                </tr>
-            ))}
-          </tbody>
+    <table className=" table-auto w-[1150px] h-[283px] left-[50px] top-[402px] absolute">
+      <thead>
+        <tr>
+            <th className="text-center px-2 py-2 text-xs">Số hiệu linh kiện</th>
+            <th className="text-center px-2 py-2 text-xs">Tên linh kiện</th>
+            <th className="text-center px-2 py-2 text-xs">Tên lô</th>
+            <th className="text-center px-2 py-2 text-xs">Tên danh mục</th>
+            <th className="text-center px-2 py-2 text-xs">Số lượng</th>
+            <th className="text-center px-2 py-2 text-xs">Các biến thể</th>
+            <th className="text-center px-2 py-2 text-xs">UOM</th>
+            <th className="text-center px-2 py-2 text-xs">Giá</th>
+        </tr>
+      </thead>
+      <tbody>
+        {linhKien.map(products => (
+          <tr className="border-t-2 border-gray-400" key={products.IDLK}>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{products.CodeLK}</td>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{products.TenLK}</td>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center"></td>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center"></td>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{products.SoLuong}</td>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{products.CacBienThe}</td>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{products.UOM}</td>
+            <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{products.GiaLK}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
           <img className="w-10 h-[35.24px] left-[8px] top-[39px] absolute" src={images['icon_linhkien.png']} onClick={() => navigate('/dslk2')}/>
-        </table>
         <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
           <button>
             <img className="w-5 h-5 left-[99px] top-[20px] absolute origin-top-left -rotate-90" src={images['left.png']}/>
@@ -212,3 +197,4 @@ function DSLK_NV() {
 
 
 export default DSLK_NV;
+

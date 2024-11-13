@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import images from '../../images';
+import axios from 'axios'
 
 function Danhmuc_QL() {
   const navigate = useNavigate(); 
@@ -10,7 +11,12 @@ function Danhmuc_QL() {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [selectedCell, setSelectedCell] = useState(null); // State để lưu ô được chọn
   const [filterText, setFilterText] = useState(''); // State để lưu nội dung đã chọn
-
+  const [ParCats, setParCats] = useState([])
+  const [ChildCats, setChildCats] = useState([])
+  const [currentCategoryId, setCurrentCategoryId] = useState(null);
+  const [totalCategories, setTotalCategories] = useState(0);
+  const [parentCategories, setParentCategories] = useState(0);
+  const [childCategories, setChildCategories] = useState(0);
   const handleIconClick = () => {
     setIsOverlayVisible(true);
     setSelectedCell(null); // Reset ô được chọn khi mở overlay
@@ -32,9 +38,7 @@ function Danhmuc_QL() {
   };
 
   // Function to toggle the table visibility
-  const toggleTable = () => {
-      setIsTableVisible((prev) => !prev);
-  };
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -54,30 +58,101 @@ function Danhmuc_QL() {
     navigate(path);
 };
 
-  return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
-  
-      
-<div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Kho Linh Kiện</div>
-<div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />
-<div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px]" />
-<div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Danh mục Linh Kiện</div>
-<img src={images['icon_dmlk.png']} alt="icon_lh" className="w-[50px] h-[50px] left-[90px] top-[113px] absolute"  />
-<div className="left-[100px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số danh mục:</div>
-        <div className="left-[350px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Danh mục cha:</div>
-        <div className="left-[650px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Danh mục con:</div>
+  const fetchCatData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/total')
+      setTotalCategories(response.data[0].total)
+    }catch (error) {
+      console.error('Lỗi khi lấy danh mục cha')
+    }
+  }
 
-        <div className="w-[330px] h-[55px] left-[850px] top-[296px] absolute">
-        <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
-        <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-lg font-bold font-['Inter']">
+  const fetchParCatData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/totalParCats')
+      setParentCategories(response.data[0].total)
+    }catch (error) {
+      console.error('Lỗi khi lấy danh mục cha')
+    }
+  }
+
+  const fetchChildCatData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/totalChildCats')
+      setChildCategories(response.data[0].total)
+    }catch (error) {
+      console.error('Lỗi khi lấy danh mục cha')
+    }
+  }
+
+  const fetchParCat = useCallback(async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/categories')
+      setParCats(response.data)
+    } catch (error) {
+      console.error('Lỗi khi lấy danh mục cha')
+    }
+  },[])
+
+  const fetchChildCat = async (IDDMC) => {
+    try { 
+      const response = await axios.get(`http://localhost:5000/api/categories-child/${IDDMC}`); // Đường dẫn API của bạn
+      return response.data;
+    } catch (error) {
+      console.error('Lỗi khi lấy danh mục con:', error);
+      return [];
+    }
+  }
+  const toggleTable = async (IDDMC) => {
+    if (isTableVisible && currentCategoryId === IDDMC) {
+      setIsTableVisible(false);
+      setChildCats([]);
+      setCurrentCategoryId(null);
+    } else {
+      setIsTableVisible(true);
+      setCurrentCategoryId(IDDMC);
+      try {
+        const childCategories = await fetchChildCat(IDDMC);
+        setChildCats(childCategories);
+      } catch (error) {
+        console.error('Error fetching child categories:', error);
+        // Có thể thông báo cho người dùng về lỗi
+      }
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await Promise.all([
+        fetchCatData(),
+        fetchParCatData(),
+        fetchChildCatData(),
+      ]);
+    };
+    fetchData()
+    fetchParCat()
+  }, [fetchParCat])
+  return (
+    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">   
+    <div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Kho Linh Kiện</div>
+    <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />
+    <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px]" />
+    <div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Danh mục Linh Kiện</div>
+    <img src={images['icon_dmlk.png']} alt="icon_lh" className="w-[50px] h-[50px] left-[90px] top-[113px] absolute"  />
+      <div className="left-[100px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số danh mục:{totalCategories}</div>
+        <div className="left-[350px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Danh mục cha:{parentCategories}</div>
+        <div className="left-[650px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Danh mục con:{childCategories}</div>
+      <div className="w-[330px] h-[55px] left-[850px] top-[296px] absolute">
+      <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
+      <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-lg font-bold font-['Inter']">
         Lọc theo: {filterText} {/* Hiển thị nội dung đã chọn */}
       </div>
-              <img className="w-5 h-5 left-[12px] top-[18px] absolute" src={images['icon_loc.png']} alt="icon_loc" />
-              <img
-        className="w-[25px] h-[25px] left-[289px] top-[15px] absolute cursor-pointer"
-        src={images['icon_drop.png']}
-        alt="icon_drop"
-        onClick={handleIconClick} // Show overlay on click
+        <img className="w-5 h-5 left-[12px] top-[18px] absolute" src={images['icon_loc.png']} alt="icon_loc" />
+        <img
+          className="w-[25px] h-[25px] left-[289px] top-[15px] absolute cursor-pointer"
+          src={images['icon_drop.png']}
+          alt="icon_drop"
+          onClick={handleIconClick} // Show overlay on click
       />
 
       {isOverlayVisible && (
@@ -134,47 +209,65 @@ function Danhmuc_QL() {
   </div>
   <img className="w-[25px] h-[25px] left-[960px] top-[162px] absolute" src={images['Plus.png']} 
         alt="Plus" />
-  <div className="w-[1150px] h-[482px] left-[46px] top-[399px] absolute">
-    <div className="left-[370px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
-    <div className="left-[160px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục</div>
-    <div className="left-[80px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
-    <div className="w-full h-[0px] left-[3px] top-[32px] absolute border-2 border-[#7f7e7e]"></div>
-    <div className="w-full h-[0px] left-[3px] top-[81px] absolute border-2 border-[#cdcdcd]"></div>
-    <div className="w-full h-[0px] left-[3px] top-[131px] absolute border-2 border-[#7f7e7e]"></div>
-    <div className="w-full h-[0px] left-[3px] top-[180px] absolute border-2 border-[#7f7e7e]"></div>
-    <div className="w-full h-[0px] left-[3px] top-[131px] absolute border-2 border-[#cdcdcd]"></div>
-    <div className="w-full h-[0px] left-[3px] top-[180px] absolute border-2 border-[#cdcdcd]"></div>
-    <div className="w-[25px] h-[0px] left-[120px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-    <div className="w-[25px] h-[0px] left-[300px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-    <div className="w-[25px] h-[0px] left-[520px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-    <div className="w-[25px] h-[0px] left-[60px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-    <div className="left-[620px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
-    <div className="w-[25px] h-[0px] left-[740px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-    <div className="left-[800px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục cấp cha</div>
-    <div className="left-[1050px] top-[3px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
-    <div className="w-[25px] h-[0px] left-[1000px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-    <img className="w-5 h-5 left-[9px] top-[96px] absolute" src={images['icon_barcode.png']} />
-    <img className="w-5 h-5 left-[9px] top-[145px] absolute" src={images['icon_barcode.png']} />
-    <img
-        className="w-5 h-5 left-[6px] top-[48px] absolute cursor-pointer"
-        src={images['icon_barcode.png']}
-        alt="Toggle Dropdown"
-        onClick={toggleTable}
-        
-      />
+  <table className="table-auto w-[1150px] h-[282px] left-[46px] top-[399px] absolute">
+    <thead>
+      <tr>
+      <th className="text-center px-2 py-2 text-xs"></th>
+      <th className="text-center px-2 py-2 text-xs">Tên danh mục</th>
+        <th className="text-center px-2 py-2 text-xs">Số hiệu danh mục</th>
+        <th className="text-center px-2 py-2 text-xs">ID</th>
+        <th className="text-center px-2 py-2 text-xs">Mô tả</th>
+        <th className="text-center px-2 py-2 text-xs">Sô hiệu danh mục cấp cha</th>
+        <th className="text-center px-2 py-2 text-xs">Ghi chú</th>
+      </tr>
+    </thead>
+    <tbody>
+      {ParCats.map(categories => (
+        <tr className="border-t-2 border-gray-400" key={categories.IDDM}>
+          <img
+          className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center cursor-pointer"
+          src={images['icon_barcode.png']}
+          alt="Toggle Dropdown"
+          onClick={() => toggleTable(categories.IDDMC)}
+        />
+          <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{categories.TenDM}</td>
+          <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{categories.CodeDM}</td>
+          <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{categories.IDDM}</td>
+          <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{categories.MoTa}</td>
+          <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{categories.IDDMC}</td>
+          <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{categories.Notes}</td>
+          {isTableVisible && currentCategoryId === categories.IDDMC && ChildCats.length > 0 && (
+          <tr>
+            <table className="table-auto w-full h-[252px] left-0 top-[230px] absolute">
+              <thead>
+                  <tr>      
+                    <td className="text-center px-2 py-2 text-xs font-['Inter']">Tên danh mục</td>
+                    <td className="text-center px-2 py-2 text-xs font-['Inter']">Số hiệu danh mục con</td>
+                    <td className="text-center px-2 py-2 text-xs font-['Inter']">ID</td>
+                    <td className="text-center px-2 py-2 text-xs font-['Inter']">Mô tả</td>
+                    <td className="text-center px-2 py-2 text-xs font-['Inter']">Ghi chú</td>
+                  </tr>
+              </thead>
+              <tbody>
+                {ChildCats.map(child => (
+                  <tr className="border-t-2 border-gray-400" key={child.IDDMC}>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{child.TenDM}</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{child.CodeDM}</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{child.IDDMC}</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{child.MoTa}</td>
+                  <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">{child.Notes}</td>
+                </tr>
+                ))}
+              </tbody>
+            </table>
+          </tr>
+        )}
+      </tr>
+      
+      ))}
+    </tbody>
 
-    <div className="w-full h-[252px] left-0 top-[230px] absolute">
-      <div className="w-full h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
-      <div className="w-full h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
-      <div className="w-full h-[0px] left-0 top-[116px] absolute border-2 border-[#cdcdcd]"></div>
-      <div className="w-full h-[0px] left-0 top-[184px] absolute border-2 border-[#cdcdcd]"></div>
-      <div className="left-[400px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Tên danh mục</div>
-      <div className="left-[150px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Số hiệu danh mục con</div>
-      <div className="left-[60px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">ID</div>
-      <div className="left-[650px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Mô tả</div>
-      <div className="left-[900px] top-[13px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
-    </div>
-  </div>
+  </table>
   <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
         <button>
         <img className="w-5 h-5 left-[99px] top-[20px] absolute origin-top-left -rotate-90" src={images['left.png']}/>
