@@ -80,10 +80,10 @@ function Danhmuc_QL_Sua() {
       <div className="left-[100px] top-[289px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số hiệu danh mục cha</div>
       <div className="absolute left-[100px] top-[228px]">
         <input
-          value={data.CodeDM}
+          value={data.IDDM}
           className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[#525050] px-2"
           placeholder='Số hiệu danh mục'
-          onChange={(e) => setData({...data, CodeDM:e.target.value})}
+          onChange={(e) => setData({...data, IDDM:e.target.value})}
         />
       </div>  
       <div className="left-[700px] top-[197px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên danh mục</div>
@@ -114,7 +114,15 @@ function Danhmuc_QL_Sua() {
           placeholder="Nhập thông tin tại đây" 
         />
       </div>  
-      <div className="w-[480px] h-[35px] left-[100px] top-[326px] absolute bg-white rounded-[10px] border border-[#525050]" />
+      <div className="w-[480px] h-[35px] left-[100px] top-[326px] absolute bg-white rounded-[10px] border border-[#525050]">
+      <input 
+          type="text" 
+          value={data.IDDMC}
+          onChange={(e)=> setData({...data, IDDMC: e.target.value})}
+          className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[# 525050] px-2" 
+          placeholder="Số hiệu danh mục cha" 
+        />
+      </div>
       <div className="w-[300px] h-[55px] left-[100px] top-[890px] absolute bg-[#f39c12] rounded-[5px]" />
       <button className="left-[180px] top-[905px] absolute text-white text-2xl font-bold font-['Inter']" type='submit'>Lưu thay đổi</button>
       {showSuccessMessage && (
