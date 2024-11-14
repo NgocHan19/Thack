@@ -33,8 +33,8 @@ function Nhacungcap_Tao() {
   };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
-      <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px]" />
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
+      <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px] shadow-lg" />
       <div className="left-[50px] top-[15px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']" onClick={() => navigate('/nhacungcap')}>Nhà cung cấp/Thêm mới</div>
       <div className="left-[70px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên nhà cung cấp</div>
       <div className="left-[70px] top-[282px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Địa chỉ</div>

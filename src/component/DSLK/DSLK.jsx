@@ -46,17 +46,17 @@ function DSLK_NV() {
   };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
  
         
  <div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Kho Linh Kiện</div>
- <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />
+ <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px] shadow-lg" />
  <div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Thông Tin Linh Kiện</div>
         <img src={images['icon_dslk.png']} alt="icon_lh" className="w-[50px] h-[50px] left-[90px] top-[113px] absolute"   />
         <div className="left-[100px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số linh kiện:</div>
         <div className="left-[350px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Số linh kiện cận hạn:</div>
         <div className="left-[650px] top-[208px] absolute text-[#3498db] text-base font-bold font-['Inter']">Số linh kiện lỗi:</div>
-        <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px]" />
+        <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px] shadow-lg" />
         
         <div className="absolute w-[279px] h-[50px] left-[80px] top-[299px]">
   <div className="w-[279px] h-[50px] left-0 top-0 absolute bg-[#d9d9d9]/60 rounded-[20px] flex items-center transition duration-200 hover:bg-[#c0c0c0]">

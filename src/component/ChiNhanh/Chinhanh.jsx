@@ -48,10 +48,10 @@ setTimeout(() => {
   };
   
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
-        <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />
-        <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px]" />
-      <div className="w-[1150px] h-[203px] left-[50px] top-[383px] absolute bg-white flex-col justify-start items-start inline-flex">
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
+        <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px] shadow-lg" />
+        <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px] shadow-lg" />
+      <div className="w-[1150px] h-[203px] left-[50px] top-[383px] absolute bg-white flex-col justify-start items-start inline-flex ">
         <div className="self-stretch bg-[#f4f4f4] border-b border-[#e0e0e0] justify-start items-center inline-flex">
           <div className="grow shrink basis-0 self-stretch p-3 border-r border-[#e0e0e0] flex-col justify-center items-start inline-flex">
             <div className="self-stretch text-black text-xs font-semibold font-['Inter']">STT</div>

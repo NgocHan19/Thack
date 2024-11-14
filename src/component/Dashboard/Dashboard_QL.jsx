@@ -260,7 +260,7 @@ const ChartComparison = () => {
   };
 
   return (
-    <div className="w-full h-[900px] mx-auto p-6 bg-[#F4F7FA] rounded-lg shadow-lg space-y-6">
+    <div className="w-full h-[1080px] mx-auto p-6 bg-[#F4F7FA] rounded-lg shadow-lg space-y-6">
     {/* Chọn năm và tháng */}
     <div className="flex space-x-4">
       <select

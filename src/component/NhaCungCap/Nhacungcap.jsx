@@ -26,12 +26,12 @@ function Nhacungcap() {
 };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
 
 
 <div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Quản lí nhà cung cấp</div>
-<div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />
-<div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px]" />
+<div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px] shadow-lg" />
+<div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px] shadow-lg" />
   <img className="w-[50px] h-[50px] left-[90px] top-[113px] absolute" src={images['iconttncc.png']} />
   <div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Thông Tin Nhà Cung Cấp</div>
   <div className="left-[100px] top-[206px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số nhà cung cấp:</div>
