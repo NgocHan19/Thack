@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import images from '../../images';
 import axios from 'axios'
 
-const Export_Old = () => {
+const Export = () => {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
@@ -221,4 +221,4 @@ const Export_Old = () => {
   );
 };
 
-export default Export_Old;
+export default Export;
