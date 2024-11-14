@@ -20,9 +20,9 @@ const QLND = () => {
     };
 
     return (
-        <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
+        <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
             <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Quản lý người dùng</button>
-            <div className="absolute w-[1130px] h-[170px] left-[50px] top-[60px] bg-white rounded-lg">
+            <div className="absolute w-[1130px] h-[170px] left-[50px] top-[60px] bg-white rounded-lg shadow-lg">
                 <div className="absolute left-[40px] top-[15px] flex items-center">
                     <img src={images['icon_info_staff.png']} alt="Icon" className="mr-4 w-[50px] h-[50px]" />
                     <h2 className="text-[24px] font-bold text-black">Thông Tin Người Dùng</h2>
@@ -48,7 +48,7 @@ const QLND = () => {
                 </div>
             </div>
 
-            <div className="absolute w-[1130px] h-[780px] left-[50px] top-[260px] bg-white rounded-lg">
+            <div className="absolute w-[1130px] h-[780px] left-[50px] top-[260px] bg-white rounded-lg shadow-lg">
                 <div className="absolute w-[260px] h-[40px] left-[20px] top-[20px] bg-[#D9D9D9] rounded-[15px] flex items-center px-2">
                     <button className="flex items-center pl-4">
                         <input type="text" placeholder="Tìm kiếm..." className="flex-1 bg-transparent outline-none text-[#80808A] font-semibold text-sm" />

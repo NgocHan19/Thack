@@ -48,12 +48,12 @@ function Lohang_NV() {
     setSelectedRow(rowIndex); // Cập nhật trạng thái dòng được chọn
   };
   return (
-<div className="relative w-full h-[1080px] bg-[#EEEEEE]">
+<div className="relative w-full h-[1080px] bg-[#F4F7FA]">
 
 
 <div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Lô hàng</div>
- <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />
- <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px]" />
+ <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px] shadow-lg" />
+ <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px] shadow-lg" />
  <div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Thông Tin Lô Hàng</div>
  <div className="left-[100px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số lô hàng:</div>
  <div className="left-[600px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Số lô hàng cận hạn:</div>
@@ -72,7 +72,7 @@ function Lohang_NV() {
 </div>
  
 <div className="w-[330px] h-[55px] left-[850px] top-[296px] absolute">
-   <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
+   <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80 " />
    <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-lg font-bold font-['Inter']">
         Lọc theo: {filterText} {/* Hiển thị nội dung đã chọn */}
       </div>

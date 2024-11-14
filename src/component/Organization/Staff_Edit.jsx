@@ -10,12 +10,12 @@ const Staff_Edit = () => {
     };
 
     return (
-        <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
+        <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
             <button onClick={() => handleNavigate('/nhanvien')}
                 className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">
                 Quản lý nhân viên/
             </button>            <button className="absolute left-[220px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Chỉnh sửa thông tin nhân viên</button>
-            <div className="absolute w-[1300px] h-[750px] left-[50px] top-[60px] bg-white rounded-[15px]">
+            <div className="absolute w-[1150px] h-[750px] left-[50px] top-[60px] bg-white rounded-[15px] shadow-lg">
                 <div className="absolute left-[40px] top-[15px] flex items-center">
                     <img src={images['icon_info_staff.png']} alt="Icon" className="mr-4 w-[50px] h-[50px]" />
                     <h2 className="text-[24px] font-bold text-black">Tạo Thông Tin Nhân Viên</h2>
@@ -34,7 +34,7 @@ const Staff_Edit = () => {
                         </div>
                         <input type="text" placeholder="Nhập họ và tên..." className="box-border w-[450px] h-[35px] mt-[5px] bg-white border border-[#525050] rounded-[10px] pl-5" />
                     </div>
-                    <div className="ml-[250px] flex flex-col">
+                    <div className="ml-[130px] flex flex-col">
                         <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
                             Ngày sinh
                         </div>
@@ -49,7 +49,7 @@ const Staff_Edit = () => {
                         </div>
                         <input type="text" placeholder="Nhập địa chỉ..." className="box-border w-[450px] h-[35px] mt-[5px] bg-white border border-[#525050] rounded-[10px] pl-5" />
                     </div>
-                    <div className="ml-[250px] flex flex-col">
+                    <div className="ml-[130px] flex flex-col">
                         <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
                             Giới tính
                         </div>
@@ -67,9 +67,9 @@ const Staff_Edit = () => {
                         <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
                             Email
                         </div>
-                        <input type="text" className="box-border w-[450px] h-[35px] mt-[5px] bg-[#EEEEEE] border border-[#525050] rounded-[10px] pl-5" />
+                        <input type="text" readOnly className="box-border w-[450px] h-[35px] mt-[5px] bg-[#EEEEEE] border border-[#525050] rounded-[10px] pl-5" />
                     </div>
-                    <div className="ml-[250px] flex flex-col">
+                    <div className="ml-[130px] flex flex-col">
                         <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
                             Ngày tạo
                         </div>

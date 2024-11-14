@@ -19,7 +19,7 @@ const QLLK = () => {
     };
 
     return (
-        <div className="relative w-full h-[1080px] bg-[#FFFFFF]">
+        <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
   <div className="w-[250px] h-[350px] left-[50px] top-[63px] absolute bg-gradient-to-b from-[#9786ba] to-[#443c54] rounded-[20px]" />
   <div className="w-[250px] h-[350px] left-[340px] top-[63px] absolute bg-gradient-to-b from-[#509fcc] to-[#285066] rounded-[20px]" />
   <div className="w-[250px] h-[350px] left-[630px] top-[63px] absolute bg-gradient-to-b from-[#da4f4f] to-[#742a2a] rounded-[20px]" />

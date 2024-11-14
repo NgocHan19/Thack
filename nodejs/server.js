@@ -223,7 +223,7 @@ app.post('/dangnhap', async (req, res) => {
   }
 });
 
-app.get('/api/userprofile', async (req, res) => {
+app.get('/api/nhanvien', async (req, res) => {
     try {
         const result = await sql.query('SELECT * FROM USERPROFILE');
         res.json(result.recordset);

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const QLND_Delete = ({ onClose }) => {
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="relative w-[350px] h-[150px] bg-white border-2 border-gray-600 rounded-[25px] shadow-lg flex flex-col items-center justify-center">

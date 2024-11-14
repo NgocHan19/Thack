@@ -10,13 +10,13 @@ const Staff_New = () => {
     };
 
     return (
-        <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
+        <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
             <button onClick={() => handleNavigate('/nhanvien')}
                 className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">
                 Quản lý nhân viên/
             </button>
             <button className="absolute left-[220px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Thêm nhân viên</button>
-            <div className="absolute w-[1130px] h-[750px] left-[50px] top-[60px] bg-white rounded-[15px]">
+            <div className="absolute w-[1130px] h-[750px] left-[50px] top-[60px] bg-white rounded-[15px] shadow-lg">
                 <div className="absolute left-[40px] top-[15px] flex items-center">
                     <img src={images['icon_info_staff.png']} alt="Icon" className="mr-4 w-[50px] h-[50px]" />
                     <h2 className="text-[24px] font-bold text-black">Tạo Thông Tin Nhân Viên</h2>
