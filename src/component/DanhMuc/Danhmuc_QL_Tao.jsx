@@ -57,18 +57,18 @@ function Danhmuc_QL_Tao() {
   };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
-      <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px]" />
-      <div className="left-[50px] top-[16px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']" onClick={() => navigate('/danhmuc-ql')}>Kho Linh Kiện/Tạo mới</div>
-      <div className="left-[150px] top-[84px] absolute text-black text-[32px] font-bold font-['Inter']">Tạo Mới Thông Tin Danh Mục</div>
-      <div className="left-[100px] top-[197px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số hiệu danh mục</div>
-      <div className="left-[100px] top-[289px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số hiệu danh mục cha</div>
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
+      <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px] shadow-lg" />
+      <div className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]" onClick={() => navigate('/danhmuc-ql')}>Kho Linh Kiện/Tạo mới</div>
+      <div className="left-[150px] top-[84px] absolute text-[24px] font-bold text-black">Tạo Mới Thông Tin Danh Mục</div>
+      <div className="left-[100px] top-[197px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Số hiệu danh mục</div>
+      <div className="left-[100px] top-[289px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Số hiệu danh mục cha</div>
       <div className="absolute left-[100px] top-[228px]">
         <input 
           className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[#525050] px-2" 
         />
       </div>  
-      <div className="left-[700px] top-[197px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên danh mục</div>
+      <div className="left-[700px] top-[197px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Tên danh mục</div>
       <div className="absolute left-[700px] top-[228px]">
         <input 
           type="text" 
@@ -76,14 +76,14 @@ function Danhmuc_QL_Tao() {
           placeholder="Nhập thông tin tại đây" 
         />
       </div>  
-      <div className="left-[100px] top-[387px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Mô tả</div>
+      <div className="left-[100px] top-[387px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Mô tả</div>
       <div className="absolute left-[100px] top-[426px]">
         <textarea 
           className="w-[480px] h-[100px] bg-white rounded-[10px] border border-[#525050] p-2 resize-none" 
           placeholder="Nhập thông tin tại đây" 
         />
       </div>
-      <div className="left-[100px] top-[539px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
+      <div className="left-[100px] top-[539px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Ghi chú</div>
       <div className="absolute left-[100px] top-[578px]">
         <textarea 
           className="w-[950px] h-[200px] bg-white rounded-[10px] border border-[#525050] p-2 resize-none" 

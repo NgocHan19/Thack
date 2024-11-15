@@ -33,11 +33,11 @@ function Nhacungcap_Sua() {
   };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
-      <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px]" />
-      <div className="left-[50px] top-[15px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']" onClick={() => navigate('/nhacungcap')}>Nhà cung cấp/Chỉnh Sửa</div>
-      <div className="left-[70px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên nhà cung cấp</div>
-      <div className="left-[70px] top-[282px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Địa chỉ</div>
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
+      <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px] shadow-lg" />
+      <div className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]" onClick={() => navigate('/nhacungcap')}>Nhà cung cấp/Chỉnh sửa</div>
+      <div className="left-[70px] top-[190px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Tên nhà cung cấp</div>
+      <div className="left-[70px] top-[282px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Địa chỉ</div>
       <div className="absolute w-[300px] h-[35px] left-[70px] top-[230px]">
         <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
           <input
@@ -47,7 +47,7 @@ function Nhacungcap_Sua() {
           />
         </div>
       </div>
-      <div className="left-[400px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ngày bắt đầu hợp tác</div>
+      <div className="left-[400px] top-[190px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Ngày bắt đầu hợp tác</div>
       <div className="absolute w-[300px] h-[35px] left-[400px] top-[230px]">
         <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
           <input
@@ -57,7 +57,7 @@ function Nhacungcap_Sua() {
           />
         </div>
       </div>
-      <div className="left-[70px] top-[380px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số điện thoại</div>
+      <div className="left-[70px] top-[380px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Số điện thoại</div>
       <div className="absolute w-[300px] h-[35px] left-[70px] top-[419px]">
         <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
           <input
@@ -67,7 +67,7 @@ function Nhacungcap_Sua() {
           />
         </div>
       </div>
-      <div className="left-[70px] top-[480px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Contact</div>
+      <div className="left-[70px] top-[480px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Contact</div>
  <div className="absolute w-[300px] h-[50px] left-[70px] top-[519px]">
         <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
           <input
@@ -77,7 +77,7 @@ function Nhacungcap_Sua() {
           />
         </div>
       </div>
-      <div className="left-[70px] top-[595px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
+      <div className="left-[70px] top-[595px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Ghi chú</div>
       <div className="absolute w-[600px] h-[200px] left-[70px] top-[634px]">
         <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
           <textarea
@@ -95,7 +95,7 @@ function Nhacungcap_Sua() {
           />
         </div>
       </div>
-      <div className="left-[400px] top-[282px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Email</div>
+      <div className="left-[400px] top-[282px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Email</div>
       <div className="absolute w-[300px] h-[35px] left-[400px] top-[319px]">
         <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
           <input
@@ -105,7 +105,7 @@ function Nhacungcap_Sua() {
           />
         </div>
       </div>
-      <div className="left-[400px] top-[380px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Trạng thái</div>
+      <div className="left-[400px] top-[380px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Trạng thái</div>
       <div className="w-[300px] h-[35px] left-[400px] top-[417px] absolute bg-white rounded-[10px] border border-[#525050]" onClick={toggleOverlay}>
         <div className="flex items-center justify-between px-2">
           <span className="text-[#525050]">{statusText || "Chọn trạng thái"}</span>
@@ -142,7 +142,7 @@ function Nhacungcap_Sua() {
           Thành công
         </div>
       )}
-      <img className="w-[450px] h-[590px] left-[730px] top-[221px] absolute" src="https://via.placeholder.com/450x590" />
+      <img className="w-[450px] h-[590px] left-[730px] top-[221px] absolute" src={images['map.png']} />
       <img className="w-[50px] h-[50px] left-[90px] top-[79px] absolute" src={images['iconttncc.png']} />
       <div className="left-[150px] top-[84px] absolute text-black text-[32px] font-bold font-['Inter']">Chỉnh Sửa Nhà Cung Cấp </div>
     </div>

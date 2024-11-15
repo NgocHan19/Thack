@@ -27,22 +27,22 @@ function Lohang_QL2() {
 
   return (
     <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
-     <div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']"onClick={() => navigate('/lohang-ql')}>Lô hàng/Chi Tiết Linh Kiện Lô Hàng</div>
+     <div className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"onClick={() => navigate('/lohang-ql')}>Lô hàng/Chi Tiết Linh Kiện Lô Hàng</div>
 
 <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />
 <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px]" />
-<div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Thông Tin Lô Hàng</div>
+<div className="left-[150px] top-[118px] absolute text-[24px] font-bold text-black">Thông Tin Lô Hàng</div>
 <img src={images['icon_lh.png']} alt="icon_lh" className="w-[50px] h-[50px] left-[90px] top-[113px] absolute"  />
 <div className="w-[148px] h-[41px] left-[70px] top-[193px] absolute bg-[#e4e4e4] rounded-[10px]" />
-  <div className="left-[75px] top-[204px] absolute text-[#3498db] text-base font-bold font-['Inter']">ID Lô: </div>
+  <div className="left-[75px] top-[204px] absolute text-[#3498db] text-base ">ID Lô: </div>
   <div className="w-[181px] h-[41px] left-[250px] top-[193px] absolute bg-[#e4e4e4] rounded-[10px]" />
-  <div className="left-[255px] top-[204px] absolute text-[#3498db] text-base font-bold font-['Inter']">Số lượng lô: </div>
+  <div className="left-[255px] top-[204px] absolute text-[#3498db] text-base">Số lượng lô: </div>
   <div className="w-[204px] h-[41px] left-[460px] top-[193px] absolute bg-[#e4e4e4] rounded-[10px]" />
-  <div className="left-[465px] top-[204px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng giá: </div>
+  <div className="left-[465px] top-[204px] absolute text-[#3498db] text-base">Tổng giá: </div>
   <div className="w-60 h-[41px] left-[940px] top-[193px] absolute bg-[#e4e4e4] rounded-[10px]" />
-  <div className="left-[945px] top-[204px] absolute text-[#3498db] text-base font-bold font-['Inter']">Trạng thái:</div>
+  <div className="left-[945px] top-[204px] absolute text-[#3498db] text-base">Trạng thái:</div>
   <div className="w-[222px] h-[41px] left-[690px] top-[193px] absolute bg-[#e4e4e4] rounded-[10px]" />
-  <div className="left-[695px] top-[204px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tên lô: </div>
+  <div className="left-[695px] top-[204px] absolute text-[#3498db] text-base">Tên lô: </div>
 
   <div className="left-[350px] top-[297px] absolute text-black text-sm font-normal font-['Inter']">Giá</div>
   <div className="left-[250px] top-[297px] absolute text-black text-sm font-normal font-['Inter']">Đơn vị</div>
