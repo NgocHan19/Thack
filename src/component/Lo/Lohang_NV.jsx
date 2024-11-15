@@ -51,34 +51,33 @@ function Lohang_NV() {
 <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
 
 
-<div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Lô hàng</div>
+<div className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Lô hàng</div>
  <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px] shadow-lg" />
  <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px] shadow-lg" />
- <div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Thông Tin Lô Hàng</div>
- <div className="left-[100px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số lô hàng:</div>
- <div className="left-[600px] top-[207px] absolute text-[#3498db] text-base font-bold font-['Inter']">Số lô hàng cận hạn:</div>
+ <div className="left-[150px] top-[118px] absolute text-[24px] font-bold text-black">Thông Tin Lô Hàng</div>
+ <div className="left-[100px] top-[207px] absolute text-[#3498db] text-base ">Tổng số lô hàng:</div>
+ <div className="left-[600px] top-[207px] absolute text-[#3498db] text-base ">Số lô hàng cận hạn:</div>
  <img src={images['icon_lh.png']} alt="icon_lh" className="w-[50px] h-[50px] left-[90px] top-[113px] absolute"  />
- <div className="absolute w-[279px] h-[50px] left-[80px] top-[299px]">
-<div className="w-[279px] h-[50px] left-0 top-0 absolute bg-[#d9d9d9]/60 rounded-[20px] flex items-center transition duration-200 hover:bg-[#c0c0c0]">
-<img src={images['icon_search.png']} alt="icon_search" className="w-[25px] h-[25px] ml-[15px]" />
-<img className="w-[30px] h-[30px] left-[720px] top-[10px] absolute" src={images['icon_print.png']} />
-
-<input
- type="text"
- placeholder="Tìm kiếm..."
- className="ml-[15px] w-full h-full bg-transparent text-[#7f8089] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none"
-/>
-</div>
-</div>
  
-<div className="w-[330px] h-[55px] left-[850px] top-[296px] absolute">
-   <div className="w-[330px] h-[55px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80 " />
-   <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-lg font-bold font-['Inter']">
+ <div className="absolute w-[279px] h-[50px] left-[80px] top-[280px]">
+ <div className="absolute w-[260px] h-[40px] left-[20px] top-[20px] bg-[#D9D9D9] rounded-[15px] flex items-center px-2">
+                    <button className="flex items-center pl-4">
+                        <input type="text" placeholder="Tìm kiếm..." className="flex-1 bg-transparent outline-none text-[#80808A] font-semibold text-sm" />
+                        <img src={images['icon_search.png']} alt="Search" className="w-[25px] h-[38px] ml-4" />
+                    </button>
+                </div>
+</div>
+<img className="w-[30px] h-[30px] left-[800px] top-[300px] absolute" src={images['icon_print.png']} />
+
+ 
+<div className="w-[330px] h-[40px] left-[850px] top-[296px] absolute">
+        <div className="w-[300px] h-[40px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
+        <div className="left-[47px] top-[16px] absolute text-[#cbcbcb] text-xs font-bold font-['Inter']">
         Lọc theo: {filterText} {/* Hiển thị nội dung đã chọn */}
       </div>
-              <img className="w-5 h-5 left-[12px] top-[18px] absolute" src={images['icon_loc.png']} alt="icon_loc" />
+              <img className="w-5 h-5 left-[12px] top-[14px] absolute" src={images['icon_loc.png']} alt="icon_loc" />
               <img
-        className="w-[25px] h-[25px] left-[289px] top-[15px] absolute cursor-pointer"
+        className="w-[20px] h-[20px] left-[280px] top-[15px] absolute cursor-pointer"
         src={images['icon_drop.png']}
         alt="icon_drop"
         onClick={handleIconClick} // Show overlay on click
@@ -133,10 +132,10 @@ function Lohang_NV() {
       )}
     </div>
  <div className="w-[1150px] h-[282px] left-[50px] top-[401px] absolute">
-   <div className="left-[280px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Ngày nhận</div>
-   <div className="left-[120px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Số seri</div>
-   <div className="left-[200px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Tên lô</div>
-   <div className="left-[50px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Barcode </div>
+   <div className="left-[280px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Ngày nhận</div>
+   <div className="left-[120px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Số seri</div>
+   <div className="left-[200px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Tên lô</div>
+   <div className="left-[50px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Barcode </div>
    <div className="w-full h-[0px] left-0 top-[33px] absolute border-2 border-[#7f7e7e]"></div>
    <div className="w-full h-[0px] left-0 top-[82px] absolute border-2 border-[#cdcdcd]"></div>
    <div className="w-full h-[0px] left-0 top-[132px] absolute border-2 border-[#7f7e7e]"></div>
@@ -148,16 +147,16 @@ function Lohang_NV() {
    <div className="w-[25px] h-[0px] left-[100px] top-[26px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
    <div className="w-[25px] h-[0px] left-[33px] top-[26px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
    <div className="w-[25px] h-[0px] left-[380px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-   <div className="left-[400px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Ngày sản xuất</div>
+   <div className="left-[400px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Ngày sản xuất</div>
    <div className="w-[25px] h-[0px] left-[520px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-   <div className="left-[550px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Ngày hết hạn lô</div>
+   <div className="left-[550px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Ngày hết hạn lô</div>
    <div className="w-[25px] h-[0px] left-[650px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-   <div className="left-[670px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Số lượng lô hàng</div>
+   <div className="left-[670px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Số lượng lô hàng</div>
    <div className="w-[25px] h-[0px] left-[780px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-   <div className="left-[800px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Tổng giá</div>
+   <div className="left-[800px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Tổng giá</div>
    <div className="w-[25px] h-[0px] left-[880px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
-   <div className="left-[900px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Trạng thái lô hàng</div>
-   <div className="left-[1070px] top-[4px] absolute text-black text-sm font-normal font-['Inter']">Ghi chú</div>
+   <div className="left-[900px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Trạng thái lô hàng</div>
+   <div className="left-[1070px] top-[4px] absolute text-black text-xs font-normal font-['Inter']">Ghi chú</div>
    <div className="w-[25px] h-[0px] left-[1035px] top-[25px] absolute origin-top-left -rotate-90 border-2 border-[#cdcdcd]"></div>
    <div className="relative">
    {/* Hình ảnh kích hoạt bảng xổ */}
@@ -174,17 +173,17 @@ function Lohang_NV() {
    {isTableVisible && (
      <div className="w-[1080px] h-[252px] left-10 top-[300px] absolute z-10"> // Thêm z-index để bảng xổ xuống nằm trên các phần tử khác
        <div className="w-full h-[252px] left-0 top-0 absolute bg-[#eeeeee] rounded-[5px]" />
-       <div className="left-[550px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Giá</div>
-       <div className="left-[350px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Đơn vị</div>
-       <div className="left-[100px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Tên linh kiện</div>
-       <div className="left-[700px] top-[14px] absolute text-black text-sm font-normal font-['Inter']">Ngày sản xuất</div>
+       <div className="left-[550px] top-[14px] absolute text-black text-xs font-normal font-['Inter']">Giá</div>
+       <div className="left-[350px] top-[14px] absolute text-black text-xs font-normal font-['Inter']">Đơn vị</div>
+       <div className="left-[100px] top-[14px] absolute text-black text-xs font-normal font-['Inter']">Tên linh kiện</div>
+       <div className="left-[700px] top-[14px] absolute text-black text-xs font-normal font-['Inter']">Ngày sản xuất</div>
      <img className="w-[40px] h-[50px] left-[20px] top-[54px] absolute" src={images['icon_linhkien.png']} alt="item" />
      <div className="w-full h-[0px] left-0 top-[45px] absolute border-2 border-[#cdcdcd]"></div>
      <img className="w-[40px] h-[50px] left-[20px] top-[125px] absolute" src={images['icon_linhkien.png']} alt="item" />
      <div className="w-full h-[0px] left-0 top-[116px] absolute border-2 border-[#cdcdcd]"></div>
      <img className="w-[40px] h-[50px] left-[20px] top-[193px] absolute" src={images['icon_linhkien.png']} alt="item" />
      <div className="w-full h-[0px] left-0 top-[184px] absolute border-2 border-[#cdcdcd]"></div>
-     <div className="left-[920px] top-[14px] absolute text-[#3498db] text-sm font-bold font-['Inter']"onClick={() => navigate('/lohang-nv3')}>Xem chi tiết</div>
+     <div className="left-[920px] top-[14px] absolute text-[#3498db] text-xs font-bold font-['Inter']"onClick={() => navigate('/lohang-nv3')}>Xem chi tiết</div>
    </div>
  )}
 </div>         

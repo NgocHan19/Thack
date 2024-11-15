@@ -29,13 +29,13 @@ function Nhacungcap() {
     <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
 
 
-<div className="left-[50px] top-[37px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']">Quản lí nhà cung cấp</div>
+<div className="left-[50px] top-[37px] absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Quản lí nhà cung cấp</div>
 <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px] shadow-lg" />
 <div className="w-[1150px] h-[753px] left-[50px] top-[276px] absolute bg-white rounded-[15px] shadow-lg" />
   <img className="w-[50px] h-[50px] left-[90px] top-[113px] absolute" src={images['iconttncc.png']} />
-  <div className="left-[150px] top-[118px] absolute text-black text-[32px] font-bold font-['Inter']">Thông Tin Nhà Cung Cấp</div>
-  <div className="left-[100px] top-[206px] absolute text-[#3498db] text-base font-bold font-['Inter']">Tổng số nhà cung cấp:</div>
-  <div className="left-[500px] top-[205px] absolute text-[#3498db] text-base font-bold font-['Inter']">Số nhà cung cấp đang hợp tác:</div>
+  <div className="left-[150px] top-[118px] absolute text-[24px] font-bold text-black">Thông Tin Nhà Cung Cấp</div>
+  <div className="left-[100px] top-[206px] absolute text-base text-[#3498DB]">Tổng số nhà cung cấp:</div>
+  <div className="left-[500px] top-[205px] absolute text-base text-[#3498DB]">Số nhà cung cấp đang hợp tác:</div>
   <div className="absolute w-[279px] h-[50px] left-[70px] top-[299px]">
   <div className="w-[279px] h-[50px] left-0 top-0 absolute bg-[#d9d9d9]/60 rounded-[20px] flex items-center transition duration-200 hover:bg-[#c0c0c0]">
     <img src={images['icon_search.png']} alt="icon_search" className="w-[25px] h-[25px] ml-[15px]" />
@@ -161,14 +161,16 @@ function Nhacungcap() {
       </div>
     </div>
   </div>
-  <div className="w-[150px] h-[60px] left-[820px] top-[126px] absolute bg-[#f39c12] rounded-[15px]" />
-  <div className="w-[135px] h-[60px] left-[1000px] top-[126px] absolute">
-    <div className="w-[135px] h-[60px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
-    <div className="w-[82.39px] h-[21.29px] left-[47px] top-[19px] absolute text-white text-lg font-semibold font-['Inter']"onClick={() => navigate('/nhacungcap-tao')}>Tạo mới</div>
-    <img className="w-[25px] h-[25px] left-[14px] top-[20px] absolute" src={images['Plus.png']} />
-  </div>
-  <div className="w-[91px] h-[21px] left-[870px] top-[145px] absolute text-white text-lg font-semibold font-['Inter']"onClick={() => navigate('/nhacungcap-sua')}>Chỉnh sửa</div>
-  <img className="w-[25px] h-[25px] left-[840px] top-[145px] absolute"src={images['Sua.png']} />
+  <div  className="w-[135px] h-[40px] left-[950px] top-[124px] absolute bg-[#f39c12] rounded-[15px]" />
+
+<div className="w-[135px] h-[60px] left-[800px] top-[124px] absolute" >
+  <div className="w-[120px] h-[40px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
+  <div className="w-[50px] h-[15px] left-[47px] top-[15px] absolute text-white text-xs font-semibold font-['Inter']"onClick={() => navigate('/nhacungcap-tao')}>Tạo mới</div>
+  <img className="w-[15px] h-[15px] left-[20px] top-[15px] absolute" src={images['Plus.png']} />
+</div>
+<div className="w-[50px] h-[15px] left-[1000px] top-[140px] absolute text-white text-xs font-semibold font-['Inter']"onClick={() => navigate('/nhacungcap-sua')}>Chỉnhsửa</div>
+<img src={images['Sua.png']} className="w-[15px] h-[15px] left-[970px] top-[140px] absolute"  />
+
   
   <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">
         <button>

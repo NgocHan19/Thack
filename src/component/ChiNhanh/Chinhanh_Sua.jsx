@@ -38,10 +38,10 @@ function Chinhanh_Sua() {
   return (
     <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
     <div className="w-[1150px] h-[981px] left-[50px] top-[49px] absolute bg-white rounded-[15px] shadow-lg" />
-    <div className="left-[50px] top-[16px] absolute text-[#7d7d7d] text-2xl font-bold font-['Inter']" onClick={() => navigate('/chinhanh')}>Chi nhánh/Chỉnh sửa</div>
+    <div className="left-[50px] top-[16px] absolute font-inter font-bold text-base leading-[29px] text-[#7D7D7D]" onClick={() => navigate('/chinhanh')}>Chi nhánh/Chỉnh sửa</div>
 
-<div className="left-[100px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Tên chi nhánh</div>
-<div className="left-[100px] top-[282px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Địa chỉ</div>
+<div className="left-[100px] top-[190px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Tên chi nhánh</div>
+<div className="left-[100px] top-[282px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Địa chỉ</div>
 <div className="absolute w-[380px] h-[35px] left-[100px] top-[221px]">
 <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
  <input
@@ -50,7 +50,7 @@ function Chinhanh_Sua() {
    className="w-full h-full bg-transparent text-[#525050] font-semibold text-[14px] placeholder-[#A2A2A2] focus:outline-none px-[10px]"
  />
 </div>
-</div>  <div className="left-[650px] top-[190px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Quản lý chi nhánh</div>
+</div>  <div className="left-[650px] top-[190px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Quản lý chi nhánh</div>
 <div className="absolute w-[380px] h-[35px] left-[650px] top-[221px]">
 <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
  <input
@@ -60,7 +60,7 @@ function Chinhanh_Sua() {
  />
 </div>
 </div>
-<div className="left-[100px] top-[380px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Số điện thoại của chi nhánh</div>
+<div className="left-[100px] top-[380px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Số điện thoại của chi nhánh</div>
 <div className="absolute w-[380px] h-[35px] left-[100px] top-[419px]">
 <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
  <input
@@ -70,7 +70,7 @@ function Chinhanh_Sua() {
  />
 </div>
 </div>
-<div className="left-[100px] top-[480px] absolute text-[#a09696] text-2xl font-bold font-['Inter']">Ghi chú</div>
+<div className="left-[100px] top-[480px] absolute font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">Ghi chú</div>
 <div className="absolute w-[600px] h-[200px] left-[100px] top-[520px]">
 <div className="w-full h-full bg-white rounded-[10px] border border-[#525050] flex items-center">
  <textarea
@@ -94,7 +94,7 @@ function Chinhanh_Sua() {
    )}
  
 <img src={images['icon_ttcn.png']}  className="w-[50px] h-[50px] left-[90px] top-[79px] absolute"  />
-<div className="left-[150px] top-[84px] absolute text-black text-[32px] font-bold font-['Inter']">Tạo Chi nhánh mới</div>
+<div className="left-[150px] top-[84px] absolute absolute text-[24px] font-bold text-black">Chỉnh sửa chi nhánh</div>
 
 </div>  
 );
