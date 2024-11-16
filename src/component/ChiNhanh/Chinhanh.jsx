@@ -213,7 +213,7 @@ setTimeout(() => {
       )}
             <div  className="w-[135px] h-[40px] left-[950px] top-[124px] absolute bg-[#f39c12] rounded-[15px]" />
 
-      <div className="w-[135px] h-[60px] left-[800px] top-[124px] absolute" >
+      <div className="w-[135px] h-[60px] left-[820px] top-[124px] absolute" >
 
         <div className="w-[120px] h-[40px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
         <div className="w-[80px] h-[15px] left-[45px] top-[8px] absolute text-white font-semibold text-base"onClick={() => navigate('/chinhanh-tao')}>Tạo mới</div>
