@@ -165,11 +165,12 @@ function Nhacungcap() {
 
 <div className="w-[135px] h-[60px] left-[800px] top-[124px] absolute" >
   <div className="w-[120px] h-[40px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
-  <div className="w-[50px] h-[15px] left-[47px] top-[15px] absolute text-white text-xs font-semibold font-['Inter']"onClick={() => navigate('/nhacungcap-tao')}>Tạo mới</div>
-  <img className="w-[15px] h-[15px] left-[20px] top-[15px] absolute" src={images['Plus.png']} />
+
+  <div className="w-[80px] h-[15px] left-[47px] top-[8px] absolute text-white font-semibold text-base"onClick={() => navigate('/nhacungcap-tao')}>Tạo mới</div>
+  <img className="w-[15px] h-[15px] left-[20px] top-[13px] absolute" src={images['Plus.png']} />
 </div>
-<div className="w-[50px] h-[15px] left-[1000px] top-[140px] absolute text-white text-xs font-semibold font-['Inter']"onClick={() => navigate('/nhacungcap-sua')}>Chỉnhsửa</div>
-<img src={images['Sua.png']} className="w-[15px] h-[15px] left-[970px] top-[140px] absolute"  />
+<div className="w-[80px] h-[15px] left-[1000px] top-[132px] absolute text-white font-semibold text-base"onClick={() => navigate('/nhacungcap-sua')}>Chỉnhsửa</div>
+<img src={images['Sua.png']} className="w-[15px] h-[15px] left-[972px] top-[137px] absolute"  />
 
   
   <div className="w-[119px] h-5 left-[1050px] top-[987px] absolute">

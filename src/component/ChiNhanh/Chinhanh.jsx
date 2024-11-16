@@ -168,6 +168,7 @@ setTimeout(() => {
           </div>
         </div>
       </div> 
+
 {/* Trigger Delete Button */}
 <div className="w-[40px] h-[40px] absolute left-[1110px] top-[124px] cursor-pointer" onClick={handleDeleteClick}>
         <div className="w-full h-full bg-[#cd4141] rounded-[15px] flex items-center justify-center">
@@ -177,22 +178,28 @@ setTimeout(() => {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50">
-          <div className="max-w-[300px] w-full h-auto bg-white rounded-[15px] border-2 border-[#767676] flex flex-col items-center justify-center p-4">
-            <div className="text-[#525050] text-2xl font-bold">Xóa chi nhánh</div>
-            <div className="text-[#a09696] text-xl font-bold bg-[#FFFFFF] mt-2 text-center">
-              Bạn chắc chắn muốn xóa chi nhánh này?
-            </div>
-            <div className="flex justify-between w-full mt-4">
-              {/* Confirm Button */}
-              <button onClick={confirmDelete} className="w-[100px] h-[40px] bg-[#cd4141] rounded-[10px] flex items-center justify-center mx-2">
-                <span className="text-white text-l font-bold">Xóa</span>
-              </button>
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="max-w-[300px] w-full h-auto bg-[#FFFFFF] rounded-[15px] border-2 border-[#767676] flex flex-col items-center justify-center p-4 shadow-lg">
+      <div className="text-[#525050] text-2xl font-bold">Xóa chi nhánh</div>
+      <div className="text-[#a09696] text-xl font-bold bg-[#FFFFFF] mt-2 text-center">
+        Bạn chắc chắn muốn xóa chi nhánh này?
+      </div>
+      <div className="flex justify-between w-full mt-4">
+        {/* Confirm Button */}
+        <button
+          onClick={confirmDelete}
+          className="w-[100px] h-[40px] bg-[#cd4141] rounded-[10px] flex items-center justify-center mx-2"
+        >
+          <span className="text-white text-l font-bold">Xóa</span>
+        </button>
 
-              {/* Cancel Button */}
-              <button onClick={() => setShowModal(false)} className="w-[100px] h-[40px] bg-[#d9d9d9] rounded-[10px] flex items-center justify-center mx-2">
-                <span className="text-[#525050] text-l font-bold">Quay lại</span>
-              </button>
+        {/* Cancel Button */}
+        <button
+          onClick={() => setShowModal(false)}
+          className="w-[100px] h-[40px] bg-[#d9d9d9] rounded-[10px] flex items-center justify-center mx-2"
+        >
+          <span className="text-[#525050] text-l font-bold">Quay lại</span>
+        </button>
             </div>
           </div>
         </div>
@@ -206,13 +213,14 @@ setTimeout(() => {
       )}
             <div  className="w-[135px] h-[40px] left-[950px] top-[124px] absolute bg-[#f39c12] rounded-[15px]" />
 
-      <div className="w-[135px] h-[60px] left-[800px] top-[124px] absolute" >
+      <div className="w-[135px] h-[60px] left-[820px] top-[124px] absolute" >
+
         <div className="w-[120px] h-[40px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
-        <div className="w-[50px] h-[15px] left-[47px] top-[15px] absolute text-white text-xs font-semibold font-['Inter']"onClick={() => navigate('/chinhanh-tao')}>Tạo mới</div>
-        <img className="w-[15px] h-[15px] left-[20px] top-[15px] absolute" src={images['Plus.png']} />
+        <div className="w-[80px] h-[15px] left-[45px] top-[8px] absolute text-white font-semibold text-base"onClick={() => navigate('/chinhanh-tao')}>Tạo mới</div>
+        <img className="w-[15px] h-[15px] left-[20px] top-[13px] absolute" src={images['Plus.png']} />
       </div>
-      <div className="w-[50px] h-[15px] left-[1000px] top-[140px] absolute text-white text-xs font-semibold font-['Inter']"onClick={() => navigate('/chinhanh-sua')}>Chỉnhsửa</div>
-      <img src={images['Sua.png']} className="w-[15px] h-[15px] left-[970px] top-[140px] absolute"  />
+      <div className="w-[80px] h-[15px] left-[1000px] top-[132px] absolute text-white font-semibold text-base"onClick={() => navigate('/chinhanh-sua')}>Chỉnh sửa</div>
+      <img src={images['Sua.png']} className="w-[15px] h-[15px] left-[973px] top-[138px] absolute"  />
 
       <img className="w-[50px] h-[50px] left-[90px] top-[113px] absolute" src={images['icon_ttcn.png']} />
 
@@ -237,6 +245,7 @@ setTimeout(() => {
         <div className="left-0 top-[2px] absolute text-[#b1b1b1] text-xs font-bold font-['Inter']">1/ 10 trang</div>
       </div>
     </div>
+    
   );
 }
 export default Chinhanh;

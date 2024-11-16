@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import hook điều hướng
 import images from '../../images';
 
-function DSLK_NV2() {
+function DSLK2() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isTableVisible, setIsTableVisible] = useState(false);
@@ -74,4 +74,4 @@ function DSLK_NV2() {
 }
 
 
-export default DSLK_NV2;
+export default DSLK2;
