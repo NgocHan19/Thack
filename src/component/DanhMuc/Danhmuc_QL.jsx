@@ -130,7 +130,7 @@ function Danhmuc_QL() {
       </div>
   <div className="w-[184px] h-[50px] left-[950px] top-[150px] absolute">
     <div className="w-[150px] h-[40px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
-    <div className="w-[126px] h-[21px] left-[43px] top-[10px] absolute text-white font-semibold font-['Inter']"onClick={() => navigate('/danhmuc-ql-tao')}>Tạo danh mục</div>
+    <div className="w-[126px] h-[21px] left-[38px] top-[6px] absolute font-bold text-base leading-[29px] text-[#FFFFFF]"onClick={() => navigate('/danhmuc-ql-tao')}>Tạo danh mục</div>
   </div>
   <img className="w-[20px] h-[20px] left-[962px] top-[162px] absolute" src={images['Plus.png']} 
         alt="Plus" />

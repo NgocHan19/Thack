@@ -15,6 +15,10 @@ function Menu_NV() {
     setIsFormVisible(!isFormVisible);
   };
 
+  const handleNavigate = (path) => {
+    navigate(path);
+};
+
   return (
     <div className="relative w-full h-full">
       <div className="absolute w-[280px] h-[1080px] left-0 top-0">
@@ -34,7 +38,7 @@ function Menu_NV() {
 
           <div className="absolute w-[250px] h-[45px] left-[15px] top-[150px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center">
             <img src={images['icon_dashboard.png']} alt="icon_dashboard" className="w-[25px] h-[25px] absolute left-[20px] top-[8px]" />
-            <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]">Dashboard</button>
+            <button className="absolute left-[55px] top-[8px] text-[#FFFFFF] font-bold text-[17px]"onClick={() => navigate('/dashboard-nv')}>Dashboard</button>
           </div>
 
           <div className={`absolute w-[250px] h-[45px] left-[15px] top-[215px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] flex items-center`}>
@@ -55,17 +59,17 @@ function Menu_NV() {
           {/* Các mục con của Lô hàng */}
           {isDropdownOpen && (
             <div className="absolute right-[15px] top-[270px] w-[200px]">
-<div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
+            <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[10px] flex items-center">
                 <img src={images['icon_import.png']} alt="icon_import" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Nhập kho</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => navigate('/nhapkho')}>Nhập kho</button>
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_export.png']} alt="icon_export" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Xuất kho</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => navigate('/xuatkho')}>Xuất kho</button>
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_inventory.png']} alt="icon_inventory" className="w-[25px] h-[25px] ml-[10px]" />
-                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]">Kiểm kê</button>
+                <button className="ml-[10px] text-[#FFFFFF] font-bold text-[17px]" onClick={() => navigate('/kiemke')}>Kiểm kê</button>
               </div>
               <div className="w-full h-[45px] bg-[#5B5E65] border border-[#9F9F9F] rounded-[10px] mt-[15px] flex items-center">
                 <img src={images['icon_component.png']} alt="icon_component" className="w-[25px] h-[25px] ml-[10px]" />
@@ -88,7 +92,7 @@ function Menu_NV() {
               <img src={images['icon_account1.png']} alt="Account Avatar" className="w-full h-full" />
             </button>
             <div className="absolute left-[85px] top-[10px] font-inter font-bold text-[18px] text-[#FFFFFF]">Tên Tài Khoản</div>
-<div className="absolute left-[85px] top-[40px] font-inter font-bold text-[10px] text-[#D9D9D9]">email@gmail.com</div>
+            <div className="absolute left-[85px] top-[40px] font-inter font-bold text-[10px] text-[#D9D9D9]">email@gmail.com</div>
             <button className="absolute right-[10px] top-[10px] w-[20px] h-[20px]">
               <img src={images['icon_ring.png']} alt="Notification Ring" className="w-full h-full" />
             </button>
@@ -99,11 +103,11 @@ function Menu_NV() {
 
       {isFormVisible && (
         <div className="absolute left-[290px] top-[auto] bottom-[10px] w-[200px] h-[80px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[15px] flex flex-col items-center justify-center border-2 border-[#D8D8D8]">
-          <button className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] flex items-center">
-            <img src={images['icon_info.png']} alt="icon_infp" className="w-[20px] h-[20px] ml-[10px] mr-[10px]" />
+          <button className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] flex items-center" onClick={() => navigate('/suathongtincanhan')}>
+            <img src={images['icon_info.png']} alt="icon_info" className="w-[20px] h-[20px] ml-[10px] mr-[10px]" />
             Thông tin cá nhân
           </button>
-          <button className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] mt-2 flex items-center">
+          <button className="w-full h-[30px] bg-gradient-to-r from-[#4B4E55] to-[#62656B] rounded-[5px] text-[#FFFFFF] mt-2 flex items-center" onClick={() => handleNavigate('/dangxuat')}>
             <img src={images['icon_logout.png']} alt="icon_logout" className="w-[20px] h-[20px] ml-[10px] mr-[10px]" />
             Đăng xuất
           </button>

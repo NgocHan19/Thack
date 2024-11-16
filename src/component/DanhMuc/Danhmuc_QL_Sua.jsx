@@ -90,8 +90,12 @@ function Danhmuc_QL_Sua() {
           placeholder="Nhập thông tin tại đây" 
         />
       </div>  
-      <div className="w-[480px] h-[35px] left-[100px] top-[326px] absolute bg-white rounded-[10px] border border-[#525050]" />
-      <div className="w-[300px] h-[55px] left-[100px] top-[890px] absolute bg-[#f39c12] rounded-[5px]" />
+      <div className="absolute left-[100px] top-[326px]">
+        <input 
+          className="w-[480px] h-[35px] bg-white rounded-[10px] border border-[#525050] px-2" 
+        />
+      </div>
+            <div className="w-[300px] h-[55px] left-[100px] top-[890px] absolute bg-[#f39c12] rounded-[5px]" />
       <div className="left-[180px] top-[905px] absolute text-white text-2xl font-bold font-['Inter']" onClick={handleClick}>Lưu thay đổi</div>
       {showSuccessMessage && (
         <div className="absolute left-[393px] top-[950px] bg-green-500 text-white p-3 rounded-md">
