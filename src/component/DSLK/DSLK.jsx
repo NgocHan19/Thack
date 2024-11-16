@@ -46,9 +46,7 @@ function DSLK() {
   };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
- 
-        
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">      
  <div className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Kho Linh Kiện</div>
  <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px] shadow-lg" />
  <div className="left-[150px] top-[118px] absolute text-[24px] font-bold text-black">Thông Tin Linh Kiện</div>
@@ -56,6 +54,7 @@ function DSLK() {
         <div className="left-[100px] top-[207px] absolute text-base text-[#3498DB]">Tổng số linh kiện:</div>
         <div className="left-[350px] top-[208px] absolute text-base text-[#3498DB]">Số linh kiện cận hạn:</div>
         <div className="left-[650px] top-[208px] absolute text-base text-[#3498DB]">Số linh kiện lỗi:</div>
+
         
         <div className="absolute w-[1130px] h-[780px] left-[50px] top-[260px] bg-white rounded-lg shadow-lg">
                 <div className="absolute w-[260px] h-[40px] left-[20px] top-[20px] bg-[#D9D9D9] rounded-[15px] flex items-center px-2">
@@ -65,17 +64,18 @@ function DSLK() {
                     </button>
                 </div>
 </div>
-        <div className="w-[136px] h-[60px] left-[850px] top-[142px] absolute">
+        <div className="w-[136px] h-[60px] left-[850px] top-[142px] absolute" onClick={() => navigate('/nhapkhomoi')}>
           <div className="w-[136px] h-[40px] left-0 top-0 absolute bg-[#3498db] rounded-[15px]" />
-          <div className="w-[83px] h-[21.29px] left-[45px] top-[8px] absolute font-bold text-base leading-[29px] text-[#FFFFFF]">Nhập kho</div>
-          <img className="w-[20px] h-[20px] left-[13px] top-[12px] absolute" src={images['Plus.png']} />
+          <div className="w-[83px] h-[21.29px] left-[45px] top-[9px] absolute text-white font-semibold text-base">Nhập kho</div>
+          <img className="w-[20px] h-[20px] left-[14px] top-[12px] absolute" src={images['Plus.png']} />
         </div>
         <div className="w-[129px] h-[60px] left-[1020px] top-[142px] absolute">
           <div className="w-[129px] h-[40px] left-0 top-0 absolute">
-            <div className="w-[129px] h-[40px] left-0 top-0 absolute bg-[#cd4141] rounded-[15px]" />
-            <div className="w-[79px] left-[16px] top-[8px] absolute font-bold text-base leading-[29px] text-[#FFFFFF]">Xuất kho</div>
+            <div className="w-[129px] h-[40px] left-0 top-0 absolute bg-[#cd4141] rounded-[15px]" onClick={() => navigate('/xuatkho')}/>
+
+            <div className="w-[79px] left-[16px] top-[9px] absolute text-white font-semibold text-base">Xuất kho</div>
           </div>
-          <img className="w-[20px] h-[20px] left-[89px] top-[12px] absolute" src={images['Delete.png']} />
+          <img className="w-[20px] h-[20px] left-[87px] top-[12px] absolute" src={images['Delete.png']} />
         </div>
         <div className="w-[330px] h-[40px] left-[850px] top-[296px] absolute">
         <div className="w-[300px] h-[40px] left-0 top-0 absolute bg-white rounded-[5px] border border-[#c2c2c2]/80" />
@@ -139,7 +139,7 @@ function DSLK() {
       )}
     </div>
 
-        <div className="w-[1100px] h-[283px] left-[50px] top-[402px] absolute">
+        <div className="w-[1150px] h-[283px] left-[50px] top-[402px] absolute">
           <div className="left-[200px] top-[3px] absolute text-black text-xs font-normal font-['Inter']">Tên linh kiện</div>
           <div className="left-[350px] top-[3px] absolute text-black text-xs font-normal font-['Inter']">Tên lô</div>
           <div className="left-[70px] top-[3px] absolute text-black text-xs font-normal font-['Inter']">Số hiệu linh kiện</div>

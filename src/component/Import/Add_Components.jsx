@@ -10,190 +10,107 @@ const Add_Components = () => {
   };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
-      <button className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
-        onClick={() => handleNavigate('/dslk')}>Kho linh kiện/</button>
-      <button className="absolute left-[180px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
-        onClick={() => handleNavigate('/nhapkho')}>Nhập kho/</button>
-      <button className="absolute left-[270px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"
-        onClick={() => handleNavigate('/themlinhkienvaolo')}>Thêm linh kiện vào lô</button>
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
+      <button className="absolute left-[50px] top-[10px] font-inter font-bold text-sm leading-[29px] text-[#7D7D7D]"
+        onClick={() => handleNavigate('/dslk')}>Kho linh kiện /</button>
+      <button className="absolute left-[150px] top-[10px] font-inter font-bold text-sm leading-[29px] text-[#7D7D7D]"
+        onClick={() => handleNavigate('/nhapkhomoi')}>Nhập kho /</button>
+      <button className="absolute left-[230px] top-[10px] font-inter font-bold text-sm leading-[29px] text-[#7D7D7D]"
+        onClick={() => handleNavigate('/themlinhkienvaolo')}>Thêm linh kiện</button>
     <div> 
-      <div className="absolute w-[1130px] h-[520px] left-[50px] top-[60px] bg-white rounded-lg">
-        <div className="absolute left-[30px] top-[15px]">
+      <div className="absolute w-[1130px] h-[600px] left-[50px] top-[50px] bg-white rounded-lg shadow-lg">
+        <div className='absolute w-[800px] h-[40px]'>
+          <div className="absolute left-[20px] top-[10px] w-[283px] h-[31px] text-xl leading-[31px] font-bold text-black">
+            Thêm linh kiện vào lô hàng
+          </div>
+        </div>
+
+        <div className="absolute left-[30px] top-[60px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Số hiệu linh kiện
           </div>
           <input type="text" placeholder='Nhập số hiệu linh kiện...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[400px] top-[15px]">
+        <div className="absolute left-[400px] top-[60px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Số seri
           </div>
           <input type="text" placeholder='Nhập số seri...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[770px] top-[15px]">
+        <div className="absolute left-[770px] top-[60px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Ngày sản xuất
           </div>
           <input type="date" placeholder='Nhập ngày sản xuất...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[30px] top-[100px]">
+        <div className="absolute left-[30px] top-[160px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Tên linh kiện
           </div>
           <input type="text" placeholder='Nhập tên linh kiện...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[400px] top-[100px]">
+        <div className="absolute left-[400px] top-[160px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             UOM
           </div>
           <input type="text" placeholder='Nhập đơn vị...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[770px] top-[100px]">
+        <div className="absolute left-[770px] top-[160px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Thời gian sử dụng
           </div>
           <input type="date" placeholder='Chọn ngày nhập...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[30px] top-[185px]">
+        <div className="absolute left-[30px] top-[260px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Số lượng
           </div>
           <input type="number" placeholder='Số lượng...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[400px] top-[185px]">
+        <div className="absolute left-[400px] top-[260px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Giá
           </div>
           <input type="text" placeholder='Nhập giá...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[770px] top-[185px]">
+        <div className="absolute left-[770px] top-[260px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Ngày hết hạn
           </div>
           <input type="date" placeholder='Nhập giá...' className="box-border w-[300px] h-[30px] mt-[15px] bg-white border border-[#525050] rounded-[10px] px-3" />
         </div>
 
-        <div className="absolute left-[30px] top-[270px]">
+        <div className="absolute left-[30px] top-[360px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Các biến thể
           </div>
           <textarea className="box-border w-[450px] h-[100px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
         </div>
 
-        <div className="absolute left-[620px] top-[270px]">
+        <div className="absolute left-[620px] top-[360px]">
           <div className="w-[200px] h-[20px] font-inter font-bold text-base leading-[29px] text-[#A09696]">
             Mô tả
           </div>
           <textarea className="box-border w-[450px] h-[100px] mt-[15px] bg-white border border-[#525050] rounded-[10px] pl-3 pt-2 resize-none"/>
         </div>
 
-        <button className="absolute left-[30px] top-[440px] w-[240px] h-[40px] bg-[#64C860] rounded-[10px] flex items-center justify-center">
+        <button className="absolute right-[20px] bottom-[20px] w-[170px] h-[35px] bg-[#64C860] rounded-[10px] flex items-center justify-center">
           <img src={images['icon_tick_white.png']} alt="Nhập kho" className="w-[20px] h-[20px] mr-2" /> 
-          <span className="font-inter font-semibold text-white text-[18px] leading-[22px]">Thêm linh kiện vào lô</span>
+          <span className="font-inter font-semibold text-white text-base leading-[22px]">Thêm linh kiện</span>
+        </button>
+        <button className="absolute right-[210px] bottom-[20px] w-[100px] h-[35px] bg-[#3498DB] rounded-[10px] flex items-center justify-center"
+          onClick={() => handleNavigate('/nhapkhomoi')}>
+          <span className="font-inter font-semibold text-white text-base leading-[22px]">Quay lại</span>
         </button>
       </div>
-
-      <div className="relative w-full h-full bg-gray-200">
-        <div className="absolute w-[1130px] h-[420px] left-[50px] top-[610px] bg-white rounded-[15px]">
-          <div className="absolute w-[260px] h-[40px] left-[20px] top-[20px] bg-[#D9D9D9] rounded-[15px] flex items-center px-2">
-            <button className="flex items-center pl-4">
-              <input type="text" placeholder="Tìm kiếm..." className="flex-1 bg-transparent outline-none text-[#80808A] font-semibold text-sm" />
-              <img src={images['icon_search.png']} alt="Search" className="w-[25px] h-[38px] ml-5" />
-            </button>
-          </div>
-          <div className="absolute right-[20px] top-[20px] flex items-center">
-            <img src={images['icon_tick.png']} alt="Icon" className="ml-2 mr-2 w-[25px] h-[25px]"/>
-            <span className="text-[#A2A2A2] font-normal text-[16px] leading-[18px]">
-              Lô hàng
-            </span>
-          </div>
-          <div className="absolute w-[1100px] h-[300px] left-[20px] top-[80px]">
-          <table className="table-auto w-full">
-            <thead>
-              <tr>
-                <th className="w-10">
-                  <button className="p-2"></button>
-                </th>
-                <th className="text-center px-2 py-2 text-xs">Barcode</th>
-                <th className="text-center px-2 py-2 text-xs">Số seri</th>
-                <th className="text-center px-2 py-2 text-xs">Tên lô</th>
-                <th className="text-center px-2 py-2 text-xs">Ngày nhận</th>
-                <th className="text-center px-2 py-2 text-xs">Ngày sản xuất</th>
-                <th className="text-center px-2 py-2 text-xs">Ngày hết hạn lô</th>
-                <th className="text-center px-2 py-2 text-xs">Số lượng lô hàng</th>
-                <th className="text-center px-2 py-2 text-xs">Tổng giá</th>
-                <th className="text-center px-2 py-2 text-xs">Trạng thái lô hàng</th>
-                <th className="text-center px-2 py-2 text-xs">Ghi chú</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t-2 border-gray-400">
-                <td className="flex items-center justify-center p-2">
-                  <button className="w-full h-full flex items-center justify-center">
-                    <img src={images['icon_down_arrow_black1.png']} alt="Arrow Down" className="w-[20px] h-[20px]" />
-                  </button>
-                </td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">q949q3</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">001234</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Lô 1</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-10-01</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">100</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
-                <td className="p-2 flex items-center justify-center">
-                  <div className="bg-white border border-[#CAC745] rounded-[10px] px-2 py-0.5">
-                    <span className="text-[#CAC745] font-bold text-[12px] leading-[15px] ">Đã nhập kho</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr className="border-t-2 border-gray-400">
-                <td className="flex items-center justify-center p-2">
-                  <button className="w-full h-full flex items-center justify-center">
-                    <img src={images['icon_down_arrow_black1.png']} alt="Arrow Down" className="w-[20px] h-[20px]" />
-                  </button>
-                </td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">q949q3</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">001234</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">Lô 1</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-10-01</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">2024-09-20</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">69</td>
-                <td className="p-2 text-xs max-w-[50px] overflow-hidden text-ellipsis whitespace-nowrap text-center">$1,000</td>
-                <td className="p-2 flex items-center justify-center">
-                  <div className="bg-white border border-[#37DE47] rounded-[10px] px-2 py-0.5">
-                    <span className="text-[#37DE47] font-bold text-[12px] leading-[15px]">Đã duyệt</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-          <div className="absolute bottom-2 right-2 flex items-center space-x-2">
-              <span className="font-bold text-base text-[#B2B2B2]">1/10 trang</span>
-                <button className="w-[30px] h-[30px] bg-white flex items-center justify-center">
-                  <img src={images['icon_prev.png']} alt="Previous" className="w-6 h-6" />
-                </button>
-                <button className="w-[30px] h-[30px] bg-white rounded-full flex items-center justify-center">
-                  <img src={images['icon_next.png']} alt="Next" className="w-6 h-6" />
-                </button>
-            </div>
-        </div>
-
-
-        </div>
       </div>
     </div>
   );

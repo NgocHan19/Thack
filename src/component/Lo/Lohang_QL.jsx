@@ -99,7 +99,8 @@ function Lohang_QL() {
 </div>
 <div className="relative">
 <button className="absolute w-[170px] h-[30px] left-[1010px] top-[15px]  bg-[#64c860] rounded-lg flex items-center justify-center"onClick={toggleDropdown1}>
-        <img src={images['icon_duyetlh.png']} alt="Nhập kho" className="w-[20px] h-[20px] mr-2" />
+
+        <img src={images['icon_tick_white.png']} alt="Nhập kho" className="w-[20px] h-[20px] mr-2" />
         <span className="font-semibold text-base text-white">Duyệt nhập kho</span>
       </button>
 

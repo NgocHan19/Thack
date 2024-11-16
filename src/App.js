@@ -14,10 +14,13 @@ import Staff from './component/Organization/Staff';
 import Staff_New from './component/Organization/Staff_New';
 import Staff_Edit from './component/Organization/Staff_Edit';
 import Statistics from './component/Statistics/Statistics';
-import Import from './component/Import/Import';
+import Import_New from './component/Import/Import_New';
+import Import_Old from './component/Import/Import_Old';
 import Import_Approval from './component/Import/Import_Approval';
 import Add_Components from './component/Import/Add_Components';
+import Import_Confirm from './component/Import/Import_Confirm';
 import Export from './component/Export/Export';
+import Export_Confirm from './component/Export/Export_Confirm';
 import Export_Approval from './component/Export/Export_Approval';
 import Dashboard_QL from './component/Dashboard/Dashboard_QL';
 import Dashboard_NV from './component/Dashboard/Dashboard_NV';
@@ -43,6 +46,7 @@ import QLND_New from './component/QLND/QLND_New';
 import QLND_Edit from './component/QLND/QLND_Edit';
 import QLND_Delete from './component/QLND/QLND_Delete';
 import Caidat_Admin from './component/Caidat_Admin/Caidat_Admin';
+import Dashboard_Admin from './component/Dashboard/Dasboard_Admin';
 
 
 
@@ -50,11 +54,28 @@ function App() {
   const location = useLocation();
   const hideMenuRoutes = ['/dangnhap', '/dangky', '/', '/xacthuctaikhoan'];
 
+    // Lấy roleName từ sessionStorage
+    const userRole = JSON.parse(sessionStorage.getItem('accountData'))?.roleName;
+
+    // Chọn menu tương ứng với role của người dùng
+    const renderMenu = () => {
+      if (userRole === 'Nhân Viên Kho') {
+        return <Menu_NV />;
+      } else if (userRole === 'Qu?n Lý Kho') {
+        return <Menu_QL />;
+      } else if (userRole === 'Admin') {
+        return <Menu_Admin />;
+      }
+      return null; // Nếu không có role hợp lệ, không hiển thị menu
+    };
+  
+
   return (
     <div className="app flex h-screen">
       {!hideMenuRoutes.includes(location.pathname) && (
-        <div className="w-[280px]">
-          <Menu_QL />
+        <div className="w-[270px]">
+          {/* {renderMenu()} */}
+           <Menu_QL />
         </div>
       )}
       <div className="flex-1 bg-white">
@@ -67,12 +88,16 @@ function App() {
           <Route path="/suathongtincanhan" element={<UserProfile />} />
           <Route path="/dashboard-ql" element={<Dashboard_QL />} />
           <Route path="/dashboard-nv" element={<Dashboard_NV />} />
-          <Route path="/nhapkho" element={<Import />} />
+          <Route path="/dashboard-admin" element={<Dashboard_Admin/>} />
+          <Route path="/nhapkhomoi" element={<Import_New />} />
+          <Route path="/nhapkholocu" element={<Import_Old />} />
           <Route path="/duyetnhapkho" element={<Import_Approval />} />
           <Route path="/themlinhkienvaolo" element={<Add_Components />} />
+          <Route path="/xacnhannhapkho" element={<Import_Confirm />} />
           <Route path="/xuatkho" element={<Export />} />
+          <Route path="/xacnhanxuatkho" element={<Export_Confirm />} />
           <Route path="/duyetxuatkho" element={<Export_Approval />} />
-          <Route path="/kiemke" element={<Statistics />} />
+          <Route path="/thongke" element={<Statistics />} />
           <Route path="/nhanvien" element={<Staff />} />
           <Route path="/taonhanvien" element={<Staff_New />} />
           <Route path="/suathongtinnhanvien" element={<Staff_Edit />} />
@@ -102,10 +127,8 @@ function App() {
           <Route path="/qlnd-new" element={<QLND_New />} />
           <Route path="/qlnd-edit" element={<QLND_Edit />} />
           <Route path="/qlnd-delete" element={<QLND_Delete />} />
-
           {/* Quản lí linh kiện */}
           <Route path="/qllk" element={<QLLK />} />
-
           {/* Cài đặt admin */}
           <Route path="/caidat-admin" element={<Caidat_Admin />} />
         </Routes>
