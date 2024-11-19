@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Bar, Line, Radar, Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Chart, RadialLinearScale, PointElement, LineElement, Filler, Title, Tooltip, Legend } from 'chart.js';
 // Đăng ký các thành phần của Chart.js, bao gồm RadialLinearScale cho biểu đồ Radar
 
-ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+Chart.register(
+  RadialLinearScale, // Scale radialLinear
+  PointElement,
+  LineElement,
+  Filler, // Filler cho biểu đồ radar/polarArea
+  Title,
+  Tooltip,
+  Legend
+);
 
 const ThongKe = () => {
   // State lưu dữ liệu biểu đồ

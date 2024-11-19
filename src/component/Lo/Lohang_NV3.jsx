@@ -26,7 +26,7 @@ function Lohang_NV3() {
 };
 
   return (
-    <div className="relative w-full h-[1080px] bg-[#EEEEEE]">
+    <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
      <div className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]"onClick={() => navigate('/lohang-nv')}>Lô hàng/Chi Tiết Linh Kiện Lô Hàng</div>
 
 <div className="w-[1150px] h-[170px] left-[50px] top-[86px] absolute bg-white rounded-[15px]" />

@@ -75,7 +75,7 @@ function App() {
       {!hideMenuRoutes.includes(location.pathname) && (
         <div className="w-[270px]">
           {/* {renderMenu()} */}
-           <Menu_QL />
+           <Menu_NV />
         </div>
       )}
       <div className="flex-1 bg-white">

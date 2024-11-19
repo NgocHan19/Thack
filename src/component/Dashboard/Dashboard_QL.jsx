@@ -1,10 +1,20 @@
 // ChartComparison.js
 import React, { useState } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Chart, PointElement, LineElement, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend } from 'chart.js';
 
 // Đăng ký các phần mở rộng cần thiết cho Chart.js
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+// Đăng ký các thành phần cần thiết
+Chart.register(
+  PointElement,
+  LineElement,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const ChartComparison = () => {
   // Dữ liệu biểu đồ: nhập và xuất hàng hóa từng tháng

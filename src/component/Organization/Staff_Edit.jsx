@@ -10,89 +10,123 @@ const Staff_Edit = () => {
     };
 
     return (
-        <div className="relative w-full h-[1080px] bg-[#F4F7FA]">
-            <button onClick={() => handleNavigate('/nhanvien')}
-                className="absolute left-[70px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">
-                Quản lý nhân viên/
-            </button>            <button className="absolute left-[220px] top-[20px] font-inter font-bold text-base leading-[29px] text-[#7D7D7D]">Chỉnh sửa thông tin nhân viên</button>
-            <div className="absolute w-[1150px] h-[750px] left-[50px] top-[60px] bg-white rounded-[15px] shadow-lg">
-                <div className="absolute left-[40px] top-[15px] flex items-center">
-                    <img src={images['icon_info_staff.png']} alt="Icon" className="mr-4 w-[50px] h-[50px]" />
-                    <h2 className="text-[24px] font-bold text-black">Tạo Thông Tin Nhân Viên</h2>
+        <div className="relative w-full min-h-[1080px] bg-[#F4F7FA]">
+            {/* Breadcrumb */}
+            <div className="p-4">
+                <button
+                    onClick={() => handleNavigate('/nhanvien')}
+                    className="font-inter font-bold text-sm md:text-base text-[#7D7D7D]">
+                    Quản lý nhân viên/
+                </button>
+                <span className="font-inter font-bold text-sm md:text-base text-[#7D7D7D]">
+                    Chỉnh sửa thông tin nhân viên
+                </span>
+            </div>
+
+            {/* Main Container */}
+            <div className="mx-auto max-w-6xl bg-white rounded-[15px] shadow-lg p-6">
+                {/* Header */}
+                <div className="flex items-center mb-6">
+                    <img
+                        src={images['icon_info_staff.png']}
+                        alt="Icon"
+                        className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] mr-4"
+                    />
+                    <h2 className="text-lg md:text-xl font-bold text-black">
+                        Chỉnh Sửa Thông Tin Nhân Viên
+                    </h2>
                 </div>
 
-                <div className="absolute left-[240px] top-[100px] flex items-center">
-                    <button className="w-full h-full">
-                        <img src={images['icon_account2.png']} alt="Icon" className="w-[80px] h-[80px]" />
-                    </button>
-                </div>
-
-                <div className="absolute left-[50px] top-[240px] flex items-center">
-                    <div className="ml-[30px] flex flex-col">
-                        <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
+                {/* Form */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Row 1 */}
+                    <div className="flex flex-col">
+                        <label className="text-sm md:text-base font-bold text-[#A09696]">
                             Họ và tên
-                        </div>
-                        <input type="text" placeholder="Nhập họ và tên..." className="box-border w-[450px] h-[35px] mt-[5px] bg-white border border-[#525050] rounded-[10px] pl-5" />
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Nhập họ và tên..."
+                            className="w-full mt-2 p-2 bg-white border border-[#525050] rounded-[10px] focus:outline-none"
+                        />
                     </div>
-                    <div className="ml-[130px] flex flex-col">
-                        <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
+                    <div className="flex flex-col">
+                        <label className="text-sm md:text-base font-bold text-[#A09696]">
                             Ngày sinh
-                        </div>
-                        <input className="box-border w-[450px] h-[35px] mt-[5px] bg-white border border-[#525050] rounded-[10px] pl-5 pr-5" type="date" />
+                        </label>
+                        <input
+                            type="date"
+                            className="w-full mt-2 p-2 bg-white border border-[#525050] rounded-[10px] focus:outline-none"
+                        />
                     </div>
-                </div>
 
-                <div className="absolute left-[50px] top-[340px] flex items-center">
-                    <div className="ml-[30px] flex flex-col">
-                        <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
+                    {/* Row 2 */}
+                    <div className="flex flex-col">
+                        <label className="text-sm md:text-base font-bold text-[#A09696]">
                             Địa chỉ
-                        </div>
-                        <input type="text" placeholder="Nhập địa chỉ..." className="box-border w-[450px] h-[35px] mt-[5px] bg-white border border-[#525050] rounded-[10px] pl-5" />
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Nhập địa chỉ..."
+                            className="w-full mt-2 p-2 bg-white border border-[#525050] rounded-[10px] focus:outline-none"
+                        />
                     </div>
-                    <div className="ml-[130px] flex flex-col">
-                        <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
+                    <div className="flex flex-col">
+                        <label className="text-sm md:text-base font-bold text-[#A09696]">
                             Giới tính
-                        </div>
-                        <select className="box-border w-[450px] h-[35px] mt-[5px] bg-white border border-[#525050] rounded-[10px] pl-5 pr-5">
+                        </label>
+                        <select
+                            className="w-full mt-2 p-2 bg-white border border-[#525050] rounded-[10px] focus:outline-none">
                             <option value="">Chọn giới tính</option>
                             <option value="Nam">Nam</option>
                             <option value="Nữ">Nữ</option>
                             <option value="Khác">Khác</option>
                         </select>
                     </div>
-                </div>
 
-                <div className="absolute left-[50px] top-[440px] flex items-center">
-                    <div className="ml-[30px] flex flex-col">
-                        <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
+                    {/* Row 3 */}
+                    <div className="flex flex-col">
+                        <label className="text-sm md:text-base font-bold text-[#A09696]">
                             Email
-                        </div>
-                        <input type="text" readOnly className="box-border w-[450px] h-[35px] mt-[5px] bg-[#EEEEEE] border border-[#525050] rounded-[10px] pl-5" />
+                        </label>
+                        <input
+                            type="text"
+                            readOnly
+                            className="w-full mt-2 p-2 bg-[#EEEEEE] border border-[#525050] rounded-[10px] focus:outline-none"
+                        />
                     </div>
-                    <div className="ml-[130px] flex flex-col">
-                        <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
+                    <div className="flex flex-col">
+                        <label className="text-sm md:text-base font-bold text-[#A09696]">
                             Ngày tạo
-                        </div>
-                        <input className="box-border w-[450px] h-[35px] mt-[5px] bg-white border border-[#525050] rounded-[10px] pl-5 pr-5" type="date" />
+                        </label>
+                        <input
+                            type="date"
+                            className="w-full mt-2 p-2 bg-white border border-[#525050] rounded-[10px] focus:outline-none"
+                        />
+                    </div>
+
+                    {/* Row 4 */}
+                    <div className="flex flex-col md:col-span-2">
+                        <label className="text-sm md:text-base font-bold text-[#A09696]">
+                            Vai trò
+                        </label>
+                        <select
+                            className="w-full mt-2 p-2 bg-[#EEEEEE] border border-[#525050] rounded-[10px] focus:outline-none">
+                            <option value="">Chọn vai trò</option>
+                            <option value="Nhân viên kho">Nhân viên kho</option>
+                            <option value="Quản lý kho">Quản lý kho</option>
+                        </select>
                     </div>
                 </div>
 
-                <div className="absolute left-[50px] top-[540px] ml-[30px] flex flex-col">
-                    <div className="w-[100px] h-[25px] font-inter font-bold text-[20px] leading-[29px] text-[#A09696]">
-                        Vai trò
-                    </div>
-                    <select className="box-border w-[450px] h-[35px] mt-[5px] bg-[#EEEEEE] border border-[#525050] rounded-[10px] pl-5 pr-5">
-                        <option value="">Chọn vai trò</option>
-                        <option value="Nhân viên kho">Nhân viên kho</option>
-                        <option value="Quản lý kho">Quản lý kho</option>
-                    </select>
+                {/* Save Button */}
+                <div className="mt-6">
+                    <button className="w-full md:w-[180px] h-[45px] bg-[#F39C12] rounded-[5px] flex items-center justify-center">
+                        <span className="font-inter font-bold text-white text-lg">
+                            Lưu thay đổi
+                        </span>
+                    </button>
                 </div>
-
-
-                <button className="absolute w-[180px] h-[45px] left-[40px] top-[675px] bg-[#F39C12] rounded-[5px] flex items-center justify-center">
-                    <span className="font-inter font-bold text-white text-lg">Lưu thay đổi</span>
-                </button>
-
             </div>
         </div>
     );
